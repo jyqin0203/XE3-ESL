@@ -5,6 +5,14 @@
   const WHITE_MARK_URL = "/assets/speakup/speakup-mark-white.svg";
   const SIDEKICK_VIDEO_URL = "/assets/speakup/先理解你-web.mp4";
   const SIDEKICK_VIDEO_POSTER_URL = "/assets/speakup/先理解你-poster.jpg";
+  const EXPRESSION_PREP_VIDEO_URL =
+    "/assets/speakup/expression-prep/expression-prep.mp4";
+  const EXPRESSION_PREP_QUESTION_URL =
+    "/assets/speakup/expression-prep/question.png";
+  const EXPRESSION_PREP_STAR_URL =
+    "/assets/speakup/expression-prep/star.png";
+  const EXPRESSION_PREP_READY_URL =
+    "/assets/speakup/expression-prep/ready.png";
   const AGENTIC_HAND_DESKTOP_URL =
     "/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/chatgptdesktopposter_12_10.webp";
   const AGENTIC_HAND_MOBILE_URL =
@@ -605,6 +613,142 @@
     document.getElementById("agentic-storefronts-video")?.remove();
   }
 
+  function buildExpressionPreparationStage() {
+    const stage = document.createElement("div");
+    stage.className = "speakup-expression-stage animate-media-entrance";
+    stage.dataset.speakupExpressionStage = "true";
+    stage.dataset.version = "1";
+    stage.setAttribute("role", "group");
+    stage.setAttribute(
+      "aria-label",
+      "SpeakUp 从提出问题、理清表达思路到进入模拟实战的演示",
+    );
+    stage.innerHTML = `
+      <div class="speakup-expression-stage__screen speakup-expression-stage__screen--question" aria-hidden="true">
+        <img src="${EXPRESSION_PREP_QUESTION_URL}" alt="" decoding="async" />
+      </div>
+      <div class="speakup-expression-stage__screen speakup-expression-stage__screen--demo">
+        <video
+          id="speakup-expression-video"
+          src="${EXPRESSION_PREP_VIDEO_URL}"
+          poster="${EXPRESSION_PREP_STAR_URL}"
+          preload="metadata"
+          playsinline
+          disablepictureinpicture
+          aria-label="SpeakUp 理清表达思路并进入模拟实战的视频演示"
+        ></video>
+      </div>
+      <div class="speakup-expression-stage__screen speakup-expression-stage__screen--ready" aria-hidden="true">
+        <img src="${EXPRESSION_PREP_READY_URL}" alt="" decoding="async" />
+      </div>`;
+    return stage;
+  }
+
+  function syncExpressionPreparationCta(article) {
+    const cta = article?.querySelector('a[data-component-name="cta-link"]');
+    const video = article?.querySelector("#speakup-expression-video");
+    if (!cta || !video) return;
+
+    const isPlaying = !video.paused && !video.ended;
+    const label = video.ended
+      ? "重播演示"
+      : isPlaying
+        ? "暂停演示"
+        : video.currentTime > 0.05
+          ? "继续演示"
+          : "播放演示";
+    setText(cta.querySelector(":scope > span") || cta, label);
+    cta.setAttribute("aria-label", `${label}：SpeakUp 表达准备`);
+    cta.setAttribute("aria-pressed", String(isPlaying));
+  }
+
+  function bindExpressionPreparationMedia(article) {
+    const cta = article?.querySelector('a[data-component-name="cta-link"]');
+    const video = article?.querySelector("#speakup-expression-video");
+    if (!cta || !video) return;
+
+    cta.href = "#speakup-expression-video";
+    cta.removeAttribute("target");
+    cta.removeAttribute("rel");
+    cta.setAttribute("role", "button");
+    cta.setAttribute("aria-controls", "speakup-expression-video");
+
+    if (cta.dataset.speakupExpressionBound !== "true") {
+      cta.dataset.speakupExpressionBound = "true";
+      cta.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          const currentArticle = document.getElementById("rollouts");
+          const currentVideo = currentArticle?.querySelector("#speakup-expression-video");
+          if (!currentVideo) return;
+
+          if (!currentVideo.paused && !currentVideo.ended) {
+            currentVideo.pause();
+            return;
+          }
+          if (currentVideo.ended) currentVideo.currentTime = 0;
+          currentVideo.play().catch(() => syncExpressionPreparationCta(currentArticle));
+        },
+        true,
+      );
+      cta.addEventListener("keydown", (event) => {
+        if (event.key !== " ") return;
+        event.preventDefault();
+        cta.click();
+      });
+    }
+
+    if (video.dataset.speakupExpressionBound !== "true") {
+      video.dataset.speakupExpressionBound = "true";
+      ["play", "pause", "ended", "loadedmetadata"].forEach((eventName) => {
+        video.addEventListener(eventName, () => {
+          syncExpressionPreparationCta(document.getElementById("rollouts"));
+        });
+      });
+    }
+    syncExpressionPreparationCta(article);
+  }
+
+  function updateExpressionPreparationSection() {
+    const section = document.getElementById("online");
+    const article = section?.querySelector("#rollouts");
+    if (!section || !article) return;
+
+    section.dataset.speakupExpressionPrepared = "true";
+    setText(article.querySelector("#card-heading-rollouts"), "先理清，再开练");
+    setText(
+      article.querySelector(".rich-text p"),
+      "SpeakUp 先帮你理清思路，再进入模拟实战。",
+    );
+
+    section.querySelector("#shopify-simgym-app")?.remove();
+    const contentWrapper = section.firstElementChild;
+    [...(contentWrapper?.children || [])].forEach((group) => {
+      const isShopifyDetailGroup =
+        group.matches(".bg-light") &&
+        Boolean(group.querySelector("#manage-store-details-in-the-theme-editor"));
+      if (group.id === "tinker-xxl" || isShopifyDetailGroup) group.remove();
+    });
+
+    const mediaContainer = article.querySelector("[data-rollout-rive-container]");
+    if (!mediaContainer) return;
+    mediaContainer.setAttribute("role", "group");
+    mediaContainer.setAttribute(
+      "aria-label",
+      "SpeakUp 从理清思路到进入模拟实战的表达准备演示",
+    );
+
+    let stage = mediaContainer.querySelector(
+      ':scope > [data-speakup-expression-stage="true"][data-version="1"]',
+    );
+    if (!stage) stage = buildExpressionPreparationStage();
+    if (mediaContainer.children.length !== 1 || mediaContainer.firstElementChild !== stage) {
+      mediaContainer.replaceChildren(stage);
+    }
+    bindExpressionPreparationMedia(article);
+  }
+
   function updateAllDirectoryLinks() {
     for (const [id, chapter] of Object.entries(chapters)) {
       document.querySelectorAll(`a[href$="#${id}"]`).forEach((link) => {
@@ -1058,6 +1202,7 @@
       updateAllDirectoryLinks();
       updateChapterIntros();
       updateGoalUnderstandingSection();
+      updateExpressionPreparationSection();
       ensureHeroArt();
       updateSidekickVideoCard();
       updateSocialStoriesSection();

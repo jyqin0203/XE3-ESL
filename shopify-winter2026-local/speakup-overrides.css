@@ -24,6 +24,29 @@ svg:has(path[d^="m11.975 2.421"]) {
   display: none !important;
 }
 
+/* “表达准备” keeps only the authored chapter intro, the Rollouts feature
+   geometry, and the existing back-navigation boundary. Hide the legacy media
+   and removable Shopify groups before hydration; JS then removes the same
+   semantic nodes idempotently. */
+#online #shopify-simgym-app,
+#online > div > div.bg-light:has(#manage-store-details-in-the-theme-editor),
+#online #tinker-xxl {
+  display: none !important;
+}
+
+#online #rollouts [data-rollout-rive-container] {
+  aspect-ratio: 850 / 645;
+  min-height: 0;
+  isolation: isolate;
+}
+
+#online
+  #rollouts
+  [data-rollout-rive-container]
+  > :not(.speakup-expression-stage) {
+  display: none !important;
+}
+
 /* Keep the authored loader for the first hero visit only. Once the user enters
    any real chapter (or opens a chapter hash directly), reveal the content and
    prevent the shared “Renaissance Edition” startup shell from replaying. */
@@ -171,6 +194,133 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   #sidekick-video .speakup-sidekick-media > div:first-child,
   #sidekick-video .speakup-sidekick-media > div:first-child > div {
     aspect-ratio: 4 / 5 !important;
+  }
+}
+
+/* Preserve the original responsive Rollouts stage while replacing its two
+   canvases with project-owned, portrait SpeakUp UI media. */
+#online #rollouts .speakup-expression-stage {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #d2ceb7;
+  box-shadow:
+    inset 0 0 0 1px rgba(41, 41, 25, 0.14),
+    inset 0 -34px 60px rgba(56, 52, 34, 0.1);
+}
+
+#online #rollouts .speakup-expression-stage::before,
+#online #rollouts .speakup-expression-stage::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+}
+
+#online #rollouts .speakup-expression-stage::before {
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(41, 41, 25, 0.025) 0,
+      rgba(41, 41, 25, 0.025) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(247, 247, 238, 0.035) 0,
+      rgba(247, 247, 238, 0.035) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  mix-blend-mode: multiply;
+}
+
+#online #rollouts .speakup-expression-stage::after {
+  z-index: 5;
+  box-shadow: inset 0 0 44px rgba(41, 41, 25, 0.12);
+}
+
+#online #rollouts .speakup-expression-stage__screen {
+  position: absolute;
+  top: 15%;
+  z-index: 1;
+  height: 66%;
+  overflow: hidden;
+  aspect-ratio: 432 / 960;
+  border: 1px solid rgba(41, 41, 25, 0.16);
+  border-radius: clamp(8px, 1.45vw, 18px);
+  background: #f5f7f7;
+  box-shadow:
+    0 18px 34px rgba(41, 41, 25, 0.2),
+    0 3px 8px rgba(41, 41, 25, 0.13);
+  transform-origin: center bottom;
+}
+
+#online #rollouts .speakup-expression-stage__screen img,
+#online #rollouts .speakup-expression-stage__screen video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#online #rollouts .speakup-expression-stage__screen--question {
+  left: 5%;
+  transform: rotate(-4.5deg);
+  filter: saturate(0.78) contrast(0.94);
+  opacity: 0.86;
+}
+
+#online #rollouts .speakup-expression-stage__screen--demo {
+  top: 6%;
+  left: 50%;
+  z-index: 3;
+  height: 88%;
+  border-color: rgba(41, 41, 25, 0.28);
+  box-shadow:
+    0 24px 48px rgba(41, 41, 25, 0.28),
+    0 4px 12px rgba(41, 41, 25, 0.16);
+  transform: translateX(-50%);
+}
+
+#online #rollouts .speakup-expression-stage__screen--ready {
+  right: 5%;
+  transform: rotate(4.5deg);
+  filter: saturate(0.8) contrast(0.95);
+  opacity: 0.88;
+}
+
+#online #rollouts .speakup-expression-stage video {
+  background: #eef5f8;
+}
+
+@media (min-width: 940px) {
+  #online #rollouts [data-rollout-rive-container] {
+    aspect-ratio: 1134 / 645;
+  }
+
+  #online #rollouts .speakup-expression-stage__screen {
+    top: 13%;
+    height: 74%;
+  }
+
+  #online #rollouts .speakup-expression-stage__screen--question {
+    left: 10%;
+  }
+
+  #online #rollouts .speakup-expression-stage__screen--demo {
+    top: 5%;
+    height: 90%;
+  }
+
+  #online #rollouts .speakup-expression-stage__screen--ready {
+    right: 10%;
   }
 }
 
@@ -848,6 +998,12 @@ body.speakup-mode .speakup-edition-title:focus-visible {
 
   #agentic .speakup-goal-carousel__slide {
     transition: none;
+  }
+
+  #online #rollouts .speakup-expression-stage,
+  #online #rollouts .speakup-expression-stage__screen {
+    animation: none !important;
+    transition: none !important;
   }
 
   .speakup-social-wall.is-reveal-ready .speakup-social-story,

@@ -14,6 +14,9 @@ const speakUpAgenticPropsPath = '/assets/speakup/agentic/speakup-agentic-cards.g
 const originalAgenticBookPath =
   '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/9567eaad495dfa3f/Rigged_Book_CS_Animated_V5_compressed-optimized.glb';
 const speakUpAgenticBookPath = '/assets/speakup/agentic/speakup-agentic-book.glb';
+const originalOnlineIntroPath =
+  '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/46aedb6ec0619620/EW26_Online_251209v3_compressed-optimized.glb';
+const speakUpOnlineIntroPath = '/assets/speakup/online/speakup-online-intro.glb';
 
 const fallbackTypes = {
   '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8',
@@ -28,6 +31,7 @@ async function serveSpeakUpIndex(request, response, filePath) {
   body = body
     .replaceAll(originalAgenticPropsPath, speakUpAgenticPropsPath)
     .replaceAll(originalAgenticBookPath, speakUpAgenticBookPath)
+    .replaceAll(originalOnlineIntroPath, speakUpOnlineIntroPath)
     .replace(
       '</head>',
       '<link rel="stylesheet" href="/speakup-overrides.css" data-speakup-overrides="true" /></head>',
