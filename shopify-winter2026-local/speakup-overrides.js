@@ -18,6 +18,47 @@
   const AGENTIC_HAND_MOBILE_URL =
     "/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/chatgptmobileposter_12_10.webp";
 
+  const sceneChapters = {
+    retail: {
+      heading: "先把第一轮说顺",
+      description: "从自我介绍到连续追问，先在真实面试前练一遍。",
+      video: "/assets/speakup/scenes/videos/interview.mp4",
+      poster: "/assets/speakup/scenes/videos/interview-poster.jpg",
+      entry: "/assets/speakup/scenes/ui/interview-entry.png",
+      videoAlt: "英文面试场景预演",
+      entryAlt: "SpeakUp 英文面试练习入口",
+    },
+    marketing: {
+      heading: "从选题到开口",
+      description: "选择 Part 1、2、3，再进入一轮真实问答。",
+      video: "/assets/speakup/scenes/videos/ielts.mp4",
+      poster: "/assets/speakup/scenes/videos/ielts-poster.jpg",
+      entry: "/assets/speakup/scenes/ui/ielts-entry.png",
+      practice: "/assets/speakup/scenes/ui/ielts-practice.png",
+      videoAlt: "IELTS 口语考试场景预演",
+      entryAlt: "SpeakUp IELTS 口语练习入口",
+      practiceAlt: "SpeakUp IELTS Part 1 真实问答练习页面",
+    },
+    checkout: {
+      heading: "把会议先演一遍",
+      description: "汇报、协作和客户沟通，先理清再开口。",
+      video: "/assets/speakup/scenes/videos/work.mp4",
+      poster: "/assets/speakup/scenes/videos/work-poster.jpg",
+      entry: "/assets/speakup/scenes/ui/work-entry.png",
+      videoAlt: "英文职场沟通场景预演",
+      entryAlt: "SpeakUp 职场英语练习入口",
+    },
+    operations: {
+      heading: "出发前，先说一遍",
+      description: "酒店、问路与日常交流，在出发前先预演。",
+      video: "/assets/speakup/scenes/videos/travel.mp4",
+      poster: "/assets/speakup/scenes/videos/travel-poster.jpg",
+      entry: "/assets/speakup/scenes/ui/travel-entry.png",
+      videoAlt: "英文生活旅行场景预演",
+      entryAlt: "SpeakUp 生活与旅行练习入口",
+    },
+  };
+
   const goalSlides = [
     {
       label: "英文面试",
@@ -749,6 +790,264 @@
     bindExpressionPreparationMedia(article);
   }
 
+  function buildSceneVideo(config, modifier = "") {
+    const stage = document.createElement("div");
+    stage.className = `speakup-scene-video ${modifier} animate-show-media`.trim();
+    stage.innerHTML = `
+      <video
+        src="${config.video}"
+        poster="${config.poster}"
+        preload="metadata"
+        muted
+        autoplay
+        loop
+        playsinline
+        disablepictureinpicture
+        aria-label="${config.videoAlt}"
+      ></video>`;
+
+    const video = stage.querySelector("video");
+    video.muted = true;
+    video.defaultMuted = true;
+    video.autoplay = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.disablePictureInPicture = true;
+    return stage;
+  }
+
+  function setPracticeState(feature, showPractice) {
+    if (!feature) return;
+    feature.dataset.uiState = showPractice ? "practice" : "entry";
+    const entry = feature.querySelector('[data-speakup-ui-view="entry"]');
+    const practice = feature.querySelector('[data-speakup-ui-view="practice"]');
+    const toggle = feature.querySelector("[data-speakup-practice-toggle]");
+    entry?.setAttribute("aria-hidden", String(showPractice));
+    practice?.setAttribute("aria-hidden", String(!showPractice));
+    if (!toggle) return;
+    toggle.setAttribute("aria-pressed", String(showPractice));
+    toggle.setAttribute("aria-expanded", String(showPractice));
+    setText(toggle, showPractice ? "返回场景选择" : "进入 IELTS 练习");
+  }
+
+  function buildSceneUi(config, chapterId, switchable = false) {
+    const stage = document.createElement("div");
+    stage.className = `speakup-scene-ui speakup-scene-ui--${chapterId} animate-show-media`;
+    stage.dataset.uiState = "entry";
+    const stageId = `speakup-${chapterId}-ui`;
+    stage.innerHTML = `
+      <div class="speakup-scene-ui__deck" id="${stageId}">
+        <img
+          class="speakup-scene-ui__shot speakup-scene-ui__shot--entry"
+          data-speakup-ui-view="entry"
+          src="${config.entry}"
+          alt="${config.entryAlt}"
+          loading="lazy"
+          decoding="async"
+        />
+        ${
+          switchable
+            ? `<img
+                class="speakup-scene-ui__shot speakup-scene-ui__shot--practice"
+                data-speakup-ui-view="practice"
+                src="${config.practice}"
+                alt="${config.practiceAlt}"
+                loading="lazy"
+                decoding="async"
+                aria-hidden="true"
+              />`
+            : ""
+        }
+      </div>
+      ${
+        switchable
+          ? `<button
+              class="speakup-stage-toggle"
+              type="button"
+              data-speakup-practice-toggle="true"
+              aria-controls="${stageId}"
+              aria-pressed="false"
+              aria-expanded="false"
+            >进入 IELTS 练习</button>`
+          : ""
+      }`;
+
+    const toggle = stage.querySelector("[data-speakup-practice-toggle]");
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        setPracticeState(stage, stage.dataset.uiState !== "practice");
+      });
+      setPracticeState(stage, false);
+    }
+    return stage;
+  }
+
+  function buildSceneCopy(config, chapterId) {
+    const copy = document.createElement("div");
+    copy.className = "speakup-scene-copy";
+    copy.innerHTML = `
+      <h3 id="speakup-${chapterId}-feature-heading">${config.heading}</h3>
+      <div class="rich-text"><p>${config.description}</p></div>`;
+    return copy;
+  }
+
+  function buildRetailFeature(config, type) {
+    const feature = document.createElement("div");
+    feature.className = `speakup-scene-feature speakup-scene-feature--retail speakup-scene-feature--${type}`;
+    feature.dataset.speakupSceneFeature = `retail-${type}`;
+    feature.dataset.version = "1";
+    if (type === "video") {
+      feature.append(buildSceneCopy(config, "retail"), buildSceneVideo(config));
+    } else {
+      feature.append(buildSceneUi(config, "retail"));
+    }
+    return feature;
+  }
+
+  function buildMarketingFeature(config) {
+    const feature = document.createElement("div");
+    feature.className = "speakup-scene-feature speakup-scene-feature--marketing";
+    feature.dataset.speakupSceneFeature = "marketing";
+    feature.dataset.version = "1";
+    const stage = document.createElement("div");
+    stage.className = "speakup-scene-composition animate-show-media";
+    stage.append(
+      buildSceneVideo(config, "speakup-scene-video--composition"),
+      buildSceneUi(config, "marketing", true),
+    );
+    feature.append(buildSceneCopy(config, "marketing"), stage);
+    return feature;
+  }
+
+  function buildGridFeature(config, chapterId, type) {
+    const feature = document.createElement("div");
+    feature.className = `speakup-scene-card speakup-scene-card--${type}`;
+    feature.dataset.speakupSceneFeature = `${chapterId}-${type}`;
+    feature.dataset.version = "1";
+    if (type === "video") {
+      feature.append(buildSceneVideo(config), buildSceneCopy(config, chapterId));
+    } else {
+      feature.append(buildSceneUi(config, chapterId));
+    }
+    return feature;
+  }
+
+  function installSceneFeature(article, marker, build) {
+    if (!article) return null;
+    let feature = article.querySelector(
+      `:scope > [data-speakup-scene-feature="${marker}"][data-version="1"]`,
+    );
+    if (!feature) feature = build();
+    if (article.children.length !== 1 || article.firstElementChild !== feature) {
+      article.replaceChildren(feature);
+    }
+    feature.querySelectorAll("video").forEach((video) => {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.autoplay = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.controls = false;
+      video.querySelectorAll("source").forEach((source) => source.remove());
+      if (video.paused) video.play().catch(() => {});
+    });
+    return feature;
+  }
+
+  function removeUnkeptArticles(group, keepIds) {
+    if (!group) return;
+    group.querySelectorAll("article").forEach((article) => {
+      if (!keepIds.includes(article.id)) article.remove();
+    });
+  }
+
+  function updateSceneChapters() {
+    const retail = document.getElementById("retail");
+    if (retail) {
+      retail.dataset.speakupSceneChapter = "retail";
+      const wrapper = retail.firstElementChild;
+      [...(wrapper?.children || [])].forEach((group) => {
+        if (group.matches(".bg-light")) group.remove();
+      });
+      const collection = retail.querySelector("#pos-hub-collection");
+      removeUnkeptArticles(collection, ["pos-hub", "connections-that-never-drop"]);
+      const videoArticle = collection?.querySelector("#pos-hub");
+      const uiArticle = collection?.querySelector("#connections-that-never-drop");
+      videoArticle?.classList.add("speakup-scene-article", "speakup-scene-article--video");
+      uiArticle?.classList.add("speakup-scene-article", "speakup-scene-article--ui");
+      installSceneFeature(videoArticle, "retail-video", () =>
+        buildRetailFeature(sceneChapters.retail, "video"),
+      );
+      installSceneFeature(uiArticle, "retail-ui", () =>
+        buildRetailFeature(sceneChapters.retail, "ui"),
+      );
+    }
+
+    const marketing = document.getElementById("marketing");
+    if (marketing) {
+      marketing.dataset.speakupSceneChapter = "marketing";
+      const wrapper = marketing.firstElementChild;
+      [...(wrapper?.children || [])].forEach((group) => {
+        if (group.matches(".bg-light")) group.remove();
+      });
+      const article = marketing.querySelector("#shopify-product-network");
+      article?.classList.add("speakup-scene-article", "speakup-scene-article--marketing");
+      installSceneFeature(article, "marketing", () =>
+        buildMarketingFeature(sceneChapters.marketing),
+      );
+    }
+
+    const checkout = document.getElementById("checkout");
+    if (checkout) {
+      checkout.dataset.speakupSceneChapter = "checkout";
+      const group = [...(checkout.firstElementChild?.children || [])].find((node) =>
+        node.matches(".bg-light"),
+      );
+      const videoId = "personalized-shop-pay-button";
+      const uiId = "checkout-and-accounts-customization-per-market";
+      removeUnkeptArticles(group, [videoId, uiId]);
+      group?.classList.add("speakup-scene-grid", "speakup-scene-grid--checkout");
+      group
+        ?.querySelector(":scope > div > .full-bleed.bg-grey-light")
+        ?.remove();
+      const videoArticle = group?.querySelector(`#${videoId}`);
+      const uiArticle = group?.querySelector(`#${uiId}`);
+      videoArticle?.classList.add("speakup-scene-card-host", "speakup-scene-card-host--video");
+      uiArticle?.classList.add("speakup-scene-card-host", "speakup-scene-card-host--ui");
+      installSceneFeature(videoArticle, "checkout-video", () =>
+        buildGridFeature(sceneChapters.checkout, "checkout", "video"),
+      );
+      installSceneFeature(uiArticle, "checkout-ui", () =>
+        buildGridFeature(sceneChapters.checkout, "checkout", "ui"),
+      );
+    }
+
+    const operations = document.getElementById("operations");
+    if (operations) {
+      operations.dataset.speakupSceneChapter = "operations";
+      const group = [...(operations.firstElementChild?.children || [])].find((node) =>
+        node.matches(".bg-light"),
+      );
+      const videoId = "flexible-inventory-transfers";
+      const uiId = "quick-sale-in-the-shopify-mobile-app";
+      removeUnkeptArticles(group, [videoId, uiId]);
+      group?.classList.add("speakup-scene-grid", "speakup-scene-grid--operations");
+      group
+        ?.querySelector(":scope > div > .full-bleed.bg-grey-light")
+        ?.remove();
+      const videoArticle = group?.querySelector(`#${videoId}`);
+      const uiArticle = group?.querySelector(`#${uiId}`);
+      videoArticle?.classList.add("speakup-scene-card-host", "speakup-scene-card-host--video");
+      uiArticle?.classList.add("speakup-scene-card-host", "speakup-scene-card-host--ui");
+      installSceneFeature(videoArticle, "operations-video", () =>
+        buildGridFeature(sceneChapters.operations, "operations", "video"),
+      );
+      installSceneFeature(uiArticle, "operations-ui", () =>
+        buildGridFeature(sceneChapters.operations, "operations", "ui"),
+      );
+    }
+  }
+
   function updateAllDirectoryLinks() {
     for (const [id, chapter] of Object.entries(chapters)) {
       document.querySelectorAll(`a[href$="#${id}"]`).forEach((link) => {
@@ -1203,6 +1502,7 @@
       updateChapterIntros();
       updateGoalUnderstandingSection();
       updateExpressionPreparationSection();
+      updateSceneChapters();
       ensureHeroArt();
       updateSidekickVideoCard();
       updateSocialStoriesSection();

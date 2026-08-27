@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "purpose": "SpeakUp scene-entry and IELTS practice phone UI assets",
+  "entryCanvas": {
+    "width": 1000,
+    "height": 2000
+  },
+  "practiceCanvas": {
+    "width": 900,
+    "height": 2000
+  },
+  "phoneHeight": 1940,
+  "phoneBaseline": 1970,
+  "contactSheet": {
+    "file": "contact-sheet.png",
+    "order": [
+      "interview-entry",
+      "ielts-entry",
+      "work-entry",
+      "travel-entry",
+      "ielts-practice"
+    ]
+  },
+  "assets": [
+    {
+      "id": "interview-entry",
+      "kind": "entry",
+      "file": "interview-entry.png",
+      "source": "/Users/mac/Documents/SpeakUp资产/英文面试.png",
+      "sourceSize": {
+        "width": 898,
+        "height": 1824
+      },
+      "output": {
+        "width": 1000,
+        "height": 2000,
+        "pixelFormat": "rgba",
+        "alpha": {
+          "minimum": 0,
+          "maximum": 255,
+          "transparentPixels": 387800,
+          "partialPixels": 16549,
+          "opaquePixels": 1595651
+        },
+        "sha256": "02f56af94cd3010eb5816c5d82201d75dfac47c94ecb750ec7d57bd262cede0b"
+      },
+      "phoneBaseline": 1970,
+      "sourceCriticalUiSafeRegion": {
+        "x": 82,
+        "y": 188,
+        "width": 734,
+        "height": 1556
+      },
+      "fit": "contain"
+    },
+    {
+      "id": "ielts-entry",
+      "kind": "entry",
+      "file": "ielts-entry.png",
+      "source": "/Users/mac/Documents/SpeakUp资产/IELTS雅思口语.png",
+      "sourceSize": {
+        "width": 900,
+        "height": 1804
+      },
+      "output": {
+        "width": 1000,
+        "height": 2000,
+        "pixelFormat": "rgba",
+        "alpha": {
+          "minimum": 0,
+          "maximum": 255,
+          "transparentPixels": 398471,
+          "partialPixels": 15827,
+          "opaquePixels": 1585702
+        },
+        "sha256": "c0d5cf27b4cf18e55a5fd91993a92e77b6d4de5b5cf19eedcb6ab40d93032d24"
+      },
+      "phoneBaseline": 1970,
+      "sourceCriticalUiSafeRegion": {
+        "x": 84,
+        "y": 184,
+        "width": 732,
+        "height": 1536
+      },
+      "fit": "contain"
+    },
+    {
+      "id": "work-entry",
+      "kind": "entry",
+      "file": "work-entry.png",
+      "source": "/Users/mac/Documents/SpeakUp资产/职场英语.png",
+      "sourceSize": {
+        "width": 902,
+        "height": 1808
+      },
+      "output": {
+        "width": 1000,
+        "height": 2000,
+        "pixelFormat": "rgba",
+        "alpha": {
+          "minimum": 0,
+          "maximum": 255,
+          "transparentPixels": 404250,
+          "partialPixels": 15635,
+          "opaquePixels": 1580115
+        },
+        "sha256": "3fe4a7c929062619f984636247c41df4cb24c46c5b0344ff730dfc8ec6fbf1a8"
+      },
+      "phoneBaseline": 1970,
+      "sourceCriticalUiSafeRegion": {
+        "x": 88,
+        "y": 188,
+        "width": 726,
+        "height": 1534
+      },
+      "fit": "contain"
+    },
+    {
+      "id": "travel-entry",
+      "kind": "entry",
+      "file": "travel-entry.png",
+      "source": "/Users/mac/Documents/SpeakUp资产/生活与旅行.png",
+      "sourceSize": {
+        "width": 882,
+        "height": 1816
+      },
+      "output": {
+        "width": 1000,
+        "height": 2000,
+        "pixelFormat": "rgba",
+        "alpha": {
+          "minimum": 0,
+          "maximum": 255,
+          "transparentPixels": 412830,
+          "partialPixels": 16539,
+          "opaquePixels": 1570631
+        },
+        "sha256": "cc9b03fc3e022de974333f653a1cea5b2562f497c2b61b415f9664e8f76cad27"
+      },
+      "phoneBaseline": 1970,
+      "sourceCriticalUiSafeRegion": {
+        "x": 80,
+        "y": 188,
+        "width": 722,
+        "height": 1548
+      },
+      "fit": "contain"
+    },
+    {
+      "id": "ielts-practice",
+      "kind": "practice",
+      "file": "ielts-practice.png",
+      "source": "/Users/mac/Projects/XE3-ESL-dev/assets/39cbe4f7-5cd5-42c6-acc9-e728629bb556.png",
+      "sourceSize": {
+        "width": 853,
+        "height": 1844
+      },
+      "output": {
+        "width": 900,
+        "height": 2000,
+        "pixelFormat": "rgba",
+        "alpha": {
+          "minimum": 0,
+          "maximum": 255,
+          "transparentPixels": 198269,
+          "partialPixels": 15453,
+          "opaquePixels": 1586278
+        },
+        "sha256": "bd9b7741e1b59f869162d124193e99d49cdf91b67853893901e801d4064b1a11"
+      },
+      "phoneBaseline": 1970,
+      "sourceCriticalUiSafeRegion": {
+        "x": 78,
+        "y": 148,
+        "width": 697,
+        "height": 1594
+      },
+      "fit": "contain"
+    }
+  ]
+}

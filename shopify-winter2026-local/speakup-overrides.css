@@ -324,6 +324,359 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   }
 }
 
+/* Four scenario chapters retain their authored intro, 3D backdrop, outer grid,
+   reveal timing, and back-navigation. Hide only verified Shopify detail
+   boundaries and legacy media while hydration settles. */
+#retail > div > div.bg-light,
+#retail #the-only-hub-with-processing-power,
+#marketing > div > div.bg-light,
+#checkout > div > div.bg-light article:not(#personalized-shop-pay-button):not(#checkout-and-accounts-customization-per-market),
+#operations > div > div.bg-light article:not(#flexible-inventory-transfers):not(#quick-sale-in-the-shopify-mobile-app) {
+  display: none !important;
+}
+
+#checkout .speakup-scene-grid > div > .full-bleed.bg-grey-light,
+#operations .speakup-scene-grid > div > .full-bleed.bg-grey-light {
+  display: none !important;
+}
+
+#retail #pos-hub > :not([data-speakup-scene-feature="retail-video"]),
+#retail #connections-that-never-drop > :not([data-speakup-scene-feature="retail-ui"]),
+#marketing #shopify-product-network > :not([data-speakup-scene-feature="marketing"]),
+#checkout #personalized-shop-pay-button > :not([data-speakup-scene-feature="checkout-video"]),
+#checkout #checkout-and-accounts-customization-per-market > :not([data-speakup-scene-feature="checkout-ui"]),
+#operations #flexible-inventory-transfers > :not([data-speakup-scene-feature="operations-video"]),
+#operations #quick-sale-in-the-shopify-mobile-app > :not([data-speakup-scene-feature="operations-ui"]) {
+  display: none !important;
+}
+
+#retail .speakup-scene-article,
+#marketing .speakup-scene-article,
+#checkout .speakup-scene-card-host,
+#operations .speakup-scene-card-host,
+.speakup-scene-feature,
+.speakup-scene-card,
+.speakup-scene-composition,
+.speakup-scene-video,
+.speakup-scene-ui {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.speakup-scene-feature,
+.speakup-scene-card {
+  position: relative;
+  width: 100%;
+}
+
+.speakup-scene-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 35rem;
+}
+
+.speakup-scene-copy h3 {
+  margin: 0 0 12px;
+  font-family: "NeueMontreal", -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: clamp(28px, 3.1vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.speakup-scene-copy p {
+  max-width: 31rem;
+  margin: 0;
+  font-size: clamp(16px, 1.35vw, 21px);
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+.speakup-scene-video {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  isolation: isolate;
+  background: #24251f;
+  box-shadow: inset 0 0 0 1px rgba(247, 247, 238, 0.12);
+}
+
+.speakup-scene-video::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(15, 16, 13, 0.08), transparent 35%, rgba(15, 16, 13, 0.14)),
+    radial-gradient(circle at 50% 48%, transparent 55%, rgba(15, 16, 13, 0.12));
+}
+
+.speakup-scene-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.speakup-scene-ui {
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  width: 100%;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.speakup-scene-ui__deck {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  place-items: center;
+}
+
+.speakup-scene-ui__shot {
+  position: absolute;
+  inset: 0;
+  grid-area: 1 / 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 20px 30px rgba(41, 41, 25, 0.2));
+  user-select: none;
+  transition:
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 420ms ease;
+}
+
+.speakup-scene-ui__shot--entry {
+  z-index: 2;
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotate(0deg);
+}
+
+.speakup-scene-ui__shot--practice {
+  z-index: 1;
+  opacity: 0;
+  transform: translate3d(9%, 2%, 0) rotate(1.25deg) scale(0.975);
+}
+
+.speakup-scene-ui[data-ui-state="practice"] .speakup-scene-ui__shot--entry {
+  z-index: 1;
+  opacity: 0;
+  transform: translate3d(-9%, -1%, 0) rotate(-1.25deg) scale(0.975);
+}
+
+.speakup-scene-ui[data-ui-state="practice"] .speakup-scene-ui__shot--practice {
+  z-index: 2;
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+}
+
+.speakup-stage-toggle {
+  position: relative;
+  z-index: 4;
+  justify-self: center;
+  min-height: 34px;
+  margin-top: 12px;
+  padding: 7px 13px;
+  border: 1px solid rgba(41, 41, 25, 0.28);
+  border-radius: 4px;
+  color: var(--speakup-ivory);
+  background: var(--speakup-ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.speakup-stage-toggle:hover {
+  color: var(--speakup-ink);
+  background: var(--speakup-ivory);
+}
+
+.speakup-stage-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* Retail keeps the original full-viewport cadence: one landscape scene beat,
+   followed by one self-contained product-entry screenshot. */
+#retail .speakup-scene-feature--retail {
+  display: grid;
+  width: 100%;
+  min-height: 100svh;
+  align-items: center;
+}
+
+#retail .speakup-scene-feature--video {
+  grid-template-columns: minmax(15rem, 0.72fr) minmax(0, 1.45fr);
+  gap: clamp(28px, 5vw, 84px);
+}
+
+#retail .speakup-scene-feature--video .speakup-scene-copy {
+  align-self: center;
+}
+
+#retail .speakup-scene-feature--video .speakup-scene-video {
+  width: min(100%, 920px);
+  justify-self: end;
+}
+
+#retail .speakup-scene-feature--ui {
+  place-items: center;
+}
+
+#retail .speakup-scene-feature--ui .speakup-scene-ui {
+  width: min(100%, 430px);
+  height: min(78svh, 780px);
+}
+
+/* IELTS reuses the existing full-width 16:9 video article. The landscape clip
+   and the complete, already-framed product screenshot remain separate layers. */
+#marketing .speakup-scene-feature--marketing {
+  grid-column: 1 / -1;
+}
+
+#marketing .speakup-scene-feature--marketing > .speakup-scene-copy {
+  margin-bottom: clamp(24px, 3vw, 42px);
+  color: var(--speakup-ivory);
+}
+
+#marketing .speakup-scene-composition {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(260px, 0.8fr);
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #d2ceb7;
+  box-shadow:
+    inset 0 0 0 1px rgba(41, 41, 25, 0.18),
+    0 22px 50px rgba(21, 22, 18, 0.16);
+}
+
+#marketing .speakup-scene-video--composition {
+  height: 100%;
+  aspect-ratio: auto;
+  box-shadow: none;
+}
+
+#marketing .speakup-scene-ui--marketing {
+  height: 100%;
+  padding: clamp(16px, 2.4vw, 34px) clamp(12px, 1.8vw, 24px);
+  background:
+    linear-gradient(180deg, rgba(247, 247, 238, 0.58), rgba(247, 247, 238, 0.2)),
+    #d2ceb7;
+}
+
+/* Checkout and Operations keep the source grid and its reveal classes. Only
+   the two semantic articles needed for each story remain. */
+#checkout .speakup-scene-card-host,
+#operations .speakup-scene-card-host {
+  align-self: start;
+}
+
+#checkout .speakup-scene-grid > div,
+#operations .speakup-scene-grid > div {
+  height: auto !important;
+  min-height: 0 !important;
+  grid-template-rows: none !important;
+  grid-auto-rows: auto !important;
+  align-content: start !important;
+  content-visibility: visible !important;
+  contain-intrinsic-size: 0 0 !important;
+}
+
+#checkout .speakup-scene-card-host--video,
+#operations .speakup-scene-card-host--video {
+  align-self: center;
+}
+
+.speakup-scene-card--video {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.speakup-scene-card--video .speakup-scene-copy {
+  color: var(--speakup-ink);
+}
+
+.speakup-scene-card--video .speakup-scene-copy h3 {
+  font-size: clamp(25px, 2.6vw, 42px);
+}
+
+.speakup-scene-card--ui .speakup-scene-ui {
+  width: 100%;
+  height: min(76svh, 720px);
+}
+
+@media (min-width: 768px) {
+  #operations .speakup-scene-card-host--video {
+    grid-column: span 8;
+  }
+
+  #operations .speakup-scene-card-host--ui {
+    grid-column: span 4;
+  }
+
+  #checkout .speakup-scene-card-host--video,
+  #checkout .speakup-scene-card-host--ui {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 939px) {
+  #retail .speakup-scene-feature--video {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 28px;
+  }
+
+  #retail .speakup-scene-feature--video .speakup-scene-video {
+    justify-self: stretch;
+  }
+
+  #retail .speakup-scene-feature--ui .speakup-scene-ui {
+    width: min(100%, 390px);
+    height: min(72svh, 690px);
+  }
+
+  #marketing .speakup-scene-composition {
+    grid-template-columns: 1fr;
+    aspect-ratio: auto;
+    overflow: visible;
+  }
+
+  #marketing .speakup-scene-video--composition {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  #marketing .speakup-scene-ui--marketing {
+    height: min(76svh, 720px);
+    padding: 20px 14px;
+  }
+
+  .speakup-scene-card--ui .speakup-scene-ui {
+    height: min(72svh, 680px);
+  }
+}
+
 /* “理解目标” keeps the original editorial grid and hand-held phone stage.
    Hide the legacy Rive/video surfaces immediately; JS replaces only the media
    contents and leaves the authored article geometry untouched. */
@@ -1002,6 +1355,15 @@ body.speakup-mode .speakup-edition-title:focus-visible {
 
   #online #rollouts .speakup-expression-stage,
   #online #rollouts .speakup-expression-stage__screen {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .speakup-scene-feature,
+  .speakup-scene-card,
+  .speakup-scene-video,
+  .speakup-scene-ui,
+  .speakup-scene-ui__shot {
     animation: none !important;
     transition: none !important;
   }
