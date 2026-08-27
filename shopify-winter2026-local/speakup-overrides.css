@@ -24,6 +24,26 @@ svg:has(path[d^="m11.975 2.421"]) {
   display: none !important;
 }
 
+/* Keep the authored loader for the first hero visit only. Once the user enters
+   any real chapter (or opens a chapter hash directly), reveal the content and
+   prevent the shared “Renaissance Edition” startup shell from replaying. */
+body.speakup-mode
+  [data-section-name="side-and-lines"][data-speakup-loader-bypassed="true"]
+  :is(.davinci-lines__title, .davinci-lines__loader, .davinci-lines__complete) {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+body.speakup-mode
+  [data-section-name="side-and-lines"][data-speakup-loader-bypassed="true"]
+  ~ #main-content {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
 /* Keep the original floating skill cloud, but suppress only the Shopify cards
    that the SpeakUp story wall replaces while hydration is settling. */
 body.speakup-mode #sidekick-skills > a[download],
@@ -152,6 +172,226 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   #sidekick-video .speakup-sidekick-media > div:first-child > div {
     aspect-ratio: 4 / 5 !important;
   }
+}
+
+/* “理解目标” keeps the original editorial grid and hand-held phone stage.
+   Hide the legacy Rive/video surfaces immediately; JS replaces only the media
+   contents and leaves the authored article geometry untouched. */
+#agentic-storefronts-video,
+body.speakup-mode #agentic-storefronts-video {
+  display: none !important;
+}
+
+#shopify-agentic-storefronts
+  .media-wrapper
+  > :not(.speakup-goal-carousel) {
+  display: none !important;
+}
+
+#agentic #shopify-agentic-storefronts .media-wrapper {
+  overflow: visible;
+}
+
+#agentic .speakup-goal-carousel {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  color: var(--speakup-ivory);
+  outline: none;
+}
+
+#agentic .speakup-goal-carousel:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 5px;
+}
+
+#agentic .speakup-goal-carousel__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 850 / 821;
+  overflow: visible;
+  isolation: isolate;
+}
+
+#agentic .speakup-goal-carousel__device {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  pointer-events: none;
+}
+
+#agentic .speakup-goal-carousel__device img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+}
+
+#agentic .speakup-goal-carousel__screen {
+  position: absolute;
+  top: 1.489%;
+  left: 9.625%;
+  z-index: 2;
+  width: 27.125%;
+  height: 61.165%;
+  overflow: hidden;
+  border-radius: 11.3% / 5.2%;
+  background: #f4f7fa;
+  box-shadow: inset 0 0 0 1px rgba(10, 10, 8, 0.08);
+  transform: translateZ(0);
+}
+
+#agentic .speakup-goal-carousel__slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0;
+  transform: scale(1.008);
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#agentic .speakup-goal-carousel__slide.is-active {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1);
+}
+
+#agentic .speakup-goal-carousel__story {
+  position: absolute;
+  top: 12%;
+  right: 2%;
+  z-index: 3;
+  display: grid;
+  width: min(39%, 220px);
+  padding-top: 10px;
+  border-top: 1px solid rgba(247, 247, 238, 0.48);
+  pointer-events: none;
+}
+
+#agentic .speakup-goal-carousel__story p,
+#agentic .speakup-goal-carousel__story span {
+  margin: 0;
+  font-family: "PP Neue Montreal", "NeueMontreal", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(8px, 0.7vw, 11px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
+#agentic .speakup-goal-carousel__story strong {
+  margin-top: 8px;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: clamp(19px, 2.1vw, 34px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+#agentic .speakup-goal-carousel__story span {
+  margin-top: 14px;
+  color: rgba(247, 247, 238, 0.62);
+}
+
+#agentic .speakup-goal-carousel__controls {
+  position: absolute;
+  top: 34%;
+  right: 2%;
+  z-index: 4;
+  display: flex;
+  gap: 5px;
+}
+
+#agentic .speakup-goal-carousel__dot {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  place-items: center;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+#agentic .speakup-goal-carousel__dot span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  transition:
+    width 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 180ms ease;
+}
+
+#agentic .speakup-goal-carousel__dot.is-active span {
+  width: 17px;
+  border-radius: 8px;
+  background: currentColor;
+}
+
+#agentic .speakup-goal-carousel__dot:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+@media (max-width: 939px) {
+  #agentic .speakup-goal-carousel {
+    width: calc(100% + var(--spacing-grid-spacing) * 2);
+    margin-left: calc(var(--spacing-grid-spacing) * -1);
+  }
+
+  #agentic .speakup-goal-carousel__stage {
+    aspect-ratio: 810 / 1100;
+  }
+
+  #agentic .speakup-goal-carousel__screen {
+    top: 1.806%;
+    left: 20.186%;
+    width: 57.339%;
+    height: 92.083%;
+    border-radius: 14.25% / 6.55%;
+  }
+
+  #agentic .speakup-goal-carousel__story {
+    top: 12%;
+    right: 1.5%;
+    width: 18%;
+    padding-top: 7px;
+  }
+
+  #agentic .speakup-goal-carousel__story strong {
+    margin-top: 6px;
+    font-size: clamp(13px, 4vw, 20px);
+  }
+
+  #agentic .speakup-goal-carousel__story p {
+    font-size: 7px;
+    overflow-wrap: anywhere;
+  }
+
+  #agentic .speakup-goal-carousel__story span {
+    margin-top: 9px;
+    font-size: 7px;
+  }
+
+  #agentic .speakup-goal-carousel__controls {
+    top: 36%;
+    right: 1%;
+    flex-direction: column;
+    gap: 2px;
+  }
+
 }
 
 /* The original skills graph remains intact: labels, popups, spring motion,
@@ -603,6 +843,10 @@ body.speakup-mode .speakup-edition-title:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .speakup-hero-art {
+    transition: none;
+  }
+
+  #agentic .speakup-goal-carousel__slide {
     transition: none;
   }
 

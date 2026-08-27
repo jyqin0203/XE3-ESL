@@ -8,10 +8,16 @@ const rootDir = path.dirname(fileURLToPath(import.meta.url));
 const host = process.env.HOST || '127.0.0.1';
 const port = Number(process.env.PORT || 18086);
 const mimeMap = JSON.parse(await readFile(path.join(rootDir, 'mime-map.json'), 'utf8'));
+const originalAgenticPropsPath =
+  '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/510af84586abddc1/EW26_Agentic_Props_251209v5_compressed-optimized.glb';
+const speakUpAgenticPropsPath = '/assets/speakup/agentic/speakup-agentic-cards.glb';
+const originalAgenticBookPath =
+  '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/9567eaad495dfa3f/Rigged_Book_CS_Animated_V5_compressed-optimized.glb';
+const speakUpAgenticBookPath = '/assets/speakup/agentic/speakup-agentic-book.glb';
 
 const fallbackTypes = {
   '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8',
-  '.jpeg': 'image/jpeg', '.jpg': 'image/jpeg', '.png': 'image/png',
+  '.glb': 'model/gltf-binary', '.jpeg': 'image/jpeg', '.jpg': 'image/jpeg', '.png': 'image/png',
   '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8', '.mp4': 'video/mp4', '.svg': 'image/svg+xml',
   '.wasm': 'application/wasm', '.webm': 'video/webm', '.webp': 'image/webp', '.woff2': 'font/woff2',
@@ -20,13 +26,15 @@ const fallbackTypes = {
 async function serveSpeakUpIndex(request, response, filePath) {
   let body = await readFile(filePath, 'utf8');
   body = body
+    .replaceAll(originalAgenticPropsPath, speakUpAgenticPropsPath)
+    .replaceAll(originalAgenticBookPath, speakUpAgenticBookPath)
     .replace(
       '</head>',
-      '<link rel="stylesheet" href="/speakup-overrides.css" /></head>',
+      '<link rel="stylesheet" href="/speakup-overrides.css" data-speakup-overrides="true" /></head>',
     )
     .replace(
       '</body>',
-      '<script src="/speakup-overrides.js"></script></body>',
+      '<script src="/speakup-overrides.js" data-speakup-overrides="true"></script></body>',
     );
   const encoded = Buffer.from(body);
   response.writeHead(200, {

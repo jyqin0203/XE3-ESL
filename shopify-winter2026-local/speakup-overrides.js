@@ -5,6 +5,31 @@
   const WHITE_MARK_URL = "/assets/speakup/speakup-mark-white.svg";
   const SIDEKICK_VIDEO_URL = "/assets/speakup/先理解你-web.mp4";
   const SIDEKICK_VIDEO_POSTER_URL = "/assets/speakup/先理解你-poster.jpg";
+  const AGENTIC_HAND_DESKTOP_URL =
+    "/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/chatgptdesktopposter_12_10.webp";
+  const AGENTIC_HAND_MOBILE_URL =
+    "/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/chatgptmobileposter_12_10.webp";
+
+  const goalSlides = [
+    {
+      label: "英文面试",
+      meta: "岗位 · NEXT FRIDAY",
+      image: "/assets/speakup/理解目标/从岗位开始.jpg",
+      alt: "SpeakUp 理解英文面试目标，并询问用户想先练具体问题还是产品经理术语",
+    },
+    {
+      label: "IELTS 7.0",
+      meta: "考试 · 3 MONTHS",
+      image: "/assets/speakup/理解目标/雅思.jpg",
+      alt: "SpeakUp 理解雅思口语提分目标，并建议先练 Part 2 或进行完整模考",
+    },
+    {
+      label: "海外团队沟通",
+      meta: "职场 · TOMORROW",
+      image: "/assets/speakup/理解目标/职场.jpg",
+      alt: "SpeakUp 理解项目延期沟通目标，并把重点整理为解决方案而不是借口",
+    },
+  ];
 
   const speakingStruggles = [
     {
@@ -171,7 +196,7 @@
 
   const chapters = {
     sidekick: { label: "AI 老师", title: "AI 口语老师", description: "先听懂你，不急着开练。" },
-    agentic: { label: "理解目标", title: "理解目标", description: "从岗位、考试或下一场真实沟通开始。" },
+    agentic: { label: "理解目标", title: "理解目标", description: "先说清楚你为什么要开口，再决定怎么练。" },
     online: { label: "表达准备", title: "表达准备", description: "先教会你，再邀请你进入实战。" },
     retail: { label: "英文面试", title: "英文面试", description: "由面试官接管，连续追问真实经历。" },
     marketing: { label: "IELTS", title: "IELTS Speaking", description: "覆盖 Part 1、Part 2、Part 3 与完整模考。" },
@@ -187,6 +212,8 @@
   let applying = false;
   let queued = false;
   let socialMasonryFrame = 0;
+  let bypassSecondaryEditionLoader =
+    Boolean(location.hash && !["#top", "#hero"].includes(location.hash)) || window.scrollY > 100;
 
   function ensureStyles() {
     if (document.querySelector('link[data-speakup-overrides="true"]')) return;
@@ -413,6 +440,169 @@
       setText(heading, chapter.title);
       setText(paragraph, chapter.description);
     }
+  }
+
+  function setGoalCarouselIndex(carousel, requestedIndex) {
+    if (!carousel) return;
+    const slides = [...carousel.querySelectorAll(".speakup-goal-carousel__slide")];
+    if (!slides.length) return;
+    const index = ((requestedIndex % slides.length) + slides.length) % slides.length;
+    carousel.dataset.activeSlide = String(index);
+
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === index;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+    });
+    carousel.querySelectorAll(".speakup-goal-carousel__dot").forEach((dot, dotIndex) => {
+      const isActive = dotIndex === index;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+
+    const slide = goalSlides[index];
+    setText(carousel.querySelector("[data-speakup-goal-meta]"), slide.meta);
+    setText(carousel.querySelector("[data-speakup-goal-label]"), slide.label);
+    setText(
+      carousel.querySelector("[data-speakup-goal-count]"),
+      `${String(index + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`,
+    );
+  }
+
+  function buildGoalCarousel() {
+    const carousel = document.createElement("div");
+    carousel.id = "speakup-goal-carousel";
+    carousel.className = "speakup-goal-carousel";
+    carousel.dataset.speakupGoalCarousel = "true";
+    carousel.dataset.version = "1";
+    carousel.dataset.activeSlide = "0";
+    carousel.setAttribute("role", "region");
+    carousel.setAttribute("aria-roledescription", "carousel");
+    carousel.setAttribute("aria-label", "SpeakUp 理解目标示例");
+    carousel.setAttribute("tabindex", "0");
+    carousel.innerHTML = `
+      <div class="speakup-goal-carousel__stage" data-lenis-prevent="true">
+        <picture class="speakup-goal-carousel__device" aria-hidden="true">
+          <source media="(max-width: 939px)" srcset="${AGENTIC_HAND_MOBILE_URL}" />
+          <img src="${AGENTIC_HAND_DESKTOP_URL}" alt="" width="1600" height="1545" draggable="false" />
+        </picture>
+        <div class="speakup-goal-carousel__screen">
+          ${goalSlides
+            .map(
+              (slide, index) => `
+                <img
+                  class="speakup-goal-carousel__slide${index === 0 ? " is-active" : ""}"
+                  src="${slide.image}"
+                  width="1080"
+                  height="2400"
+                  ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}
+                  decoding="async"
+                  alt="${slide.alt}"
+                  aria-hidden="${index === 0 ? "false" : "true"}"
+                />`,
+            )
+            .join("")}
+        </div>
+        <div class="speakup-goal-carousel__story" aria-live="polite">
+          <p data-speakup-goal-meta>${goalSlides[0].meta}</p>
+          <strong data-speakup-goal-label>${goalSlides[0].label}</strong>
+          <span data-speakup-goal-count>01 / 03</span>
+        </div>
+        <div class="speakup-goal-carousel__controls" role="group" aria-label="选择目标示例">
+          ${goalSlides
+            .map(
+              (slide, index) => `
+                <button
+                  class="speakup-goal-carousel__dot${index === 0 ? " is-active" : ""}"
+                  type="button"
+                  data-speakup-goal-index="${index}"
+                  aria-label="查看${slide.label}示例"
+                  aria-current="${index === 0 ? "true" : "false"}"
+                ><span></span></button>`,
+            )
+            .join("")}
+        </div>
+      </div>`;
+    return carousel;
+  }
+
+  function bindGoalCarousel(carousel) {
+    if (!carousel || carousel.dataset.speakupCarouselBound === "true") return;
+    carousel.dataset.speakupCarouselBound = "true";
+
+    carousel.addEventListener("click", (event) => {
+      const dot = event.target instanceof Element
+        ? event.target.closest("[data-speakup-goal-index]")
+        : null;
+      if (!dot || !carousel.contains(dot)) return;
+      setGoalCarouselIndex(carousel, Number(dot.dataset.speakupGoalIndex));
+    });
+    carousel.addEventListener("keydown", (event) => {
+      if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+      event.preventDefault();
+      const current = Number(carousel.dataset.activeSlide || 0);
+      setGoalCarouselIndex(carousel, current + (event.key === "ArrowRight" ? 1 : -1));
+    });
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const interval = window.setInterval(() => {
+      if (!carousel.isConnected) {
+        window.clearInterval(interval);
+        return;
+      }
+      if (document.hidden || carousel.matches(":hover") || carousel.contains(document.activeElement)) {
+        return;
+      }
+      setGoalCarouselIndex(carousel, Number(carousel.dataset.activeSlide || 0) + 1);
+    }, 5800);
+  }
+
+  function updateGoalUnderstandingSection() {
+    const article = document.getElementById("shopify-agentic-storefronts");
+    if (article) {
+      setText(article.querySelector("#card-heading-shopify-agentic-storefronts"), "先理解目标，再开始训练");
+      setText(
+        article.querySelector(".rich-text p"),
+        "告诉 SpeakUp 你的岗位、考试目标或下一场真实沟通。它会识别期限、角色、当前水平与真正卡点，再把目标组织成一轮可以完成的练习。",
+      );
+
+      const cta = article.querySelector('a[data-component-name="cta-link"]');
+      if (cta) {
+        cta.href = "#speakup-goal-carousel";
+        cta.removeAttribute("target");
+        cta.removeAttribute("rel");
+        cta.setAttribute("aria-label", "查看下一个 SpeakUp 目标示例");
+        setText(cta.querySelector(":scope > span") || cta, "查看下一个目标");
+        if (cta.dataset.speakupGoalBound !== "true") {
+          cta.dataset.speakupGoalBound = "true";
+          cta.addEventListener(
+            "click",
+            (event) => {
+              event.preventDefault();
+              const carousel = document.getElementById("speakup-goal-carousel");
+              if (!carousel) return;
+              setGoalCarouselIndex(carousel, Number(carousel.dataset.activeSlide || 0) + 1);
+              carousel.focus({ preventScroll: true });
+            },
+            true,
+          );
+        }
+      }
+
+      const mediaWrapper = article.querySelector(".media-wrapper");
+      if (mediaWrapper) {
+        let carousel = mediaWrapper.querySelector(
+          ':scope > [data-speakup-goal-carousel="true"][data-version="1"]',
+        );
+        if (!carousel) carousel = buildGoalCarousel();
+        if (mediaWrapper.children.length !== 1 || mediaWrapper.firstElementChild !== carousel) {
+          mediaWrapper.replaceChildren(carousel);
+        }
+        bindGoalCarousel(carousel);
+      }
+    }
+
+    document.getElementById("agentic-storefronts-video")?.remove();
   }
 
   function updateAllDirectoryLinks() {
@@ -827,12 +1017,33 @@
     art.style.visibility = progress >= 1 ? "hidden" : "visible";
   }
 
+  function syncEditionLoaderScope() {
+    if (!bypassSecondaryEditionLoader) {
+      const isDeepLink = Boolean(
+        location.hash && !["#top", "#hero"].includes(location.hash),
+      );
+      bypassSecondaryEditionLoader = isDeepLink || window.scrollY > 100;
+    }
+    if (!bypassSecondaryEditionLoader) return;
+
+    const shell = document.querySelector('[data-section-name="side-and-lines"]');
+    if (!shell) return;
+    if (shell.dataset.speakupLoaderBypassed !== "true") {
+      shell.dataset.speakupLoaderBypassed = "true";
+    }
+    if (shell.dataset.initiated !== "true") shell.dataset.initiated = "true";
+    if (shell.dataset.scrolled !== "true") shell.dataset.scrolled = "true";
+    if (shell.dataset.sidebarLoaded !== "true") shell.dataset.sidebarLoaded = "true";
+    if (shell.dataset.sidebarReady !== "true") shell.dataset.sidebarReady = "true";
+  }
+
   function applySpeakUpLayer() {
     if (applying) return;
     applying = true;
     try {
       ensureStyles();
       document.body?.classList.add("speakup-mode");
+      syncEditionLoaderScope();
       document.documentElement.lang = "zh-CN";
       document.title = "SpeakUp · 下一场重要的英文沟通，先练一遍";
       const description = document.querySelector('meta[name="description"]');
@@ -846,6 +1057,7 @@
       updateEditionPanel();
       updateAllDirectoryLinks();
       updateChapterIntros();
+      updateGoalUnderstandingSection();
       ensureHeroArt();
       updateSidekickVideoCard();
       updateSocialStoriesSection();
@@ -867,7 +1079,10 @@
   observer.observe(document.documentElement, { childList: true, subtree: true });
 
   window.addEventListener("scroll", updateHeroOpacity, { passive: true });
+  window.addEventListener("scroll", syncEditionLoaderScope, { passive: true });
   window.addEventListener("resize", updateHeroOpacity, { passive: true });
+  window.addEventListener("hashchange", syncEditionLoaderScope);
+  window.addEventListener("pageshow", syncEditionLoaderScope);
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", applySpeakUpLayer, { once: true });
   } else {
