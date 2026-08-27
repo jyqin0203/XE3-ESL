@@ -6,6 +6,169 @@
   const SIDEKICK_VIDEO_URL = "/assets/speakup/先理解你-web.mp4";
   const SIDEKICK_VIDEO_POSTER_URL = "/assets/speakup/先理解你-poster.jpg";
 
+  const speakingStruggles = [
+    {
+      label: "/不知道怎么开始",
+      description: "告诉 SpeakUp 下一场要做什么，它会整理目标、角色和轮次，直接带你进入第一轮。",
+    },
+    {
+      label: "/听懂了却说不出",
+      description: "用真实场景把被动词汇拉回主动表达。AI 老师会等你组织完，再自然追问。",
+    },
+    {
+      label: "/一被追问就卡住",
+      description: "连续追问而不是一次一题，练习如何解释、补充和澄清。",
+    },
+    {
+      label: "/脑子突然一片空白",
+      description: "先拆出表达骨架与关键词，临场忘词也能继续说下去。",
+    },
+    {
+      label: "/文字C2·开口2G",
+      description: "把写得漂亮的英文带回真实口语：少修饰，多反应，练到能当场说出来。",
+    },
+    {
+      label: "/背了模板还是卡",
+      description: "不再背通用答案。用你的经历生成个性化思路，再练成自己的话。",
+    },
+    {
+      label: "/总要重复解释背景",
+      description: "SpeakUp 记住岗位、考试目标和前几轮回答，下一次从已有上下文接着练。",
+    },
+    {
+      label: "/练完不知道怎么改",
+      description: "逐句指出发音、表达与逻辑问题，并给出下一轮可以直接执行的改法。",
+    },
+    {
+      label: "/明天就要见客户",
+      description: "输入客户背景和会面目标，快速完成一轮临场彩排。",
+    },
+    {
+      label: "/IELTS Part 2没话说",
+      description: "从你的真实经历挖素材，练清开头、转折与细节展开。",
+    },
+    {
+      label: "/发音到底对不对",
+      description: "关键发音可听、可对比、可重录，知道问题具体发生在哪个词。",
+    },
+    {
+      label: "/单词会·句子组不出",
+      description: "先给表达结构和可复用句块，再让你用自己的信息完成整句。",
+    },
+    {
+      label: "/怕说错所以不开口",
+      description: "这是私密的练习场。可以停顿、重来、说错，不会有人抢话或评判。",
+    },
+    {
+      label: "/对方一加速就掉线",
+      description: "语速和难度随你调整；听漏时练习请求重复、确认和复述。",
+    },
+    {
+      label: "/临场只会Yes·Maybe",
+      description: "模拟对方的真实回应，让你不只准备开场，也准备接下来的每一步。",
+    },
+    {
+      label: "/想得到却翻不出来",
+      description: "不强迫逐字翻译，先抓意思，再用你现有的词汇把它说出来。",
+    },
+    {
+      label: "/练习总是坚持不下去",
+      description: "每次只做一轮有明确终点的练习，用复盘把下一次接上。",
+    },
+    {
+      label: "/找不到真实对话对象",
+      description: "AI 面试官、考官和客户随时在场，并会根据你的回答继续追问。",
+    },
+    {
+      label: "/反馈只有继续加油",
+      description: "反馈落到原句、具体原因与替换说法，不用猜下一步怎么练。",
+    },
+    {
+      label: "/学了很多年还是不敢说",
+      description: "进步按真实回答积累：常见卡点、表达变化和完成过的场景都看得见。",
+    },
+  ];
+
+  const socialPosts = [
+    {
+      id: "start-speaking",
+      platform: "小红书",
+      type: "图文",
+      title: "英语口语到底怎么开始？",
+      excerpt: "别再把“开始练口语”变成另一份学习规划。告诉 SpeakUp 你下一场要说什么，然后直接开始。",
+      href: "https://xhslink.cn/o/9cueBSeKN3F",
+      image: "/assets/speakup/social-wall/01-start-speaking.webp",
+      width: 1080,
+      height: 1440,
+    },
+    {
+      id: "foreign-client",
+      platform: "小红书",
+      type: "图文",
+      title: "明天要接待外国客户，现在抱佛脚来得及吗",
+      excerpt: "临时准备也可以很具体：客户是谁、你要谈什么、最怕被追问什么，下一次不必重新解释。",
+      href: "https://xhslink.cn/o/1kazi192sev",
+      image: "/assets/speakup/social-wall/02-foreign-client.webp",
+      width: 1080,
+      height: 1440,
+    },
+    {
+      id: "ai-filter",
+      platform: "抖音",
+      type: "图文",
+      title: "AI 把我的英语 P 成了照骗",
+      excerpt: "邮件里像 C2，视频会议里却只剩 Yes。写作可以润色，真实开口只能提前练过。",
+      href: "https://v.douyin.com/HxcnSuHbB7Y/",
+      image: "/assets/speakup/social-wall/03-ai-filter.webp",
+      width: 1086,
+      height: 1448,
+    },
+    {
+      id: "product-film",
+      platform: "小红书",
+      type: "视频",
+      title: "0 基础剪辑，我居然做出了自己的产品宣传片",
+      excerpt: "从产品画面到真实使用场景：在真正开口之前，先把重要的一次练习拍给自己看。",
+      href: "https://xhslink.cn/o/1J7y3NvyT6Q",
+      image: "/assets/speakup/social-wall/04-product-film.webp",
+      width: 1441,
+      height: 1079,
+    },
+    {
+      id: "speakup-skill",
+      platform: "小红书",
+      type: "视频",
+      title: "什么 skill 这么厉害",
+      excerpt: "一句目标，变成一次可以完成的训练：场景、角色、轮次和反馈都被组织清楚。",
+      href: "https://xhslink.cn/o/6t0JXRjBUG9",
+      image: "/assets/speakup/social-wall/05-speakup-skill.webp",
+      width: 1441,
+      height: 1080,
+    },
+    {
+      id: "first-word",
+      platform: "小红书",
+      type: "视频",
+      title: "原来他也在等你先开口",
+      excerpt: "很多沟通不是没有机会，只差第一句话。先在没有压力的地方，把它真正说出来。",
+      href: "https://xhslink.cn/o/76DNPbzgwe5",
+      image: "/assets/speakup/social-wall/06-first-word.webp",
+      width: 1080,
+      height: 1441,
+    },
+    {
+      id: "ielts-speaking",
+      platform: "小红书",
+      type: "图文",
+      title: "雅思口语开口就卡？",
+      excerpt: "不再背同一份模板：用你的经历生成回答，跟 AI 考官连着练，再看清每一句该怎么改。",
+      href: "https://xhslink.cn/o/9r6ssNYgiNa",
+      image: "/assets/speakup/social-wall/07-ielts-speaking.webp",
+      width: 1080,
+      height: 1350,
+    },
+  ];
+
   const chapters = {
     sidekick: { label: "AI 老师", title: "AI 口语老师", description: "先听懂你，不急着开练。" },
     agentic: { label: "理解目标", title: "理解目标", description: "从岗位、考试或下一场真实沟通开始。" },
@@ -23,6 +186,7 @@
 
   let applying = false;
   let queued = false;
+  let socialMasonryFrame = 0;
 
   function ensureStyles() {
     if (document.querySelector('link[data-speakup-overrides="true"]')) return;
@@ -328,6 +492,331 @@
       .forEach((button) => button.remove());
   }
 
+  function buildSocialWall() {
+    const wall = document.createElement("section");
+    wall.id = "speakup-social-wall";
+    wall.className = "speakup-social-wall col-span-full";
+    wall.dataset.speakupSocialWall = "true";
+    wall.dataset.speakupWallVersion = "1";
+    wall.setAttribute("aria-labelledby", "speakup-social-wall-title");
+    wall.innerHTML = `
+      <header class="speakup-social-wall__header">
+        <div>
+          <p class="speakup-social-wall__eyebrow">
+            <span>FIELD NOTES</span>
+            <span>07 STORIES</span>
+          </p>
+          <h4 id="speakup-social-wall-title">SpeakUp <em>in the wild</em></h4>
+        </div>
+        <p class="speakup-social-wall__intro">从真实困扰、真实练习到产品实验，我们把每一次“开不了口”持续记录下来。</p>
+      </header>
+      <div class="speakup-social-wall__grid">
+        ${socialPosts
+          .map(
+            (post, index) => `
+              <a
+                id="social-story-${post.id}"
+                class="speakup-social-story"
+                data-story-index="${index + 1}"
+                href="${post.href}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="在${post.platform}打开：${post.title}"
+                style="--story-index: ${index}; --media-ratio: ${post.width} / ${post.height}"
+              >
+                <figure>
+                  <div class="speakup-social-story__media">
+                    <img
+                      src="${post.image}"
+                      width="${post.width}"
+                      height="${post.height}"
+                      loading="lazy"
+                      decoding="async"
+                      alt="《${post.title}》${post.platform}笔记封面"
+                    />
+                    ${
+                      post.type === "视频"
+                        ? '<span class="speakup-social-story__play" aria-hidden="true">▶</span>'
+                        : ""
+                    }
+                  </div>
+                  <figcaption>
+                    <p class="speakup-social-story__meta">
+                      <span>${String(index + 1).padStart(2, "0")}</span>
+                      <span>${post.platform} · ${post.type}</span>
+                      <span aria-hidden="true">↗</span>
+                    </p>
+                    <h5>${post.title}</h5>
+                    <p>${post.excerpt}</p>
+                  </figcaption>
+                </figure>
+              </a>`,
+          )
+          .join("")}
+      </div>`;
+    return wall;
+  }
+
+  function bindSocialWallReveal(wall) {
+    if (wall.dataset.speakupRevealBound) return;
+    wall.dataset.speakupRevealBound = "true";
+
+    const stories = [...wall.querySelectorAll(".speakup-social-story")];
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!("IntersectionObserver" in window) || reducedMotion) {
+      stories.forEach((story) => story.classList.add("is-visible"));
+      return;
+    }
+
+    wall.classList.add("is-reveal-ready");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8%" },
+    );
+    stories.forEach((story) => observer.observe(story));
+  }
+
+  function layoutSocialWallMasonry() {
+    socialMasonryFrame = 0;
+    const grid = document.querySelector("#speakup-social-wall .speakup-social-wall__grid");
+    if (!grid) return;
+
+    const stories = [...grid.querySelectorAll(".speakup-social-story")];
+    if (window.innerWidth <= 768) {
+      grid.classList.remove("is-masonry-ready");
+      delete grid.dataset.speakupMasonryColumns;
+      stories.forEach((story) => {
+        story.style.removeProperty("--masonry-span");
+        story.style.removeProperty("grid-column");
+        story.style.removeProperty("grid-row-start");
+      });
+      return;
+    }
+
+    const columnCount = window.innerWidth >= 940 ? 3 : 2;
+    if (grid.dataset.speakupMasonryColumns !== String(columnCount)) {
+      grid.classList.remove("is-masonry-ready");
+      stories.forEach((story) => {
+        story.style.removeProperty("grid-column");
+        story.style.removeProperty("grid-row-start");
+      });
+      grid.dataset.speakupMasonryColumns = String(columnCount);
+    }
+
+    const rowHeight = 8;
+    const verticalGap = window.innerWidth >= 940 ? 58 : 48;
+    const spans = stories.map((story) => {
+      const height = story.getBoundingClientRect().height;
+      return Math.max(1, Math.ceil((height + verticalGap) / rowHeight));
+    });
+
+    const columnGroups =
+      columnCount === 3
+        ? [
+            [0, 3, 4],
+            [1, 5],
+            [2, 6],
+          ]
+        : [
+            [0, 3, 4, 6],
+            [1, 2, 5],
+          ];
+    const maximumOffsets = columnCount === 3 ? [0, 18, 27] : [0, 12];
+    const columnTotals = columnGroups.map((indices) =>
+      indices.reduce((total, index) => total + (spans[index] || 0), 0),
+    );
+    const tallestColumn = Math.max(...columnTotals);
+    const tracksPerColumn = 12 / columnCount;
+
+    columnGroups.forEach((indices, columnIndex) => {
+      const balancingOffset = Math.max(0, tallestColumn - columnTotals[columnIndex]);
+      const topOffset = Math.min(balancingOffset, maximumOffsets[columnIndex]);
+      let rowStart = 1 + topOffset;
+
+      indices.forEach((storyIndex) => {
+        const story = stories[storyIndex];
+        if (!story) return;
+        const span = spans[storyIndex];
+        const columnStart = 1 + columnIndex * tracksPerColumn;
+        story.style.gridColumn = `${columnStart} / span ${tracksPerColumn}`;
+        story.style.gridRowStart = String(rowStart);
+        story.style.setProperty("--masonry-span", String(span));
+        rowStart += span;
+      });
+    });
+    grid.classList.add("is-masonry-ready");
+  }
+
+  function scheduleSocialWallMasonry() {
+    if (socialMasonryFrame) window.cancelAnimationFrame(socialMasonryFrame);
+    socialMasonryFrame = window.requestAnimationFrame(layoutSocialWallMasonry);
+  }
+
+  function bindSocialWallMasonry(wall) {
+    if (wall.dataset.speakupMasonryBound) return;
+    wall.dataset.speakupMasonryBound = "true";
+    wall.querySelectorAll("img").forEach((image) => {
+      if (!image.complete) image.addEventListener("load", scheduleSocialWallMasonry, { once: true });
+    });
+
+    if (!document.documentElement.dataset.speakupMasonryResizeBound) {
+      document.documentElement.dataset.speakupMasonryResizeBound = "true";
+      window.addEventListener("resize", scheduleSocialWallMasonry, { passive: true });
+      document.fonts?.ready.then(scheduleSocialWallMasonry).catch(() => {});
+    }
+  }
+
+  function setSpeakingStruggleOpen(tag, isOpen, isPinned = false) {
+    tag.classList.toggle("is-speakup-open", isOpen);
+    if (isPinned) tag.dataset.speakupPinned = "true";
+    else delete tag.dataset.speakupPinned;
+
+    const button = tag.querySelector('button[data-component-name="skill-tag"]');
+    const popup = tag.querySelector(".skill-tag-popup");
+    if (button) button.setAttribute("aria-expanded", String(isOpen));
+    if (popup) popup.setAttribute("aria-hidden", String(!isOpen));
+  }
+
+  function closeSpeakingStruggles(root, except = null) {
+    root.querySelectorAll('#top-skills-card-container li[data-skill-tag="true"]').forEach((tag) => {
+      if (tag !== except) setSpeakingStruggleOpen(tag, false);
+    });
+  }
+
+  function bindSpeakingStruggleInteractions(skills, tags) {
+    const cloud = skills.querySelector("#top-skills-card-container");
+    if (!cloud) return;
+
+    tags.forEach((tag) => {
+      const button = tag.querySelector('button[data-component-name="skill-tag"]');
+      const popup = tag.querySelector(".skill-tag-popup");
+      if (!button || !popup) return;
+
+      button.setAttribute("aria-controls", popup.id);
+      button.setAttribute("aria-expanded", String(tag.classList.contains("is-speakup-open")));
+      popup.setAttribute("aria-hidden", String(!tag.classList.contains("is-speakup-open")));
+      if (tag.dataset.speakupInteractionBound) return;
+      tag.dataset.speakupInteractionBound = "true";
+
+      button.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          const shouldPin = tag.dataset.speakupPinned !== "true";
+          closeSpeakingStruggles(skills, tag);
+          setSpeakingStruggleOpen(tag, shouldPin, shouldPin);
+        },
+        true,
+      );
+
+      tag.addEventListener("mouseenter", () => {
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+        closeSpeakingStruggles(skills, tag);
+        setSpeakingStruggleOpen(tag, true, tag.dataset.speakupPinned === "true");
+      });
+
+      tag.addEventListener("mouseleave", () => {
+        if (tag.dataset.speakupPinned === "true") return;
+        setSpeakingStruggleOpen(tag, false);
+      });
+
+      button.addEventListener("focus", () => setSpeakingStruggleOpen(tag, true));
+      button.addEventListener("blur", () => {
+        if (tag.dataset.speakupPinned !== "true") setSpeakingStruggleOpen(tag, false);
+      });
+    });
+
+    if (!document.documentElement.dataset.speakupStruggleDismissBound) {
+      document.documentElement.dataset.speakupStruggleDismissBound = "true";
+      document.addEventListener(
+        "click",
+        (event) => {
+          if (event.target instanceof Element && event.target.closest("#top-skills-card-container")) {
+            return;
+          }
+          const currentSkills = document.getElementById("sidekick-skills");
+          if (currentSkills) closeSpeakingStruggles(currentSkills);
+        },
+        true,
+      );
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        const currentSkills = document.getElementById("sidekick-skills");
+        if (currentSkills) closeSpeakingStruggles(currentSkills);
+      });
+    }
+  }
+
+  function updateSocialStoriesSection() {
+    const section = document.getElementById("tedious-tasks-simplified");
+    const skills = section?.querySelector("#sidekick-skills");
+    const contentGrid = skills?.parentElement;
+    if (!section || !skills || !contentGrid || !section.contains(contentGrid)) return;
+
+    section.classList.add("speakup-social-stories-section");
+    setText(section.querySelector(":scope > div > h3"), "Stories, spoken out loud");
+
+    const introTitle = skills.querySelector("#card-heading-sidekick-skills");
+    const introRoot = introTitle?.parentElement;
+    setText(introTitle, "What keeps us from speaking?");
+    setText(
+      introRoot?.querySelector(":scope > .rich-text"),
+      "不是没学过，而是不知道怎么开始、临场接不住，也不知道练完到底该改哪里。",
+    );
+
+    const introCta = introRoot?.querySelector(':scope > a[data-component-name="cta-link"]');
+    if (introCta) {
+      introCta.setAttribute("href", "#speakup-social-wall");
+      introCta.removeAttribute("target");
+      introCta.removeAttribute("rel");
+      introCta.setAttribute("aria-label", "前往 SpeakUp 真实开口故事");
+      setText(introCta.querySelector(":scope > span"), "看看真实的开口困扰");
+      const arrow = introCta.querySelector("svg");
+      if (arrow) arrow.setAttribute("aria-label", "前往内容墙");
+    }
+
+    const tags = skills.querySelectorAll('#top-skills-card-container li[data-skill-tag="true"]');
+    tags.forEach((tag, index) => {
+      const struggle = speakingStruggles[index];
+      if (!struggle) return;
+      tag.dataset.speakupStruggle = String(index + 1);
+      setText(tag.querySelector(".skill-tag-content-label"), struggle.label);
+      setText(tag.querySelector(".skill-tag-popup .rich-text"), struggle.description);
+      setText(tag.querySelector(".skill-tag-popup span.text-grey-light"), "SpeakUp 怎么帮你");
+    });
+    bindSpeakingStruggleInteractions(skills, tags);
+
+    skills.querySelectorAll(":scope > a[download]").forEach((link) => link.remove());
+
+    let wall = contentGrid.querySelector(
+      ':scope > #speakup-social-wall[data-speakup-social-wall="true"]',
+    );
+    if (wall && wall.dataset.speakupWallVersion !== "1") {
+      wall.remove();
+      wall = null;
+    }
+    if (!wall) {
+      wall = buildSocialWall();
+      skills.after(wall);
+    } else if (wall.previousElementSibling !== skills) {
+      skills.after(wall);
+    }
+
+    [...contentGrid.children].forEach((child) => {
+      if (child !== skills && child !== wall) child.remove();
+    });
+    bindSocialWallReveal(wall);
+    bindSocialWallMasonry(wall);
+    scheduleSocialWallMasonry();
+  }
+
   function updateHeroOpacity() {
     const art = document.querySelector(".speakup-hero-art");
     if (!art) return;
@@ -341,24 +830,28 @@
   function applySpeakUpLayer() {
     if (applying) return;
     applying = true;
-    ensureStyles();
-    document.body?.classList.add("speakup-mode");
-    document.documentElement.lang = "zh-CN";
-    document.title = "SpeakUp · 下一场重要的英文沟通，先练一遍";
-    const description = document.querySelector('meta[name="description"]');
-    if (description) {
-      description.content = "面向真实表达场景的 AI 英语口语陪练：理解目标、组织准备、进入实战并持续复盘。";
+    try {
+      ensureStyles();
+      document.body?.classList.add("speakup-mode");
+      document.documentElement.lang = "zh-CN";
+      document.title = "SpeakUp · 下一场重要的英文沟通，先练一遍";
+      const description = document.querySelector('meta[name="description"]');
+      if (description) {
+        description.content = "面向真实表达场景的 AI 英语口语陪练：理解目标、组织准备、进入实战并持续复盘。";
+      }
+      updateHeader();
+      replaceShopifyBagLogos();
+      truncateAfterAgenticCommerce();
+      removeSidekickSectionsBeforeTediousTasks();
+      updateEditionPanel();
+      updateAllDirectoryLinks();
+      updateChapterIntros();
+      ensureHeroArt();
+      updateSidekickVideoCard();
+      updateSocialStoriesSection();
+    } finally {
+      applying = false;
     }
-    updateHeader();
-    replaceShopifyBagLogos();
-    truncateAfterAgenticCommerce();
-    removeSidekickSectionsBeforeTediousTasks();
-    updateEditionPanel();
-    updateAllDirectoryLinks();
-    updateChapterIntros();
-    ensureHeroArt();
-    updateSidekickVideoCard();
-    applying = false;
   }
 
   function queueApply() {
