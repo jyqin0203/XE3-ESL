@@ -1,0 +1,161 @@
+:root {
+  --speakup-ivory: #f7f7ee;
+  --speakup-ink: #292919;
+}
+
+/* Hide the original inline bag during the brief SSR-to-hydration window. */
+svg:has(path[d^="m11.975 2.421"]) {
+  visibility: hidden !important;
+}
+
+body.speakup-mode .canvas-wrapper {
+  isolation: isolate;
+}
+
+.speakup-hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: var(--speakup-hero-opacity, 1);
+  transition: opacity 180ms linear;
+}
+
+.speakup-hero-art::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(12, 18, 18, 0.16), transparent 30%, transparent 72%, rgba(8, 13, 12, 0.18)),
+    linear-gradient(90deg, rgba(7, 12, 12, 0.08), transparent 22%, transparent 78%, rgba(7, 12, 12, 0.08));
+}
+
+.speakup-hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+body.speakup-mode .canvas-wrapper > .pointer-events-auto {
+  position: relative;
+  z-index: 1;
+}
+
+.speakup-top-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.speakup-top-brand .speakup-top-mark {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  object-fit: contain;
+}
+
+.speakup-top-brand .speakup-top-wordmark {
+  width: 86px;
+  height: auto;
+  filter: invert(1);
+}
+
+.speakup-replaced-shopify-mark {
+  display: block;
+  object-fit: contain;
+}
+
+.speakup-top-brand small {
+  color: currentColor;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  opacity: 0.64;
+}
+
+body.speakup-mode h2.title-link > a > svg.title {
+  display: none !important;
+}
+
+.speakup-edition-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--speakup-ivory);
+  font-family: "NeueMontreal", -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: clamp(28px, 2.3vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.84;
+}
+
+.speakup-edition-title em {
+  font-family: "HWCigars", Georgia, "Times New Roman", serif;
+  font-size: 1.02em;
+  font-weight: 400;
+}
+
+.speakup-edition-title span:last-child {
+  letter-spacing: -0.055em;
+}
+
+.speakup-hero-copy {
+  max-width: 17rem;
+  color: var(--speakup-ivory);
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(15px, 1.28vw, 20px);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+body.speakup-mode .speakup-directory a {
+  letter-spacing: -0.045em;
+}
+
+body.speakup-mode .speakup-directory a:focus-visible,
+body.speakup-mode .speakup-edition-title:focus-visible {
+  outline: 1px solid var(--speakup-ivory);
+  outline-offset: 3px;
+}
+
+@media (max-width: 939px) {
+  .speakup-hero-art img {
+    object-position: center center;
+  }
+
+  .speakup-top-brand .speakup-top-wordmark {
+    width: 74px;
+  }
+
+  .speakup-top-brand .speakup-top-mark {
+    width: 18px;
+    height: 18px;
+    flex-basis: 18px;
+  }
+
+  .speakup-top-brand small {
+    display: none;
+  }
+
+  .speakup-edition-title {
+    font-size: clamp(30px, 9.4vw, 45px);
+  }
+
+  .speakup-hero-copy {
+    max-width: 14rem;
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speakup-hero-art {
+    transition: none;
+  }
+}
