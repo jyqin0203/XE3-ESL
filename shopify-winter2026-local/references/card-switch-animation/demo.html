@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Card switch animation reference</title>
+    <link rel="stylesheet" href="./card-switch.css" />
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: clamp(24px, 5vw, 72px);
+        background: #181814;
+        color: #f7f7ee;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      main { width: min(100%, 1500px); margin: 0 auto; }
+      h1 { max-width: 800px; margin: 0 0 18px; font-size: clamp(36px, 6vw, 84px); line-height: .92; letter-spacing: -.06em; }
+      .lede { max-width: 720px; margin: 0 0 52px; color: rgb(247 247 238 / 68%); font-size: 18px; line-height: 1.55; }
+      .examples { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 4vw, 56px); }
+      .example h2 { margin: 0 0 14px; font-size: 16px; font-weight: 650; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+      @media (max-width: 900px) { .examples { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>卡片栈切换动效</h1>
+      <p class="lede">左侧保留原始 3 秒循环参考；右侧是可替换任意 HTML、图片和文案的 DOM 实现。</p>
+
+      <div class="examples">
+        <section class="example" aria-labelledby="reference-title">
+          <h2 id="reference-title">原始动作参考</h2>
+          <video class="card-switch-reference" muted loop playsinline preload="metadata" poster="./media/poster.png" data-reference-video>
+            <source src="./media/mobile@2x.webm" type="video/webm" media="(max-width: 767px) and (min-resolution: 2dppx)" />
+            <source src="./media/mobile.webm" type="video/webm" media="(max-width: 767px)" />
+            <source src="./media/mobile@2x.mp4" type="video/mp4" media="(max-width: 767px) and (min-resolution: 2dppx)" />
+            <source src="./media/mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
+            <source src="./media/desktop@2x.webm" type="video/webm" media="(min-width: 768px) and (min-resolution: 2dppx)" />
+            <source src="./media/desktop.webm" type="video/webm" media="(min-width: 768px)" />
+            <source src="./media/desktop@2x.mp4" type="video/mp4" media="(min-width: 768px) and (min-resolution: 2dppx)" />
+            <source src="./media/desktop.mp4" type="video/mp4" />
+          </video>
+        </section>
+
+        <section class="example" aria-labelledby="reusable-title">
+          <h2 id="reusable-title">可复用 DOM 实现</h2>
+          <div class="card-switch" data-card-switch data-interval="1000" data-duration="520" role="region" aria-roledescription="carousel" aria-label="Card stack preview">
+            <div class="card-switch__stage" data-card-switch-stage>
+              <article class="card-switch__card" data-card-switch-card>
+                <picture>
+                  <source media="(max-width: 640px)" srcset="./rive-assets/card-1-mobile.webp" />
+                  <img class="card-switch__media" src="./rive-assets/card-1-desktop.webp" alt="Food card" />
+                </picture>
+                <div class="card-switch__caption"><span>Explore recipes</span><button class="card-switch__arrow" type="button" aria-label="下一张" data-card-switch-next>→</button></div>
+              </article>
+              <article class="card-switch__card" data-card-switch-card>
+                <picture>
+                  <source media="(max-width: 640px)" srcset="./rive-assets/card-2-mobile.webp" />
+                  <img class="card-switch__media" src="./rive-assets/card-2-desktop.webp" alt="Outfit card" />
+                </picture>
+                <div class="card-switch__caption"><span>Track your outfits</span><button class="card-switch__arrow" type="button" aria-label="下一张" data-card-switch-next>→</button></div>
+              </article>
+              <article class="card-switch__card" data-card-switch-card>
+                <picture>
+                  <source media="(max-width: 640px)" srcset="./rive-assets/card-3-mobile.webp" />
+                  <img class="card-switch__media" src="./rive-assets/card-3-desktop.webp" alt="Feedback card" />
+                </picture>
+                <div class="card-switch__caption"><span>Outfit feedback</span><button class="card-switch__arrow" type="button" aria-label="下一张" data-card-switch-next>→</button></div>
+              </article>
+            </div>
+            <div class="card-switch__controls">
+              <span class="sr-only" aria-live="polite" data-card-switch-status></span>
+              <button class="card-switch__control" type="button" data-card-switch-pause>暂停</button>
+              <button class="card-switch__control" type="button" data-card-switch-next>下一张</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="./card-switch.js"></script>
+  </body>
+</html>
+

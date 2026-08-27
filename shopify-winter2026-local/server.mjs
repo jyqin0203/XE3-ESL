@@ -90,6 +90,7 @@ async function serveFile(request, response, filePath, publicPath) {
 const server = http.createServer(async (request, response) => {
   try {
     const url = new URL(request.url || '/', `http://${request.headers.host || host}`);
+    const serveReference = url.searchParams.get('reference') === '1';
     if (url.pathname === '/services/auth/session') return sendJson(response, 200, {});
     if (url.pathname === '/.well-known/dux') {
       response.writeHead(204, { 'Cache-Control': 'no-store' });
@@ -104,7 +105,9 @@ const server = http.createServer(async (request, response) => {
       response.writeHead(403);
       return response.end('Forbidden');
     }
-    if (publicPath === '/index.html') return serveSpeakUpIndex(request, response, filePath);
+    if (publicPath === '/index.html' && !serveReference) {
+      return serveSpeakUpIndex(request, response, filePath);
+    }
     await serveFile(request, response, filePath, publicPath);
   } catch (error) {
     response.writeHead(error?.code === 'ENOENT' ? 404 : 500, { 'Content-Type': 'text/plain; charset=utf-8' });

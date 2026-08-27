@@ -8,6 +8,22 @@ svg:has(path[d^="m11.975 2.421"]) {
   visibility: hidden !important;
 }
 
+/* The SpeakUp narrative intentionally ends before the original developer
+   detail groups. Hide them immediately, then JS removes their wrapper. */
+#agentic-commerce,
+#agentic-commerce ~ * {
+  display: none !important;
+}
+
+/* In the Sidekick chapter, jump directly from the SpeakUp demo to the
+   reusable-practice section. These are verified sibling sections; the
+   `tedious-tasks-simplified` boundary remains visible. */
+#insights-proactively-delivered,
+#complexity-delegated,
+#designs-refined {
+  display: none !important;
+}
+
 body.speakup-mode .canvas-wrapper {
   isolation: isolate;
 }
@@ -44,6 +60,82 @@ body.speakup-mode .canvas-wrapper {
 body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   position: relative;
   z-index: 1;
+}
+
+/* Hide the original modal trigger before hydration, then JS removes it. */
+#sidekick-video .media-wrapper > button[data-component-name="cta-open-video-modal"],
+#sidekick-video .media-wrapper > button[data-transition-id="sidekick-video"] {
+  display: none !important;
+}
+
+/* The mirrored component may mount its poster/video before our hydration-safe
+   replacement pass. Keep every unclaimed media node invisible so no legacy
+   frame can flash; the current SpeakUp nodes are revealed by marker classes. */
+#sidekick-video .media-wrapper img,
+#sidekick-video .media-wrapper video {
+  visibility: hidden !important;
+}
+
+#sidekick-video .media-wrapper img.speakup-sidekick-poster,
+#sidekick-video .media-wrapper video.speakup-sidekick-preview-video {
+  visibility: visible !important;
+}
+
+/* Keep the original video-card interaction, but give the 9:16 SpeakUp demo a
+   calmer responsive stage instead of stretching or aggressively cropping it. */
+#sidekick-video .speakup-sidekick-media {
+  isolation: isolate;
+  overflow: hidden;
+  background: #e9e9e1;
+}
+
+#sidekick-video .speakup-sidekick-media::before {
+  position: absolute;
+  inset: -24px;
+  z-index: 0;
+  content: "";
+  background-image:
+    linear-gradient(135deg, rgba(247, 247, 238, 0.38), rgba(214, 216, 211, 0.26)),
+    var(--speakup-sidekick-poster);
+  background-position: center;
+  background-size: cover;
+  filter: blur(22px) saturate(0.72);
+  opacity: 0.82;
+  transform: scale(1.08);
+}
+
+#sidekick-video .speakup-sidekick-media > div:first-child,
+#sidekick-video .speakup-sidekick-media > div:first-child > div {
+  aspect-ratio: 4 / 3 !important;
+}
+
+#sidekick-video .speakup-sidekick-media > div:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+#sidekick-video .speakup-sidekick-poster {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  object-position: center;
+}
+
+#sidekick-video .speakup-sidekick-preview-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+}
+
+@media (min-width: 940px) {
+  #sidekick-video .speakup-sidekick-media > div:first-child,
+  #sidekick-video .speakup-sidekick-media > div:first-child > div {
+    aspect-ratio: 4 / 5 !important;
+  }
 }
 
 .speakup-top-brand {

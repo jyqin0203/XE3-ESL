@@ -3,6 +3,8 @@
     "https://speak-up.top/downloads/android/v0.1.8/speakup-v0.1.8-production-arm64.apk";
   const GITHUB_URL = "https://github.com/1024XEngineer/XE3-ESL";
   const WHITE_MARK_URL = "/assets/speakup/speakup-mark-white.svg";
+  const SIDEKICK_VIDEO_URL = "/assets/speakup/先理解你-web.mp4";
+  const SIDEKICK_VIDEO_POSTER_URL = "/assets/speakup/先理解你-poster.jpg";
 
   const chapters = {
     sidekick: { label: "AI 老师", title: "AI 口语老师", description: "先听懂你，不急着开练。" },
@@ -73,6 +75,33 @@
       if (link.getAttribute("href") !== WHITE_MARK_URL) link.setAttribute("href", WHITE_MARK_URL);
       link.setAttribute("type", "image/svg+xml");
     });
+  }
+
+  function truncateAfterAgenticCommerce() {
+    const target = document.getElementById("agentic-commerce");
+    if (!target) return;
+
+    const developerDetails = target.parentElement;
+    if (!developerDetails?.classList.contains("bg-light")) return;
+    developerDetails.remove();
+    document.body.dataset.speakupTruncated = "agentic-commerce";
+  }
+
+  function removeSidekickSectionsBeforeTediousTasks() {
+    const boundary = document.getElementById("tedious-tasks-simplified");
+    const parent = boundary?.parentElement;
+    if (!parent) return;
+
+    const removableIds = [
+      "insights-proactively-delivered",
+      "complexity-delegated",
+      "designs-refined",
+    ];
+    removableIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section?.parentElement === parent) section.remove();
+    });
+    document.body.dataset.speakupSidekickTrimmed = "before-tedious-tasks";
   }
 
   function updateHeader() {
@@ -245,6 +274,60 @@
     updateHeroOpacity();
   }
 
+  function updateSidekickVideoCard() {
+    const mediaWrapper = document.querySelector("#sidekick-video .media-wrapper");
+    if (!mediaWrapper) return;
+
+    mediaWrapper.classList.add("speakup-sidekick-media");
+    mediaWrapper.style.setProperty(
+      "--speakup-sidekick-poster",
+      `url("${SIDEKICK_VIDEO_POSTER_URL}")`,
+    );
+
+    const poster = mediaWrapper.querySelector("img");
+    if (poster) {
+      if (poster.getAttribute("src") !== SIDEKICK_VIDEO_POSTER_URL) {
+        poster.src = SIDEKICK_VIDEO_POSTER_URL;
+      }
+      // Hydration may restore the original responsive source even after `src`
+      // is replaced, so clear these attributes on every guard pass.
+      poster.removeAttribute("srcset");
+      poster.removeAttribute("sizes");
+      poster.width = 536;
+      poster.height = 960;
+      poster.alt = "SpeakUp 先理解你功能演示";
+      poster.classList.add("speakup-sidekick-poster");
+    }
+
+    const previewVideo = mediaWrapper.querySelector("video");
+    if (previewVideo) {
+      if (previewVideo.getAttribute("src") !== SIDEKICK_VIDEO_URL) {
+        previewVideo.src = SIDEKICK_VIDEO_URL;
+      }
+      // The mirrored component can rehydrate its original <source> children.
+      // A direct source wins in the browser; removing the stale children also
+      // prevents them from flashing during a later media reload.
+      previewVideo.querySelectorAll("source").forEach((source) => source.remove());
+      previewVideo.poster = SIDEKICK_VIDEO_POSTER_URL;
+      previewVideo.muted = true;
+      previewVideo.defaultMuted = true;
+      previewVideo.autoplay = true;
+      previewVideo.loop = true;
+      previewVideo.playsInline = true;
+      previewVideo.classList.add("speakup-sidekick-preview-video");
+      if (previewVideo.paused) previewVideo.play().catch(() => {});
+    }
+
+    // The SpeakUp clip plays directly in the card. Remove the mirrored site's
+    // modal trigger on every pass so hydration cannot bring the old overlay
+    // button (and its separate video surface) back.
+    mediaWrapper
+      .querySelectorAll(
+        'button[data-component-name="cta-open-video-modal"], button[data-transition-id="sidekick-video"], button[aria-label="Play video"], button[data-speakup-video]',
+      )
+      .forEach((button) => button.remove());
+  }
+
   function updateHeroOpacity() {
     const art = document.querySelector(".speakup-hero-art");
     if (!art) return;
@@ -268,10 +351,13 @@
     }
     updateHeader();
     replaceShopifyBagLogos();
+    truncateAfterAgenticCommerce();
+    removeSidekickSectionsBeforeTediousTasks();
     updateEditionPanel();
     updateAllDirectoryLinks();
     updateChapterIntros();
     ensureHeroArt();
+    updateSidekickVideoCard();
     applying = false;
   }
 
