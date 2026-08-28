@@ -2246,12 +2246,19 @@
     }
     const heroImage = picture.querySelector("img");
     if (isEmbedded && heroImage && !runtimeReadyPublished) {
-      const publishRuntimeReady = () => {
+      const publishRuntimeReady = async () => {
         if (runtimeReadyPublished) return;
         runtimeReadyPublished = true;
-        window.setTimeout(() => {
-          window.parent.postMessage({ type: "speakup-runtime-ready" }, location.origin);
-        }, 1000);
+        try {
+          await heroImage.decode();
+        } catch {}
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            window.setTimeout(() => {
+              window.parent.postMessage({ type: "speakup-runtime-ready" }, location.origin);
+            }, 320);
+          });
+        });
       };
       if (heroImage.complete && heroImage.naturalWidth > 0) publishRuntimeReady();
       else {
