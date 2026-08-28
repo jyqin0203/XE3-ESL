@@ -17,6 +17,32 @@ const speakUpAgenticBookPath = '/assets/speakup/agentic/speakup-agentic-book.glb
 const originalOnlineIntroPath =
   '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/46aedb6ec0619620/EW26_Online_251209v3_compressed-optimized.glb';
 const speakUpOnlineIntroPath = '/assets/speakup/online/speakup-online-intro.glb';
+const sidekickAssetReplacements = [
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/63ac5b514230f82a/EW26_Sidekick_251208_compressed-optimized.glb',
+    '/assets/speakup/sidekick/speakup-sidekick-high.glb',
+  ],
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/6c9b3bf2f335a314/EW26_Sidekick_251207v4_compressed-optimized.glb',
+    '/assets/speakup/sidekick/speakup-sidekick-medium.glb',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Sidekick_Fallback.jpg',
+    '/assets/speakup/sidekick/sidekick-desktop.jpg',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_Sidekick_2x_ae10922b-27e9-4a86-ac5d-24de7957ea02.jpg',
+    '/assets/speakup/sidekick/sidekick-mobile.jpg',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Sidekick_desktop.ktx2',
+    '/assets/speakup/sidekick/sidekick-desktop.ktx2',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_Sidekick_2x.ktx2',
+    '/assets/speakup/sidekick/sidekick-mobile.ktx2',
+  ],
+];
 const retailAssetReplacements = [
   [
     '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/9eeb64e8194faa39/POS_V53_environment_251209v2_compressed-optimized.glb',
@@ -46,6 +72,9 @@ async function serveSpeakUpIndex(request, response, filePath) {
     .replaceAll(originalAgenticPropsPath, speakUpAgenticPropsPath)
     .replaceAll(originalAgenticBookPath, speakUpAgenticBookPath)
     .replaceAll(originalOnlineIntroPath, speakUpOnlineIntroPath);
+  for (const [originalPath, speakUpPath] of sidekickAssetReplacements) {
+    body = body.replaceAll(originalPath, speakUpPath);
+  }
   for (const [originalPath, speakUpPath] of retailAssetReplacements) {
     body = body.replaceAll(originalPath, speakUpPath);
   }

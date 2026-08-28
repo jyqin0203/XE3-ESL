@@ -502,6 +502,108 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   object-fit: contain;
 }
 
+#retail .speakup-scene-ui__device-video,
+#retail .speakup-scene-ui__device-play {
+  position: absolute;
+  inset: 7px;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
+  border-radius: 10.6% / 4.9%;
+}
+
+#retail .speakup-scene-ui__device-video {
+  z-index: 3;
+  display: block;
+  opacity: 0;
+  background: #050607;
+  object-fit: contain;
+  pointer-events: none;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: opacity;
+  transition: opacity 220ms ease;
+}
+
+#retail
+  .speakup-scene-ui[data-device-video-state="loading"]
+  .speakup-scene-ui__device-video,
+#retail
+  .speakup-scene-ui[data-device-video-state="playing"]
+  .speakup-scene-ui__device-video {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#retail
+  .speakup-scene-ui[data-device-video-state="loading"]
+  .speakup-scene-ui__shot--entry,
+#retail
+  .speakup-scene-ui[data-device-video-state="playing"]
+  .speakup-scene-ui__shot--entry {
+  opacity: 0;
+}
+
+#retail .speakup-scene-ui__device-play {
+  z-index: 5;
+  display: grid;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  place-items: center;
+}
+
+#retail .speakup-scene-ui__device-play[hidden] {
+  display: none;
+}
+
+#retail .speakup-scene-ui__device-play-prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 13px 8px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(8, 10, 13, 0.78);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+#retail .speakup-scene-ui__device-play-icon {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #101217;
+  background: #fff;
+  place-items: center;
+}
+
+#retail .speakup-scene-ui__device-play-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+#retail .speakup-scene-ui__device-play:hover .speakup-scene-ui__device-play-prompt {
+  background: rgba(8, 10, 13, 0.9);
+  transform: scale(1.025);
+}
+
+#retail .speakup-scene-ui__device-play:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -8px;
+}
+
 .speakup-scene-ui__shot--entry {
   z-index: 2;
   opacity: 1;

@@ -1,0 +1,1431 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e3]:
+    - navigation [ref=f3e4]:
+      - link "Skip to main content" [ref=f3e5] [cursor=pointer]:
+        - /url: "#main-content"
+      - heading [level=1] [ref=f3e6]:
+        - link "SpeakUp 首页" [ref=f3e7] [cursor=pointer]:
+          - /url: /editions/winter2026
+          - img "SpeakUp" [ref=f3e10]
+      - list [ref=f3e11]:
+        - listitem [ref=f3e12]:
+          - link "下载 Android" [ref=f3e13] [cursor=pointer]:
+            - /url: https://speak-up.top/downloads/android/v0.1.8/speakup-v0.1.8-production-arm64.apk
+        - listitem [ref=f3e14]:
+          - button "Menu" [ref=f3e15] [cursor=pointer]
+      - generic [ref=f3e18]:
+        - generic [ref=f3e21]:
+          - list [ref=f3e22]:
+            - listitem [ref=f3e23]:
+              - link "AI 老师" [ref=f3e24] [cursor=pointer]:
+                - /url: /editions/winter2026#sidekick
+            - listitem [ref=f3e25]:
+              - link "理解目标" [ref=f3e26] [cursor=pointer]:
+                - /url: /editions/winter2026#agentic
+            - listitem [ref=f3e27]:
+              - link "表达准备" [ref=f3e28] [cursor=pointer]:
+                - /url: /editions/winter2026#online
+            - listitem [ref=f3e29]:
+              - link "英文面试" [ref=f3e30] [cursor=pointer]:
+                - /url: /editions/winter2026#retail
+            - listitem [ref=f3e31]:
+              - link "IELTS" [ref=f3e32] [cursor=pointer]:
+                - /url: /editions/winter2026#marketing
+            - listitem [ref=f3e33]:
+              - link "职场沟通" [ref=f3e34] [cursor=pointer]:
+                - /url: /editions/winter2026#checkout
+            - listitem [ref=f3e35]:
+              - link "生活旅行" [ref=f3e36] [cursor=pointer]:
+                - /url: /editions/winter2026#operations
+            - listitem [ref=f3e37]:
+              - link "即时反馈" [ref=f3e38] [cursor=pointer]:
+                - /url: /editions/winter2026#shop-app
+            - listitem [ref=f3e39]:
+              - link "练习复盘" [ref=f3e40] [cursor=pointer]:
+                - /url: /editions/winter2026#b2b
+            - listitem [ref=f3e41]:
+              - link "训练记忆" [ref=f3e42] [cursor=pointer]:
+                - /url: /editions/winter2026#finance
+            - listitem [ref=f3e43]:
+              - link "学习进度" [ref=f3e44] [cursor=pointer]:
+                - /url: /editions/winter2026#shipping
+            - listitem [ref=f3e45]:
+              - link "下载产品" [ref=f3e46] [cursor=pointer]:
+                - /url: /editions/winter2026#developer
+          - generic [ref=f3e48]:
+            - paragraph [ref=f3e49]: © Shopify Inc
+            - link "Terms of Service" [ref=f3e50] [cursor=pointer]:
+              - /url: https://www.shopify.com/legal/terms
+            - link "Privacy Policy" [ref=f3e51] [cursor=pointer]:
+              - /url: https://www.shopify.com/legal/privacy
+        - list [ref=f3e52]:
+          - listitem [ref=f3e53]:
+            - button "训练目录" [ref=f3e55] [cursor=pointer]
+          - listitem [ref=f3e56]:
+            - generic [ref=f3e57]:
+              - button "探索 SpeakUp 练习场景" [ref=f3e58] [cursor=pointer]: 探索场景
+              - generic:
+                - generic:
+                  - generic:
+                    - combobox "Search"
+                    - generic [ref=f3e59]:
+                      - button "Clear" [disabled] [ref=f3e60] [cursor=pointer]
+                      - button "探索 SpeakUp 练习场景" [disabled] [ref=f3e62] [cursor=pointer]: 探索场景
+          - listitem [ref=f3e63]:
+            - link "GitHub" [ref=f3e64] [cursor=pointer]:
+              - /url: https://github.com/1024XEngineer/XE3-ESL
+  - generic:
+    - main:
+      - generic:
+        - complementary:
+          - navigation:
+            - heading "SpeakUp Practice Edition" [level=2]:
+              - link "SpeakUp Practice Edition" [ref=f3e65] [cursor=pointer]:
+                - /url: "#top"
+                - generic [ref=f3e67]:
+                  - generic [ref=f3e68]: SpeakUp
+                  - emphasis [ref=f3e69]: Practice
+                  - generic [ref=f3e70]: Edition
+            - generic:
+              - paragraph: 下一场重要的英文沟通，先练一遍。
+              - list:
+                - listitem [ref=f3e71]:
+                  - link "AI 老师" [ref=f3e72] [cursor=pointer]:
+                    - /url: /editions/winter2026#sidekick
+                - listitem [ref=f3e73]:
+                  - link "理解目标" [ref=f3e74] [cursor=pointer]:
+                    - /url: /editions/winter2026#agentic
+                - listitem [ref=f3e75]:
+                  - link "表达准备" [ref=f3e76] [cursor=pointer]:
+                    - /url: /editions/winter2026#online
+                - listitem [ref=f3e77]:
+                  - link "英文面试" [ref=f3e78] [cursor=pointer]:
+                    - /url: /editions/winter2026#retail
+                - listitem [ref=f3e79]:
+                  - link "IELTS" [ref=f3e80] [cursor=pointer]:
+                    - /url: /editions/winter2026#marketing
+                - listitem [ref=f3e81]:
+                  - link "职场沟通" [ref=f3e82] [cursor=pointer]:
+                    - /url: /editions/winter2026#checkout
+                - listitem [ref=f3e83]:
+                  - link "生活旅行" [ref=f3e84] [cursor=pointer]:
+                    - /url: /editions/winter2026#operations
+                - listitem [ref=f3e85]:
+                  - link "即时反馈" [ref=f3e86] [cursor=pointer]:
+                    - /url: /editions/winter2026#shop-app
+                - listitem [ref=f3e87]:
+                  - link "练习复盘" [ref=f3e88] [cursor=pointer]:
+                    - /url: /editions/winter2026#b2b
+                - listitem [ref=f3e89]:
+                  - link "训练记忆" [ref=f3e90] [cursor=pointer]:
+                    - /url: /editions/winter2026#finance
+                - listitem [ref=f3e91]:
+                  - link "学习进度" [ref=f3e92] [cursor=pointer]:
+                    - /url: /editions/winter2026#shipping
+                - listitem [ref=f3e93]:
+                  - link "下载产品" [ref=f3e94] [cursor=pointer]:
+                    - /url: /editions/winter2026#developer
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - heading "AI 口语老师" [level=2]
+              - paragraph [ref=f3e97]: 先听懂你，不急着开练。
+            - article [ref=f3e101]:
+              - generic [ref=f3e106]:
+                - img "SpeakUp 先理解你功能演示"
+            - generic [ref=f3e108]:
+              - heading "Stories, spoken out loud" [level=3] [ref=f3e109]
+              - generic [ref=f3e110]:
+                - article [ref=f3e111]:
+                  - generic [ref=f3e113]:
+                    - heading "What keeps us from speaking?" [level=4] [ref=f3e114]
+                    - generic [ref=f3e115]: 不是没学过，而是不知道怎么开始、临场接不住，也不知道练完到底该改哪里。
+                    - link "前往 SpeakUp 真实开口故事" [ref=f3e116] [cursor=pointer]:
+                      - /url: "#speakup-social-wall"
+                      - generic [ref=f3e117]: 看看真实的开口困扰
+                      - img "前往内容墙" [ref=f3e119]
+                  - list [ref=f3e123]:
+                    - listitem [ref=f3e124]:
+                      - button "/不知道怎么开始" [ref=f3e125] [cursor=pointer]:
+                        - generic:
+                          - generic: 告诉 SpeakUp 下一场要做什么，它会整理目标、角色和轮次，直接带你进入第一轮。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e130]:
+                      - button "/听懂了却说不出" [ref=f3e131] [cursor=pointer]:
+                        - generic:
+                          - generic: 用真实场景把被动词汇拉回主动表达。AI 老师会等你组织完，再自然追问。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e136]:
+                      - button "/一被追问就卡住" [ref=f3e137] [cursor=pointer]:
+                        - generic:
+                          - generic: 连续追问而不是一次一题，练习如何解释、补充和澄清。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e142]:
+                      - button "/脑子突然一片空白" [ref=f3e143] [cursor=pointer]:
+                        - generic:
+                          - generic: 先拆出表达骨架与关键词，临场忘词也能继续说下去。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e148]:
+                      - button "/文字C2·开口2G" [ref=f3e149] [cursor=pointer]:
+                        - generic:
+                          - generic: 把写得漂亮的英文带回真实口语：少修饰，多反应，练到能当场说出来。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e154]:
+                      - button "/背了模板还是卡" [ref=f3e155] [cursor=pointer]:
+                        - generic:
+                          - generic: 不再背通用答案。用你的经历生成个性化思路，再练成自己的话。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e160]:
+                      - button "/总要重复解释背景" [ref=f3e161] [cursor=pointer]:
+                        - generic:
+                          - generic: SpeakUp 记住岗位、考试目标和前几轮回答，下一次从已有上下文接着练。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e166]:
+                      - button "/练完不知道怎么改" [ref=f3e167] [cursor=pointer]:
+                        - generic:
+                          - generic: 逐句指出发音、表达与逻辑问题，并给出下一轮可以直接执行的改法。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e172]:
+                      - button "/明天就要见客户" [ref=f3e173] [cursor=pointer]:
+                        - generic:
+                          - generic: 输入客户背景和会面目标，快速完成一轮临场彩排。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e178]:
+                      - button "/IELTS Part 2没话说" [ref=f3e179] [cursor=pointer]:
+                        - generic:
+                          - generic: 从你的真实经历挖素材，练清开头、转折与细节展开。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e184]:
+                      - button "/发音到底对不对" [ref=f3e185] [cursor=pointer]:
+                        - generic:
+                          - generic: 关键发音可听、可对比、可重录，知道问题具体发生在哪个词。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e190]:
+                      - button "/单词会·句子组不出" [ref=f3e191] [cursor=pointer]:
+                        - generic:
+                          - generic: 先给表达结构和可复用句块，再让你用自己的信息完成整句。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e196]:
+                      - button "/怕说错所以不开口" [ref=f3e197] [cursor=pointer]:
+                        - generic:
+                          - generic: 这是私密的练习场。可以停顿、重来、说错，不会有人抢话或评判。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e202]:
+                      - button "/对方一加速就掉线" [ref=f3e203] [cursor=pointer]:
+                        - generic:
+                          - generic: 语速和难度随你调整；听漏时练习请求重复、确认和复述。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e208]:
+                      - button "/临场只会Yes·Maybe" [ref=f3e209] [cursor=pointer]:
+                        - generic:
+                          - generic: 模拟对方的真实回应，让你不只准备开场，也准备接下来的每一步。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e214]:
+                      - button "/想得到却翻不出来" [ref=f3e215] [cursor=pointer]:
+                        - generic:
+                          - generic: 不强迫逐字翻译，先抓意思，再用你现有的词汇把它说出来。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e220]:
+                      - button "/练习总是坚持不下去" [ref=f3e221] [cursor=pointer]:
+                        - generic:
+                          - generic: 每次只做一轮有明确终点的练习，用复盘把下一次接上。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e226]:
+                      - button "/找不到真实对话对象" [ref=f3e227] [cursor=pointer]:
+                        - generic:
+                          - generic: AI 面试官、考官和客户随时在场，并会根据你的回答继续追问。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e232]:
+                      - button "/反馈只有继续加油" [ref=f3e233] [cursor=pointer]:
+                        - generic:
+                          - generic: 反馈落到原句、具体原因与替换说法，不用猜下一步怎么练。
+                          - generic: SpeakUp 怎么帮你
+                    - listitem [ref=f3e238]:
+                      - button "/学了很多年还是不敢说" [ref=f3e239] [cursor=pointer]:
+                        - generic:
+                          - generic: 进步按真实回答积累：常见卡点、表达变化和完成过的场景都看得见。
+                          - generic: SpeakUp 怎么帮你
+                - region [ref=f3e244]:
+                  - generic [ref=f3e245]:
+                    - generic [ref=f3e246]:
+                      - paragraph [ref=f3e247]:
+                        - generic [ref=f3e248]: FIELD NOTES
+                        - generic [ref=f3e249]: 07 STORIES
+                      - heading [level=4] [ref=f3e250]:
+                        - text: SpeakUp
+                        - emphasis [ref=f3e251]: in the wild
+                    - paragraph [ref=f3e252]: 从真实困扰、真实练习到产品实验，我们把每一次“开不了口”持续记录下来。
+                  - generic [ref=f3e253]:
+                    - link "在小红书打开：英语口语到底怎么开始？" [ref=f3e254] [cursor=pointer]:
+                      - /url: https://xhslink.cn/o/9cueBSeKN3F
+                      - figure "01 小红书 · 图文 英语口语到底怎么开始？ 别再把“开始练口语”变成另一份学习规划。告诉 SpeakUp 你下一场要说什么，然后直接开始。" [ref=f3e255]:
+                        - img "《英语口语到底怎么开始？》小红书笔记封面" [ref=f3e257]
+                        - generic [ref=f3e258]:
+                          - paragraph [ref=f3e259]:
+                            - generic [ref=f3e260]: "01"
+                            - generic [ref=f3e261]: 小红书 · 图文
+                            - generic [ref=f3e262]: ↗
+                          - heading "英语口语到底怎么开始？" [level=5] [ref=f3e263]
+                          - paragraph [ref=f3e264]: 别再把“开始练口语”变成另一份学习规划。告诉 SpeakUp 你下一场要说什么，然后直接开始。
+                    - link "在小红书打开：明天要接待外国客户，现在抱佛脚来得及吗" [ref=f3e265] [cursor=pointer]:
+                      - /url: https://xhslink.cn/o/1kazi192sev
+                      - figure "02 小红书 · 图文 明天要接待外国客户，现在抱佛脚来得及吗 临时准备也可以很具体：客户是谁、你要谈什么、最怕被追问什么，下一次不必重新解释。" [ref=f3e266]:
+                        - img "《明天要接待外国客户，现在抱佛脚来得及吗》小红书笔记封面" [ref=f3e268]
+                        - generic [ref=f3e269]:
+                          - paragraph [ref=f3e270]:
+                            - generic [ref=f3e271]: "02"
+                            - generic [ref=f3e272]: 小红书 · 图文
+                            - generic [ref=f3e273]: ↗
+                          - heading "明天要接待外国客户，现在抱佛脚来得及吗" [level=5] [ref=f3e274]
+                          - paragraph [ref=f3e275]: 临时准备也可以很具体：客户是谁、你要谈什么、最怕被追问什么，下一次不必重新解释。
+                    - link "在抖音打开：AI 把我的英语 P 成了照骗" [ref=f3e276] [cursor=pointer]:
+                      - /url: https://v.douyin.com/HxcnSuHbB7Y/
+                      - figure "03 抖音 · 图文 AI 把我的英语 P 成了照骗 邮件里像 C2，视频会议里却只剩 Yes。写作可以润色，真实开口只能提前练过。" [ref=f3e277]:
+                        - img "《AI 把我的英语 P 成了照骗》抖音笔记封面" [ref=f3e279]
+                        - generic [ref=f3e280]:
+                          - paragraph [ref=f3e281]:
+                            - generic [ref=f3e282]: "03"
+                            - generic [ref=f3e283]: 抖音 · 图文
+                            - generic [ref=f3e284]: ↗
+                          - heading "AI 把我的英语 P 成了照骗" [level=5] [ref=f3e285]
+                          - paragraph [ref=f3e286]: 邮件里像 C2，视频会议里却只剩 Yes。写作可以润色，真实开口只能提前练过。
+                    - link "在小红书打开：0 基础剪辑，我居然做出了自己的产品宣传片" [ref=f3e287] [cursor=pointer]:
+                      - /url: https://xhslink.cn/o/1J7y3NvyT6Q
+                      - figure "04 小红书 · 视频 0 基础剪辑，我居然做出了自己的产品宣传片 从产品画面到真实使用场景：在真正开口之前，先把重要的一次练习拍给自己看。" [ref=f3e288]:
+                        - generic [ref=f3e289]:
+                          - img "《0 基础剪辑，我居然做出了自己的产品宣传片》小红书笔记封面" [ref=f3e290]
+                          - generic [ref=f3e291]: ▶
+                        - generic [ref=f3e292]:
+                          - paragraph [ref=f3e293]:
+                            - generic [ref=f3e294]: "04"
+                            - generic [ref=f3e295]: 小红书 · 视频
+                            - generic [ref=f3e296]: ↗
+                          - heading "0 基础剪辑，我居然做出了自己的产品宣传片" [level=5] [ref=f3e297]
+                          - paragraph [ref=f3e298]: 从产品画面到真实使用场景：在真正开口之前，先把重要的一次练习拍给自己看。
+                    - link "在小红书打开：什么 skill 这么厉害" [ref=f3e299] [cursor=pointer]:
+                      - /url: https://xhslink.cn/o/6t0JXRjBUG9
+                      - figure "05 小红书 · 视频 什么 skill 这么厉害 一句目标，变成一次可以完成的训练：场景、角色、轮次和反馈都被组织清楚。" [ref=f3e300]:
+                        - generic [ref=f3e301]:
+                          - img "《什么 skill 这么厉害》小红书笔记封面" [ref=f3e302]
+                          - generic [ref=f3e303]: ▶
+                        - generic [ref=f3e304]:
+                          - paragraph [ref=f3e305]:
+                            - generic [ref=f3e306]: "05"
+                            - generic [ref=f3e307]: 小红书 · 视频
+                            - generic [ref=f3e308]: ↗
+                          - heading "什么 skill 这么厉害" [level=5] [ref=f3e309]
+                          - paragraph [ref=f3e310]: 一句目标，变成一次可以完成的训练：场景、角色、轮次和反馈都被组织清楚。
+                    - link "在小红书打开：原来他也在等你先开口" [ref=f3e311] [cursor=pointer]:
+                      - /url: https://xhslink.cn/o/76DNPbzgwe5
+                      - figure "06 小红书 · 视频 原来他也在等你先开口 很多沟通不是没有机会，只差第一句话。先在没有压力的地方，把它真正说出来。" [ref=f3e312]:
+                        - generic [ref=f3e313]:
+                          - img "《原来他也在等你先开口》小红书笔记封面" [ref=f3e314]
+                          - generic [ref=f3e315]: ▶
+                        - generic [ref=f3e316]:
+                          - paragraph [ref=f3e317]:
+                            - generic [ref=f3e318]: "06"
+                            - generic [ref=f3e319]: 小红书 · 视频
+                            - generic [ref=f3e320]: ↗
+                          - heading "原来他也在等你先开口" [level=5] [ref=f3e321]
+                          - paragraph [ref=f3e322]: 很多沟通不是没有机会，只差第一句话。先在没有压力的地方，把它真正说出来。
+                    - link "在小红书打开：雅思口语开口就卡？" [ref=f3e323] [cursor=pointer]:
+                      - /url: https://xhslink.cn/o/9r6ssNYgiNa
+                      - figure "07 小红书 · 图文 雅思口语开口就卡？ 不再背同一份模板：用你的经历生成回答，跟 AI 考官连着练，再看清每一句该怎么改。" [ref=f3e324]:
+                        - img "《雅思口语开口就卡？》小红书笔记封面" [ref=f3e326]
+                        - generic [ref=f3e327]:
+                          - paragraph [ref=f3e328]:
+                            - generic [ref=f3e329]: "07"
+                            - generic [ref=f3e330]: 小红书 · 图文
+                            - generic [ref=f3e331]: ↗
+                          - heading "雅思口语开口就卡？" [level=5] [ref=f3e332]
+                          - paragraph [ref=f3e333]: 不再背同一份模板：用你的经历生成回答，跟 AI 考官连着练，再看清每一句该怎么改。
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "理解目标" [level=2]
+              - paragraph [ref=f3e336]: 先说清楚你为什么要开口，再决定怎么练。
+            - article [ref=f3e340]:
+              - generic [ref=f3e341]:
+                - heading "先理解目标，再开始训练" [level=3] [ref=f3e342]
+                - paragraph [ref=f3e344]: 告诉 SpeakUp 你的岗位、考试目标或下一场真实沟通。它会识别期限、角色、当前水平与真正卡点，再把目标组织成一轮可以完成的练习。
+                - link "查看下一个 SpeakUp 目标示例" [ref=f3e345] [cursor=pointer]:
+                  - /url: "#speakup-goal-carousel"
+                  - generic [ref=f3e346]: 查看下一个目标
+                  - img "Opens a new window" [ref=f3e348]
+              - region "SpeakUp 理解目标示例" [ref=f3e351]:
+                - generic [ref=f3e352]:
+                  - img "SpeakUp 理解雅思口语提分目标，并建议先练 Part 2 或进行完整模考" [ref=f3e355]
+                  - generic:
+                    - paragraph: 考试 · 3 MONTHS
+                    - strong: IELTS 7.0
+                    - generic: 02 / 03
+                  - group "选择目标示例" [ref=f3e357]:
+                    - button "查看英文面试示例" [ref=f3e358] [cursor=pointer]
+                    - button "查看IELTS 7.0示例" [ref=f3e360] [cursor=pointer]
+                    - button "查看海外团队沟通示例" [ref=f3e362] [cursor=pointer]
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "表达准备" [level=2]
+              - paragraph [ref=f3e366]: 先教会你，再邀请你进入实战。
+            - article [ref=f3e370]:
+              - generic [ref=f3e371]:
+                - generic [ref=f3e373]:
+                  - heading "先理清，再开练" [level=3] [ref=f3e374]
+                  - paragraph [ref=f3e376]: SpeakUp 先帮你理清思路，再进入模拟实战。
+                  - button "播放演示：SpeakUp 表达准备" [ref=f3e377] [cursor=pointer]:
+                    - generic [ref=f3e378]: 播放演示
+                    - img "Opens a new window" [ref=f3e380]
+                - group "SpeakUp 从理清思路到进入模拟实战的表达准备演示" [ref=f3e382]:
+                  - group "SpeakUp 从提出问题、理清表达思路到进入模拟实战的演示" [ref=f3e383]:
+                    - generic "SpeakUp 理清表达思路并进入模拟实战的视频演示" [ref=f3e386]
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "英文面试" [level=2]
+              - paragraph [ref=f3e390]: 由面试官接管，连续追问真实经历。
+            - generic [ref=f3e393]:
+              - article [ref=f3e394]:
+                - generic [ref=f3e397]:
+                  - heading "Not your standard hub" [level=3] [ref=f3e398]
+                  - paragraph [ref=f3e400]: The POS Hub gives you the reliability of wired connections with the processing power of a computer.
+                  - link "Shop now Opens a new window" [ref=f3e401] [cursor=pointer]:
+                    - /url: https://hardware.shopify.com/pages/poshub?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - generic [ref=f3e402]: Shop now
+                    - img "Opens a new window" [ref=f3e404]
+              - article [ref=f3e406]:
+                - generic [ref=f3e409]:
+                  - heading "Connections that never drop" [level=3] [ref=f3e410]
+                  - paragraph [ref=f3e412]: Plug in card readers, printers, and scanners for the strongest, most reliable connection. No pairing required.
+              - article [ref=f3e413]:
+                - generic [ref=f3e416]:
+                  - generic [ref=f3e417]:
+                    - heading "The only hub with processing power" [level=3] [ref=f3e418]
+                    - paragraph [ref=f3e420]: Built-in software keeps data flowing between your hardware and Shopify POS.
+                    - link "Shop now Opens a new window" [ref=f3e421] [cursor=pointer]:
+                      - /url: https://hardware.shopify.com/pages/poshub?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e422]: Shop now
+                      - img "Opens a new window" [ref=f3e424]
+                  - list [ref=f3e426]:
+                    - listitem [ref=f3e427]:
+                      - generic [ref=f3e429]: Compatible with iPad via MFi Authentication Coprocessor
+                    - listitem [ref=f3e430]:
+                      - generic [ref=f3e432]: Performance powered by ARM Cortex-A7 MPU with built-in data security
+                    - listitem [ref=f3e433]:
+                      - generic [ref=f3e435]: Built-in health monitoring with automatic fault recovery
+                    - listitem [ref=f3e436]:
+                      - generic [ref=f3e438]: Automatic firmware updates
+                    - listitem [ref=f3e439]:
+                      - generic [ref=f3e441]: Rock-solid connectivity with 3 USB-A ports and 1 USB‑C port
+            - generic [ref=f3e443]:
+              - article [ref=f3e444]:
+                - img "A HP barcode scanner with a red light." [ref=f3e448]
+                - generic [ref=f3e449]:
+                  - heading "POS Hub-compatible scanners" [level=3] [ref=f3e450]
+                  - generic [ref=f3e451]:
+                    - paragraph [ref=f3e453]:
+                      - text: Choose from newly integrated barcode scanners or a range of
+                      - generic [ref=f3e454]:
+                        - link "HID-compatible scanners" [ref=f3e455] [cursor=pointer]:
+                          - /url: https://help.shopify.com/en/manual/sell-in-person/hardware/barcode-scanners/hid-scanners?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Read help doc
+                      - text: that work with the POS Hub, iPad, and Android tablets.
+                    - link "Visit hardware store Opens a new window" [ref=f3e456] [cursor=pointer]:
+                      - /url: https://hardware.shopify.com/products/shopify-pos-hub-us-ca?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e457]: Visit hardware store
+                      - img "Opens a new window" [ref=f3e459]
+              - article [ref=f3e461]:
+                - img "On the POS, there is a modal where a subscription is being added for a skate magazine." [ref=f3e465]
+                - generic [ref=f3e466]:
+                  - heading "Subscriptions on POS" [level=3] [ref=f3e467]
+                  - generic [ref=f3e468]:
+                    - paragraph [ref=f3e470]:
+                      - text: Allow customers to sign up for subscriptions in store on your POS using the
+                      - generic [ref=f3e471]:
+                        - link "Shopify Subscriptions" [ref=f3e472] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shopify-subscriptions?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app.
+                    - link "Read help doc Opens a new window" [ref=f3e473] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/subscriptions?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e474]: Read help doc
+                      - img "Opens a new window" [ref=f3e476]
+              - article [ref=f3e478]:
+                - generic [ref=f3e481]:
+                  - heading "Quick count with POS" [level=3] [ref=f3e482]
+                  - generic [ref=f3e483]:
+                    - paragraph [ref=f3e485]: Scan and update inventory directly from your POS to keep stock accurate across channels. Exclusive to POS Pro.
+                    - link "Read help doc Opens a new window" [ref=f3e486] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/sell-in-person/shopify-pos/inventory-management/changing-inventory-quantities-pos?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e487]: Read help doc
+                      - img "Opens a new window" [ref=f3e489]
+              - article [ref=f3e491]:
+                - generic [ref=f3e495]:
+                  - img "On the POS, the smart grid, lock screen, receipt, and customer display are being edited."
+                - generic [ref=f3e496]:
+                  - heading "POS customization in one editor" [level=3] [ref=f3e497]
+                  - generic [ref=f3e498]:
+                    - paragraph [ref=f3e500]: Customize the customer display, smart grid, receipts, and lock screen in a single editor.
+                    - link "Read help doc Opens a new window" [ref=f3e501] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/sell-in-person/shopify-pos/customize-pos?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e502]: Read help doc
+                      - img "Opens a new window" [ref=f3e504]
+              - article [ref=f3e506]:
+                - generic [ref=f3e509]:
+                  - heading "Same-day delivery with Uber Direct" [level=3] [ref=f3e510]
+                  - generic [ref=f3e511]:
+                    - paragraph [ref=f3e513]: Offer fast local delivery for online orders with live tracking using Uber Direct on POS. Exclusive to Plus. US, Canada, and France only.
+                    - link "Get app Opens a new window" [ref=f3e514] [cursor=pointer]:
+                      - /url: https://apps.shopify.com/uber-direct?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e515]: Get app
+                      - img "Opens a new window" [ref=f3e517]
+              - generic [ref=f3e520]:
+                - article [ref=f3e522]:
+                  - generic [ref=f3e523]:
+                    - heading [level=3] [ref=f3e524]:
+                      - link "Markets for retail" [ref=f3e525] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/sell-in-person/markets/manage?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#catalogs-for-retail-markets
+                    - paragraph [ref=f3e527]: Set unique prices and publish products per retail location and online. Exclusive to POS Pro.
+                - article [ref=f3e529]:
+                  - generic [ref=f3e530]:
+                    - heading [level=3] [ref=f3e531]:
+                      - link "Retail payments in more countries" [ref=f3e532] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/sell-in-person/getting-started/setup-payment-method/shopify-payments-pos?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#supported
+                    - paragraph [ref=f3e534]: Accept in-person payments, including Tap to Pay on iPhone and Android, in Luxembourg, Switzerland, and the Czech Republic.
+                - article [ref=f3e536]:
+                  - generic [ref=f3e537]:
+                    - heading [level=3] [ref=f3e538]:
+                      - link "QR code payments" [ref=f3e539] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/accepting-local-payments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#supported-local-payment-methods
+                    - paragraph [ref=f3e541]: Let customers pay in store with iDeal, Swish, Twint, Mobilepay, and USDC by scanning a QR code and completing checkout on their phone.
+                - article [ref=f3e543]:
+                  - generic [ref=f3e544]:
+                    - heading [level=3] [ref=f3e545]:
+                      - link "Tap to Pay in more countries" [ref=f3e546] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/tap-to-pay-iphone?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#requirements
+                    - paragraph [ref=f3e548]: Let customers Tap to Pay on iPhone in Germany, Ireland, Spain, and New Zealand.
+                - article [ref=f3e550]:
+                  - generic [ref=f3e551]:
+                    - heading [level=3] [ref=f3e552]:
+                      - link "Cartes Bancaires accepted on POS" [ref=f3e553] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries/france/payment-methods?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#card-type-france
+                    - paragraph [ref=f3e555]: Accept Cartes Bancaires (CB) branded cards from your POS in France.
+                - article [ref=f3e557]:
+                  - generic [ref=f3e558]:
+                    - heading [level=3] [ref=f3e559]:
+                      - link "Receive transfer shipments in-store" [ref=f3e560] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/sell-in-person/shopify-pos/inventory-management/receiving-transfers?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e562]: Accept or reject transfers in store using the Transfers POS extension. Exclusive to POS Pro.
+                - article [ref=f3e564]:
+                  - generic [ref=f3e565]:
+                    - heading [level=3] [ref=f3e566]:
+                      - link "Customizable return receipts" [ref=f3e567] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/sell-in-person/shopify-pos/customize-pos/printed-receipts/receipt-code-editor?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e569]: Create custom return and exchange receipts with your return policy, logo, and contact information using the Liquid editor.
+                - article [ref=f3e571]:
+                  - generic [ref=f3e572]:
+                    - heading [level=3] [ref=f3e573]:
+                      - link "Better in-progress return visibility" [ref=f3e574] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/sell-in-person/shopify-pos/order-management/complete-refund-orders?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e576]: Accurately track in-progress returns in your POS and easily cancel unfulfilled items.
+                - article [ref=f3e578]:
+                  - generic [ref=f3e579]:
+                    - heading [level=3] [ref=f3e580]:
+                      - link "Refund selections on POS" [ref=f3e581] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/sell-in-person/shopify-pos/order-management/complete-refund-orders?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#refund-an-order
+                    - paragraph [ref=f3e583]: Choose between original payment, gift card, or store credit on a dedicated refund screen.
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "IELTS Speaking" [level=2]
+              - paragraph [ref=f3e586]: 覆盖 Part 1、Part 2、Part 3 与完整模考。
+            - article [ref=f3e590]:
+              - generic [ref=f3e591]:
+                - heading "Shopify Product Network" [level=3] [ref=f3e592]
+                - paragraph [ref=f3e594]: Fill merchandise gaps by choosing to instantly surface products from other Shopify brands in your search, collections, emails, and post-purchase pages, and earn a commission on every sale. US only.
+                - link "Get app Opens a new window" [ref=f3e595] [cursor=pointer]:
+                  - /url: https://apps.shopify.com/product-network?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                  - generic [ref=f3e596]: Get app
+                  - img "Opens a new window" [ref=f3e598]
+              - button "Play video" [ref=f3e604] [cursor=pointer]:
+                - generic [ref=f3e605]: Play Video
+            - generic [ref=f3e611]:
+              - article [ref=f3e612]:
+                - generic [ref=f3e617]:
+                  - heading "Shop Campaigns expands to the online store" [level=3] [ref=f3e618]
+                  - generic [ref=f3e619]:
+                    - paragraph [ref=f3e621]: Automatically get promoted on collections, search, and post-purchase pages on other relevant Shopify stores. US only.
+                    - link "Read help doc Opens a new window" [ref=f3e622] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/online-sales-channels/shop/shop-campaigns/understanding-campaigns?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#shopify-stores
+                      - generic [ref=f3e623]: Read help doc
+                      - img "Opens a new window" [ref=f3e625]
+              - article [ref=f3e627]:
+                - img "An interface is shown where a user can select who to send SMS messages and what the message will say. Next to that interface is a phone with the SMS message." [ref=f3e631]
+                - generic [ref=f3e632]:
+                  - heading "Shopify Messaging supports SMS marketing" [level=3] [ref=f3e633]
+                  - generic [ref=f3e634]:
+                    - paragraph [ref=f3e636]:
+                      - text: Create, schedule, send, and track
+                      - generic [ref=f3e637]:
+                        - link "SMS marketing" [ref=f3e638] [cursor=pointer]:
+                          - /url: https://changelog.shopify.com/posts/shopify-messaging-now-supports-sms-marketing?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: campaigns in the Shopify Messaging app.
+                    - link "Get app Opens a new window" [ref=f3e639] [cursor=pointer]:
+                      - /url: https://apps.shopify.com/shopify-messaging?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e640]: Get app
+                      - img "Opens a new window" [ref=f3e642]
+              - article [ref=f3e644]:
+                - img "A Shopify Form is being translated from English to French and a module shows what that form looks like in French." [ref=f3e648]
+                - generic [ref=f3e649]:
+                  - heading "Auto-translation for Shopify Forms" [level=3] [ref=f3e650]
+                  - generic [ref=f3e651]:
+                    - paragraph [ref=f3e653]:
+                      - text: Automatically translate forms from English into 19 other languages with the
+                      - generic [ref=f3e654]:
+                        - link "Shopify Forms" [ref=f3e655] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shopify-forms?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app.
+                    - link "Read help doc Opens a new window" [ref=f3e656] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/promoting-marketing/create-marketing/forms-app/translation?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e657]: Read help doc
+                      - img "Opens a new window" [ref=f3e659]
+              - article [ref=f3e661]:
+                - generic [ref=f3e664]:
+                  - heading "Improved segmentation template search" [level=3] [ref=f3e665]
+                  - generic [ref=f3e666]:
+                    - paragraph [ref=f3e668]: Browse, search, and filter through a refreshed customer segmentation template library.
+                    - link "Read help doc Opens a new window" [ref=f3e669] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/customers/customer-segmentation/create-customer-segments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#template
+                      - generic [ref=f3e670]: Read help doc
+                      - img "Opens a new window" [ref=f3e672]
+              - generic [ref=f3e675]:
+                - article [ref=f3e677]:
+                  - generic [ref=f3e678]:
+                    - heading [level=3] [ref=f3e679]:
+                      - link "Target all audiences in one Shop Campaign" [ref=f3e680] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/online-sales-channels/shop/shop-campaigns/understanding-campaigns?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#campaign-objectives
+                    - paragraph [ref=f3e682]: Launch a single Shop Campaign for all audiences rather than choosing between acquisition or win back. US and Canada only.
+                - article [ref=f3e684]:
+                  - generic [ref=f3e685]:
+                    - heading [level=3] [ref=f3e686]:
+                      - link "Shop Campaigns on more channels" [ref=f3e687] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/online-sales-channels/shop/shop-campaigns/understanding-campaigns?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#other-platforms
+                    - paragraph [ref=f3e689]: Get promoted in new ad channels, including X, Snapchat, and Bing, and only pay when customers convert. US only.
+                - article [ref=f3e691]:
+                  - generic [ref=f3e692]:
+                    - heading [level=3] [ref=f3e693]:
+                      - link "Segment customers with product categories" [ref=f3e694] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/customers/customer-segmentation/create-customer-segments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#shopifyql
+                    - paragraph [ref=f3e696]: Create customer segments based on product categories that they have viewed or purchased.
+                - article [ref=f3e698]:
+                  - generic [ref=f3e699]:
+                    - heading [level=3] [ref=f3e700]:
+                      - link "Improved email customer segmentation" [ref=f3e701] [cursor=pointer]:
+                        - /url: https://help.shopify.com/manual/promoting-marketing/create-marketing/shopify-messaging/email/subscriber-list-management?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e703]:
+                      - text: Strategically target customers with intuitive segment selection and recommendations in the
+                      - generic [ref=f3e704]:
+                        - link "Shopify Messaging" [ref=f3e705] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shopify-messaging?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app.
+                - article [ref=f3e707]:
+                  - generic [ref=f3e708]:
+                    - heading [level=3] [ref=f3e709]:
+                      - link "Dynamic product sections in emails" [ref=f3e710] [cursor=pointer]:
+                        - /url: https://help.shopify.com/manual/promoting-marketing/create-marketing/shopify-messaging/email/create-email/templates?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#product
+                    - paragraph [ref=f3e712]:
+                      - text: Automatically display your best selling products or specific collections when creating emails in the
+                      - generic [ref=f3e713]:
+                        - link "Shopify Messaging" [ref=f3e714] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shopify-messaging?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app.
+                - article [ref=f3e716]:
+                  - generic [ref=f3e717]:
+                    - heading [level=3] [ref=f3e718]:
+                      - link "Calendar view for messaging" [ref=f3e719] [cursor=pointer]:
+                        - /url: https://help.shopify.com/manual/promoting-marketing/create-marketing/shopify-messaging/email/create-email/create-campaigns?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#planner
+                    - paragraph [ref=f3e721]:
+                      - text: Schedule marketing emails and SMS in the planner and create campaigns using the recommendations section in the
+                      - generic [ref=f3e722]:
+                        - link "Shopify Messaging" [ref=f3e723] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shopify-messaging?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app.
+                - article [ref=f3e725]:
+                  - generic [ref=f3e726]:
+                    - heading [level=3] [ref=f3e727]:
+                      - link "Shopify Forms marketing consent" [ref=f3e728] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/promoting-marketing/create-marketing/forms-app/settings/all-forms?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#form
+                    - paragraph [ref=f3e730]:
+                      - text: Decide how you collect marketing consent per form with the
+                      - generic [ref=f3e731]:
+                        - link "Shopify Forms" [ref=f3e732] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shopify-forms?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app.
+                - article [ref=f3e734]:
+                  - generic [ref=f3e735]:
+                    - heading [level=3] [ref=f3e736]:
+                      - link "Web pixels on customer accounts" [ref=f3e737] [cursor=pointer]:
+                        - /url: https://changelog.shopify.com/posts/web-pixels-load-on-customer-accounts-and-order-status-page?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e739]: Run web pixels and first-party analytics on customer account pages to get more visibility into post-purchase behavior.
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "职场沟通" [level=2]
+              - paragraph [ref=f3e742]: 为汇报、协作、谈判与冲突处理提前开口。
+            - generic [ref=f3e744]:
+              - article [ref=f3e745]:
+                - generic [ref=f3e749]:
+                  - img "A Buy with Shop button is shown and it expands to include the Mastercard logo and the last for digits of a card."
+                - generic [ref=f3e750]:
+                  - heading "Personalized Shop button" [level=3] [ref=f3e751]
+                  - generic [ref=f3e752]:
+                    - paragraph [ref=f3e754]: The last four digits of a customer’s saved card will appear on their Shop Pay button.
+                    - link "Read help doc Opens a new window" [ref=f3e755] [cursor=pointer]:
+                      - /url: https://help.shop.app/en/shop/shop-pay/check-out?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e756]: Read help doc
+                      - img "Opens a new window" [ref=f3e758]
+              - article [ref=f3e760]:
+                - generic [ref=f3e764]:
+                  - heading "Checkout and accounts customization per market" [level=3] [ref=f3e765]
+                  - generic [ref=f3e766]:
+                    - paragraph [ref=f3e768]: Customize your checkout and customer account pages for different countries and B2B buyers directly in the editor.
+                    - link "Read help doc Opens a new window" [ref=f3e769] [cursor=pointer]:
+                      - /url: https://help.shopify.com/manual/checkout-settings/customize-checkout-configurations/markets?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e770]: Read help doc
+                      - img "Opens a new window" [ref=f3e772]
+              - generic [ref=f3e775]:
+                - article [ref=f3e777]:
+                  - generic [ref=f3e778]:
+                    - heading [level=3] [ref=f3e779]:
+                      - link "Shop Pay Installments in the UK" [ref=f3e780] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shop-pay-installments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e782]: Offer Shop Pay's Buy Now, Pay Later in the UK with terms up to 24 months.
+                - article [ref=f3e784]:
+                  - generic [ref=f3e785]:
+                    - heading [level=3] [ref=f3e786]:
+                      - link "Shop Pay works with Global-e" [ref=f3e787] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shop-pay/activating-shop-pay?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#third-party
+                    - paragraph [ref=f3e789]:
+                      - text: Use
+                      - generic [ref=f3e790]:
+                        - link "Shop Pay" [ref=f3e791] [cursor=pointer]:
+                          - /url: https://www.shopify.com/shop-pay?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: in every market, with domestic orders handled by
+                      - generic [ref=f3e792]:
+                        - link "Shopify Payments" [ref=f3e793] [cursor=pointer]:
+                          - /url: https://www.shopify.com/payments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: and international orders processed by Global-e.
+                - article [ref=f3e795]:
+                  - generic [ref=f3e796]:
+                    - heading [level=3] [ref=f3e797]:
+                      - link "Apple Pay in Shop Pay" [ref=f3e798] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shop-pay/shop-pay?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#supported-payment-methods
+                    - paragraph [ref=f3e800]:
+                      - text: Apple Pay is now available as a payment method in
+                      - generic [ref=f3e801]:
+                        - link "Shop Pay" [ref=f3e802] [cursor=pointer]:
+                          - /url: https://www.shopify.com/shop-pay?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: .
+                - article [ref=f3e804]:
+                  - generic [ref=f3e805]:
+                    - heading [level=3] [ref=f3e806]:
+                      - link "Reminders for Shop Pay subscriptions" [ref=f3e807] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/online-sales-channels/shop/manage-shop-store/products-and-collections?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#subscriptions
+                    - paragraph [ref=f3e809]:
+                      - generic [ref=f3e810]:
+                        - link "Shop Pay" [ref=f3e811] [cursor=pointer]:
+                          - /url: https://www.shopify.com/shop-pay?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: automatically notifies subscribers before their payment method expires.
+                - article [ref=f3e813]:
+                  - generic [ref=f3e814]:
+                    - heading [level=3] [ref=f3e815]:
+                      - link "Switch to Shopify Payments with zero downtime" [ref=f3e816] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shopify-payments/onboarding/account-setup?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e818]:
+                      - text: Move from third-party payment processors to
+                      - generic [ref=f3e819]:
+                        - link "Shopify Payments" [ref=f3e820] [cursor=pointer]:
+                          - /url: https://www.shopify.com/payments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: without interrupting checkout.
+                - article [ref=f3e822]:
+                  - generic [ref=f3e823]:
+                    - heading [level=3] [ref=f3e824]:
+                      - link "Streamlined Shopify Payments onboarding" [ref=f3e825] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shopify-payments/onboarding?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e827]:
+                      - text: Set up
+                      - generic [ref=f3e828]:
+                        - link "Shopify Payments" [ref=f3e829] [cursor=pointer]:
+                          - /url: https://www.shopify.com/payments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: faster with localized forms, clear guidance, fewer requirements, and help from AI to fill out forms.
+                - article [ref=f3e831]:
+                  - generic [ref=f3e832]:
+                    - heading [level=3] [ref=f3e833]:
+                      - link "More payment methods in France" [ref=f3e834] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries/france/payment-methods?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#local-payment-methods-france
+                    - paragraph [ref=f3e836]: Accept cross-border payments in France from Bancontact in Belgium, iDEAL in the Netherlands, Twint in Switzerland, Blik and Przelewy24 in Poland, MobilePay in Denmark, and EPS in Austria.
+                - article [ref=f3e838]:
+                  - generic [ref=f3e839]:
+                    - heading [level=3] [ref=f3e840]:
+                      - link "Klarna in more countries" [ref=f3e841] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shopify-payments/local-payment-methods/klarna/klarna-shopify-payments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#regions-where-merchants-can-use-klarna-with-shopify-payments
+                    - paragraph [ref=f3e843]:
+                      - text: Let customers use Klarna on
+                      - generic [ref=f3e844]:
+                        - link "Shopify Payments" [ref=f3e845] [cursor=pointer]:
+                          - /url: https://www.shopify.com/payments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: in Belgium, Denmark, Finland, France, Switzerland, Czechia, Ireland, and Portugal.
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "生活与旅行" [level=2]
+              - paragraph [ref=f3e848]: 把租房、就医、电话与旅行交通练成自然表达。
+            - generic [ref=f3e850]:
+              - article [ref=f3e851]:
+                - generic [ref=f3e855]:
+                  - heading "Flexible inventory transfers" [level=3] [ref=f3e856]
+                  - generic [ref=f3e857]:
+                    - paragraph [ref=f3e859]: Receive items from unspecified locations, edit shipments in transit, and accurately handle more real-world inventory scenarios.
+                    - link "Read help doc Opens a new window" [ref=f3e860] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/products/inventory/inventory-transfers/creating-and-managing-transfers?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e861]: Read help doc
+                      - img "Opens a new window" [ref=f3e863]
+              - article [ref=f3e865]:
+                - generic [ref=f3e869]:
+                  - img "The quick sale button is tapped with three products selected, a checkout screen appears, and once the user confirms, a receipt of the transaction is shown."
+                - generic [ref=f3e870]:
+                  - heading "Quick sale in the Shopify mobile app" [level=3] [ref=f3e871]
+                  - generic [ref=f3e872]:
+                    - paragraph [ref=f3e874]: Sell in person instantly with quick sale and accept payments with Tap to Pay or payment links.
+                    - link "Read help doc Opens a new window" [ref=f3e875] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/shopify-admin/shopify-app/quick-sale?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e876]: Read help doc
+                      - img "Opens a new window" [ref=f3e878]
+              - article [ref=f3e880]:
+                - img "An Apple Watch with the redesigned Shopify app that shows the total sales and the total sessions." [ref=f3e884]
+                - generic [ref=f3e885]:
+                  - heading "Updated metrics and widgets for Apple Watch" [level=3] [ref=f3e886]
+                  - generic [ref=f3e887]:
+                    - paragraph [ref=f3e889]: Monitor your store from your wrist with quick access to key metrics and customizable widgets.
+                    - link "Read help doc Opens a new window" [ref=f3e890] [cursor=pointer]:
+                      - /url: https://help.shopify.com/manual/shopify-admin/shopify-app/watch-app?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e891]: Read help doc
+                      - img "Opens a new window" [ref=f3e893]
+              - generic [ref=f3e896]:
+                - article [ref=f3e898]:
+                  - generic [ref=f3e899]:
+                    - heading [level=3] [ref=f3e900]:
+                      - link "AI-enhanced chargeback management" [ref=f3e901] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shopify-payments/managing-chargebacks/chargebacks-shopify-admin?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#add-evidence-and-submit-a-chargeback
+                    - paragraph [ref=f3e903]: Auto-generate dispute summaries that include key factors like delivery tracking and your policies.
+                - article [ref=f3e905]:
+                  - generic [ref=f3e906]:
+                    - heading [level=3] [ref=f3e907]:
+                      - link "Password-free login" [ref=f3e908] [cursor=pointer]:
+                        - /url: https://accounts.shopify.com/account/security?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e910]: Set up passkeys to access your store securely with your fingerprint, face, or PIN.
+                - article [ref=f3e912]:
+                  - generic [ref=f3e913]:
+                    - heading [level=3] [ref=f3e914]:
+                      - link "Heatmaps in analytics" [ref=f3e915] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/reports-overview?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#visualizations
+                    - paragraph [ref=f3e917]: View data as a heatmap across two variables, such as sales by hour and day of the week to spot your highest selling time.
+                - article [ref=f3e919]:
+                  - generic [ref=f3e920]:
+                    - heading [level=3] [ref=f3e921]:
+                      - link "Customizable top items in analytics" [ref=f3e922] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/custom-reports/filter-and-edit?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#customize-top-items-visualizations
+                    - paragraph [ref=f3e924]: Get a flexible view of reports by configuring the number of items displayed in visualizations, no longer limited to five.
+                - article [ref=f3e926]:
+                  - generic [ref=f3e927]:
+                    - heading [level=3] [ref=f3e928]:
+                      - link "Bot filtering in analytics" [ref=f3e929] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/intro-to-shopify/bots/bot-filtering?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e931]: Exclude bot traffic for more accurate conversion rates and cleaner data.
+                - article [ref=f3e933]:
+                  - generic [ref=f3e934]:
+                    - heading [level=3] [ref=f3e935]:
+                      - link "Comprehensive inventory history" [ref=f3e936] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/products/inventory/adjusting-inventory/adjustment-history?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e938]: Access full inventory adjustment history with the removal of the 180-day cap.
+                - article [ref=f3e940]:
+                  - generic [ref=f3e941]:
+                    - heading [level=3] [ref=f3e942]:
+                      - link "Precise date and time controls for analytics" [ref=f3e943] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/custom-reports/time-ranges?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e945]: Monitor flash sales and product drops with filters that show data down to the minute.
+                - article [ref=f3e947]:
+                  - generic [ref=f3e948]:
+                    - heading [level=3] [ref=f3e949]:
+                      - link "Flash sales with multi-location inventory" [ref=f3e950] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/products/inventory/setup/selling-when-out-of-stock?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e952]: Run flash sales without overselling using inventory from multiple locations.
+                - article [ref=f3e954]:
+                  - generic [ref=f3e955]:
+                    - heading [level=3] [ref=f3e956]:
+                      - link "Single-view analytics for multiple stores" [ref=f3e957] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/organization-settings/analytics?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#multi-store-reporting
+                    - paragraph [ref=f3e959]: See organization-wide performance in one view, then filter by store and compare metrics. Exclusive to Plus.
+                - article [ref=f3e961]:
+                  - generic [ref=f3e962]:
+                    - heading [level=3] [ref=f3e963]:
+                      - link "Bin locations in the Order Printer app" [ref=f3e964] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/products/inventory/setup/bin-locations?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e966]:
+                      - text: Pick orders faster by assigning bin locations to each SKU using a CSV or the bulk editor in the
+                      - generic [ref=f3e967]:
+                        - link "Order Printer" [ref=f3e968] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shopify-order-printer?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app.
+                - article [ref=f3e970]:
+                  - generic [ref=f3e971]:
+                    - heading [level=3] [ref=f3e972]:
+                      - link "More order filtering capabilities" [ref=f3e973] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/fulfillment/managing-orders/viewing-orders?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e975]: Filter orders by custom metafields, total value, and weight for smarter fulfillment workflows in admin.
+                - article [ref=f3e977]:
+                  - generic [ref=f3e978]:
+                    - heading [level=3] [ref=f3e979]:
+                      - link "Edit unfulfilled orders with duties" [ref=f3e980] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/fulfillment/managing-orders/editing-orders/considerations?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#taxes-duties
+                    - paragraph [ref=f3e982]: Duties, taxes, and totals recalculate automatically when making changes to unfulfilled orders.
+                - article [ref=f3e984]:
+                  - generic [ref=f3e985]:
+                    - heading [level=3] [ref=f3e986]:
+                      - link "Smarter safeguards for inventory updates" [ref=f3e987] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/products/inventory/adjusting-inventory/bulk-editing-inventory?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#edit-properties
+                    - paragraph [ref=f3e989]: Prevent accidental overrides when you save bulk edits with color-coded changes, a warning, and a confirmation step.
+                - article [ref=f3e991]:
+                  - generic [ref=f3e992]:
+                    - heading [level=3] [ref=f3e993]:
+                      - link "Discounts on fulfilled items" [ref=f3e994] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/fulfillment/managing-orders/editing-orders/discounts?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e996]: Issue refunds by applying discounts to fulfilled products for accurate taxes and reporting.
+                - article [ref=f3e998]:
+                  - generic [ref=f3e999]:
+                    - heading [level=3] [ref=f3e1000]:
+                      - link "Preview workflow results in Flow" [ref=f3e1001] [cursor=pointer]:
+                        - /url: https://www.shopify.com/blog/flow-automation-updates-2025?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1003]:
+                      - text: Test workflows in the
+                      - generic [ref=f3e1004]:
+                        - link "Shopify Flow" [ref=f3e1005] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/flow?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app before going live and adjust logic without impacting real store data.
+                - article [ref=f3e1007]:
+                  - generic [ref=f3e1008]:
+                    - heading [level=3] [ref=f3e1009]:
+                      - link "Redesigned Flow editor" [ref=f3e1010] [cursor=pointer]:
+                        - /url: https://www.shopify.com/blog/flow-automation-updates-2025?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1012]:
+                      - text: Build large automations in the
+                      - generic [ref=f3e1013]:
+                        - link "Shopify Flow" [ref=f3e1014] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/flow?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app with more workspace in the vertical layout.
+                - article [ref=f3e1016]:
+                  - generic [ref=f3e1017]:
+                    - heading [level=3] [ref=f3e1018]:
+                      - link "Cancel workflow runs in Flow" [ref=f3e1019] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/shopify-flow/manage/monitor?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#cancelling-runs
+                    - paragraph [ref=f3e1021]:
+                      - text: Stop automations by cancelling a run or multiple runs in the
+                      - generic [ref=f3e1022]:
+                        - link "Shopify Flow" [ref=f3e1023] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/flow?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app.
+                - article [ref=f3e1025]:
+                  - generic [ref=f3e1026]:
+                    - heading [level=3] [ref=f3e1027]:
+                      - link "Store credit email notifications" [ref=f3e1028] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/customers/store-credit?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#issue
+                    - paragraph [ref=f3e1030]: Notify customers when store credit has been issued with a customizable email.
+                - article [ref=f3e1032]:
+                  - generic [ref=f3e1033]:
+                    - heading [level=3] [ref=f3e1034]:
+                      - link "Enhanced Managed Markets" [ref=f3e1035] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/international/managed-markets/overview?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1037]: Sell internationally with instant compliance checks, faster payouts, and full Harmonized System code control. US only.
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "即时反馈" [level=2]
+              - paragraph [ref=f3e1040]: 逐句纠错，也告诉你怎样说得更自然。
+            - generic [ref=f3e1042]:
+              - article [ref=f3e1043]:
+                - generic [ref=f3e1048]:
+                  - heading "Dynamic storefronts" [level=3] [ref=f3e1049]
+                  - generic [ref=f3e1050]:
+                    - paragraph [ref=f3e1052]:
+                      - text: Automatically personalize your
+                      - generic [ref=f3e1053]:
+                        - link "Shop" [ref=f3e1054] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shop?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: storefront with relevant products for each shopper.
+                    - link "Read article Opens a new window" [ref=f3e1055] [cursor=pointer]:
+                      - /url: https://www.shopify.com/blog/customize-your-shop-presence?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e1056]: Read article
+                      - img "Opens a new window" [ref=f3e1058]
+              - article [ref=f3e1060]:
+                - generic [ref=f3e1063]:
+                  - heading "Deals feed" [level=3] [ref=f3e1064]
+                  - generic [ref=f3e1065]:
+                    - paragraph [ref=f3e1067]:
+                      - text: Highlight discounts, price drops, and Shop Campaigns in the dedicated Deals feed in
+                      - generic [ref=f3e1068]:
+                        - link "Shop" [ref=f3e1069] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shop?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: .
+                    - link "Read article Opens a new window" [ref=f3e1070] [cursor=pointer]:
+                      - /url: https://www.shopify.com/blog/introducing-deals-feed?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e1071]: Read article
+                      - img "Opens a new window" [ref=f3e1073]
+              - article [ref=f3e1075]:
+                - generic [ref=f3e1078]:
+                  - heading "Shoppable videos" [level=3] [ref=f3e1079]
+                  - generic [ref=f3e1080]:
+                    - paragraph [ref=f3e1082]:
+                      - text: Add shoppable videos to
+                      - generic [ref=f3e1083]:
+                        - link "Shop" [ref=f3e1084] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shop?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: and AI will optimize their distribution with built-in ranking and recommendations.
+                    - link "Read help doc Opens a new window" [ref=f3e1085] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/online-sales-channels/shop/manage-shop-store/video?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e1086]: Read help doc
+                      - img "Opens a new window" [ref=f3e1088]
+              - generic [ref=f3e1091]:
+                - article [ref=f3e1093]:
+                  - generic [ref=f3e1094]:
+                    - heading [level=3] [ref=f3e1095]:
+                      - link "Customizable product pages" [ref=f3e1096] [cursor=pointer]:
+                        - /url: https://www.shopify.com/blog/customize-your-shop-presence?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1098]:
+                      - text: Design your
+                      - generic [ref=f3e1099]:
+                        - link "Shop" [ref=f3e1100] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/shop?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: product pages with custom sections, videos, and branding, then preview how they look before going live.
+                - article [ref=f3e1102]:
+                  - generic [ref=f3e1103]:
+                    - heading [level=3] [ref=f3e1104]:
+                      - link "Better product discovery in Shop Minis" [ref=f3e1105] [cursor=pointer]:
+                        - /url: https://shop.app/minis/?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#gallery
+                    - paragraph [ref=f3e1107]: Your products automatically appear in immersive experiences, such as virtual try-on and outfit tracking, for relevant shoppers.
+                - article [ref=f3e1109]:
+                  - generic [ref=f3e1110]:
+                    - heading [level=3] [ref=f3e1111]:
+                      - link "Order tracking in 21 more countries" [ref=f3e1112] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/online-sales-channels/shop/delivery-tracking?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1114]: Shoppers can track purchases in Germany, France, Italy, Spain, New Zealand, Mexico, Switzerland, Denmark, Belgium, Sweden, Norway, Poland, Romania, Portugal, Lithuania, the Czech Republic, the Netherlands, Austria, Finland, Estonia, and Latvia.
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "练习复盘" [level=2]
+              - paragraph [ref=f3e1117]: 用真实回答中的证据，找到下一步训练方向。
+            - generic [ref=f3e1119]:
+              - article [ref=f3e1120]:
+                - img "Shoes from Japan, Germany, and England are shown as options for Shopify Collective." [ref=f3e1124]
+                - generic [ref=f3e1125]:
+                  - heading "Shopify Collective available globally" [level=3] [ref=f3e1126]
+                  - generic [ref=f3e1127]:
+                    - paragraph [ref=f3e1129]:
+                      - text: Source and sell other Shopify brands directly from the admin using
+                      - generic [ref=f3e1130]:
+                        - link "Shopify Collective" [ref=f3e1131] [cursor=pointer]:
+                          - /url: https://www.shopify.com/collective?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: ", now available in 35 additional countries."
+                    - link "Read help doc Opens a new window" [ref=f3e1132] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/online-sales-channels/shopify-collective?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e1133]: Read help doc
+                      - img "Opens a new window" [ref=f3e1135]
+              - article [ref=f3e1137]:
+                - img "The option to pay by ACH by linking a bank account is shown below the other payment options." [ref=f3e1141]
+                - generic [ref=f3e1142]:
+                  - heading "ACH payments for B2B" [level=3] [ref=f3e1143]
+                  - generic [ref=f3e1144]:
+                    - paragraph [ref=f3e1146]:
+                      - text: Accept ACH bank payments at checkout with
+                      - link "Shopify Payments" [ref=f3e1147] [cursor=pointer]:
+                        - /url: https://www.shopify.com/payments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - text: ", and charge saved accounts directly from the admin. Exclusive to Plus. US only."
+                    - link "Read help doc Opens a new window" [ref=f3e1148] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/payments/shopify-payments/local-payment-methods/ach?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e1149]: Read help doc
+                      - img "Opens a new window" [ref=f3e1151]
+              - article [ref=f3e1153]:
+                - generic [ref=f3e1157]:
+                  - img "A search bar shows a supplier looking for skateboards to sell."
+                - generic [ref=f3e1158]:
+                  - heading "Suppliers can discover retailers" [level=3] [ref=f3e1159]
+                  - generic [ref=f3e1160]:
+                    - paragraph [ref=f3e1162]:
+                      - text: Discover and connect with new retail partners using the
+                      - generic [ref=f3e1163]:
+                        - link "Shopify Collective" [ref=f3e1164] [cursor=pointer]:
+                          - /url: https://www.shopify.com/collective?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: retailer directory.
+                    - link "Read help doc Opens a new window" [ref=f3e1165] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/online-sales-channels/shopify-collective/suppliers/discovery?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#find-retailers
+                      - generic [ref=f3e1166]: Read help doc
+                      - img "Opens a new window" [ref=f3e1168]
+              - article [ref=f3e1170]:
+                - img "A hat, t-shirt, and skateboard are paired with their payments." [ref=f3e1174]
+                - generic [ref=f3e1175]:
+                  - heading "Payment requests per fulfillment" [level=3] [ref=f3e1176]
+                  - generic [ref=f3e1177]:
+                    - paragraph [ref=f3e1179]: Send a separate payment request for each shipment of a multi-shipment order. Exclusive to Plus.
+                    - link "Read help doc Opens a new window" [ref=f3e1180] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/deferred-payments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#payment-per-fulfillment
+                      - generic [ref=f3e1181]: Read help doc
+                      - img "Opens a new window" [ref=f3e1183]
+              - generic [ref=f3e1186]:
+                - article [ref=f3e1188]:
+                  - generic [ref=f3e1189]:
+                    - heading [level=3] [ref=f3e1190]:
+                      - link "Store credit for B2B" [ref=f3e1191] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/b2b/checkout-and-orders/store-credit?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#issue-store-credit-to-a-company-location
+                    - paragraph [ref=f3e1193]: Issue store credit to company locations from their location profile or when refunding orders.
+                - article [ref=f3e1195]:
+                  - generic [ref=f3e1196]:
+                    - heading [level=3] [ref=f3e1197]:
+                      - link "Pickup in store for B2B" [ref=f3e1198] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/b2b/checkout-and-orders/shipping-methods?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#pickup-in-store
+                    - paragraph [ref=f3e1200]: Let B2B customers select pick up as a delivery option at checkout.
+                - article [ref=f3e1202]:
+                  - generic [ref=f3e1203]:
+                    - heading [level=3] [ref=f3e1204]:
+                      - link "Dynamic payment terms and deposits" [ref=f3e1205] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/b2b/checkout-and-orders/payment-terms?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#configuring-dynamic-payment-terms-and-deposits
+                    - paragraph [ref=f3e1207]: Use third-party or custom apps powered by Shopify Functions to set dynamic payment terms and deposit requirements. Exclusive to Plus.
+                - article [ref=f3e1209]:
+                  - generic [ref=f3e1210]:
+                    - heading [level=3] [ref=f3e1211]:
+                      - link "Create rules for order review" [ref=f3e1212] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/b2b/checkout-and-orders/draft-orders?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#checkout-to-draft
+                    - paragraph [ref=f3e1214]: Set dynamic rules to determine which orders need review based on conditions like order values and products, using apps powered by Shopify Functions. Exclusive to Plus.
+                - article [ref=f3e1216]:
+                  - generic [ref=f3e1217]:
+                    - heading [level=3] [ref=f3e1218]:
+                      - link "New B2B-compatible apps" [ref=f3e1219] [cursor=pointer]:
+                        - /url: https://apps.shopify.com/stories/guide-selling-b2b?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1221]: Offer quote requests, custom buyer roles, shopping lists, and more using 11 apps compatible with B2B.
+                - article [ref=f3e1223]:
+                  - generic [ref=f3e1224]:
+                    - heading [level=3] [ref=f3e1225]:
+                      - link "Instant product imports for retailers" [ref=f3e1226] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/online-sales-channels/shopify-collective/suppliers/price-lists?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#create-price-list
+                    - paragraph [ref=f3e1228]:
+                      - text: Create public price lists that let retailers import products into their stores without waiting for approval on
+                      - generic [ref=f3e1229]:
+                        - link "Shopify Collective" [ref=f3e1230] [cursor=pointer]:
+                          - /url: https://www.shopify.com/collective?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: .
+                - article [ref=f3e1232]:
+                  - generic [ref=f3e1233]:
+                    - heading [level=3] [ref=f3e1234]:
+                      - link "ERP systems integration" [ref=f3e1235] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/b2b/reports-and-automations/external-integrations?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#integrating-to-external-systems-using-direct-integrations
+                    - paragraph [ref=f3e1237]: Sync companies, orders, and payment terms to NetSuite, BrightPearl, Fulfil, Sage, or Acumatica using pre-built integrations by Patchworks, Fulfil, and Kensium.
+                - article [ref=f3e1239]:
+                  - generic [ref=f3e1240]:
+                    - heading [level=3] [ref=f3e1241]:
+                      - link "Improved product import for retailers" [ref=f3e1242] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/online-sales-channels/shopify-collective/retailers/policies/products?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#default-product-policies
+                    - paragraph [ref=f3e1244]:
+                      - text: Publish imported products to all channels by default on
+                      - generic [ref=f3e1245]:
+                        - link "Shopify Collective" [ref=f3e1246] [cursor=pointer]:
+                          - /url: https://www.shopify.com/collective?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: .
+                - article [ref=f3e1248]:
+                  - generic [ref=f3e1249]:
+                    - heading "Shopify and EDI workflows connect" [level=3] [ref=f3e1250]
+                    - paragraph [ref=f3e1252]:
+                      - text: Sync EDI purchase orders from
+                      - generic [ref=f3e1253]:
+                        - link "Crstl" [ref=f3e1254] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/crstl-b2b-commerce-network?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: and
+                      - generic [ref=f3e1255]:
+                        - link "SPS Commerce" [ref=f3e1256] [cursor=pointer]:
+                          - /url: https://apps.shopify.com/sps-commerce?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: directly with your admin as draft orders, using pre-built integrations.
+                - article [ref=f3e1258]:
+                  - generic [ref=f3e1259]:
+                    - heading [level=3] [ref=f3e1260]:
+                      - link "Horizon themes work with B2B" [ref=f3e1261] [cursor=pointer]:
+                        - /url: https://themes.shopify.com/collections/horizon-themes?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1263]: All Horizon themes support built-in volume pricing, quantity rules, and quick order lists.
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "训练记忆" [level=2]
+              - paragraph [ref=f3e1266]: 记住你的目标、经历、进步与反复出现的卡点。
+            - generic [ref=f3e1268]:
+              - article [ref=f3e1269]:
+                - generic [ref=f3e1273]:
+                  - img "The animation starts with an application for funding, then there's a request to withdraw money, and finally the money is withdrawn."
+                - generic [ref=f3e1274]:
+                  - heading "Continuous funding with the Shopify Capital flex account" [level=3] [ref=f3e1275]
+                  - generic [ref=f3e1276]:
+                    - paragraph [ref=f3e1278]:
+                      - text: Apply once for ongoing access to funding with
+                      - generic [ref=f3e1279]:
+                        - link "Shopify Capital" [ref=f3e1280] [cursor=pointer]:
+                          - /url: https://www.shopify.com/capital?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: and only pay fees on your outstanding balance. Get replenished funds, subject to approval, as you repay. US only.
+                    - link "Read help doc Opens a new window" [ref=f3e1281] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/finance/shopify-capital/shopify-capital-flex?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                      - generic [ref=f3e1282]: Read help doc
+                      - img "Opens a new window" [ref=f3e1284]
+              - article [ref=f3e1286]:
+                - generic [ref=f3e1289]:
+                  - heading "Automatic transfers in Shopify Balance" [level=3] [ref=f3e1290]
+                  - generic [ref=f3e1291]:
+                    - paragraph [ref=f3e1293]:
+                      - text: Set rules in
+                      - generic [ref=f3e1294]:
+                        - link "Shopify Balance" [ref=f3e1295] [cursor=pointer]:
+                          - /url: https://www.shopify.com/balance?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: to automatically split each payout across accounts, such as expenses, inventory, marketing, and savings. US only.
+                    - link "Read help doc Opens a new window" [ref=f3e1296] [cursor=pointer]:
+                      - /url: https://help.shopify.com/manual/finance/shopify-balance/managing-account/transfers?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#shopify-balance-automatic-transfers
+                      - generic [ref=f3e1297]: Read help doc
+                      - img "Opens a new window" [ref=f3e1299]
+              - article [ref=f3e1301]:
+                - generic [ref=f3e1304]:
+                  - heading "Staff cards with spend controls" [level=3] [ref=f3e1305]
+                  - generic [ref=f3e1306]:
+                    - paragraph [ref=f3e1308]:
+                      - text: Issue
+                      - generic [ref=f3e1309]:
+                        - link "Shopify Balance" [ref=f3e1310] [cursor=pointer]:
+                          - /url: https://www.shopify.com/balance?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: cards to staff and set spend controls. US only.
+                    - link "Read help doc Opens a new window" [ref=f3e1311] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/finance/shopify-balance/cards/card?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#number-of-cards
+                      - generic [ref=f3e1312]: Read help doc
+                      - img "Opens a new window" [ref=f3e1314]
+              - generic [ref=f3e1317]:
+                - article [ref=f3e1319]:
+                  - generic [ref=f3e1320]:
+                    - heading [level=3] [ref=f3e1321]:
+                      - link "Shopify Capital in more European countries" [ref=f3e1322] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/finance/shopify-capital?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1324]:
+                      - text: Access fast funding with adjustable repayment terms in the Netherlands, Spain, and Ireland with
+                      - generic [ref=f3e1325]:
+                        - link "Shopify Capital" [ref=f3e1326] [cursor=pointer]:
+                          - /url: https://www.shopify.com/capital?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: .
+                - article [ref=f3e1328]:
+                  - generic [ref=f3e1329]:
+                    - heading [level=3] [ref=f3e1330]:
+                      - link "Track international profit margins" [ref=f3e1331] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#average-profit-margin-by-market
+                    - paragraph [ref=f3e1333]: Compare actual and estimated costs by market, including duties, taxes, and shipping adjustments.
+                - article [ref=f3e1335]:
+                  - generic [ref=f3e1336]:
+                    - heading [level=3] [ref=f3e1337]:
+                      - link "Credits on USDC transactions" [ref=f3e1338] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/payments/shopify-payments/usdc-payments?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#credits
+                    - paragraph [ref=f3e1340]: Earn automatic credits on every order paid with USDC, which appear in your order timeline and payouts—paid in fiat or USDC on settlement. US, Mexico, and Hong Kong only.
+                - article [ref=f3e1342]:
+                  - generic [ref=f3e1343]:
+                    - heading [level=3] [ref=f3e1344]:
+                      - link "Same-day ACH transfers" [ref=f3e1345] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/finance/shopify-balance/managing-account/transfers?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#shopify-balance-transfer-to-bank
+                    - paragraph [ref=f3e1347]:
+                      - text: Send money from your
+                      - generic [ref=f3e1348]:
+                        - link "Shopify Balance" [ref=f3e1349] [cursor=pointer]:
+                          - /url: https://www.shopify.com/balance?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: account by 1pm ET to have transfers arrive the same business day. US only.
+                - article [ref=f3e1351]:
+                  - generic [ref=f3e1352]:
+                    - heading "Unified card dispute" [level=3] [ref=f3e1353]
+                    - paragraph [ref=f3e1355]:
+                      - text: File and track disputes directly from both
+                      - generic [ref=f3e1356]:
+                        - link "Shopify Balance" [ref=f3e1357] [cursor=pointer]:
+                          - /url: https://help.shopify.com/en/manual/finance/shopify-balance/managing-account/disputes/dispute-card-transactions?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#disputing-charges-on-your-shopify-balance-account
+                        - text: Read help doc
+                      - text: and
+                      - generic [ref=f3e1358]:
+                        - link "Shopify Credit" [ref=f3e1359] [cursor=pointer]:
+                          - /url: https://help.shopify.com/en/manual/finance/shopify-credit/disputes?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#disputing-charges-on-your-shopify-credit-account
+                        - text: Read help doc
+                      - text: transactions lists in a clear, self-serve flow. US only.
+                - article [ref=f3e1361]:
+                  - generic [ref=f3e1362]:
+                    - heading [level=3] [ref=f3e1363]:
+                      - link "Increased Shopify Credit rewards cap" [ref=f3e1364] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/finance/shopify-credit/rewards?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#calculating-your-cashback-rewards
+                    - paragraph [ref=f3e1366]: Earn 3% cashback on up to $250,000 in eligible purchases on your top spend category annually, and 1% after with Shopify Credit. Earn 1% for all other eligible categories. US only.
+                - article [ref=f3e1368]:
+                  - generic [ref=f3e1369]:
+                    - heading [level=3] [ref=f3e1370]:
+                      - link "Dynamic credit limits" [ref=f3e1371] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/finance/shopify-credit/manage-account?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#credit-limit-changes
+                    - paragraph [ref=f3e1373]:
+                      - text: Get access to a credit limit that automatically adjusts based on your sales, utilization, and repayments with
+                      - generic [ref=f3e1374]:
+                        - link "Shopify Credit" [ref=f3e1375] [cursor=pointer]:
+                          - /url: https://www.shopify.com/credit?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: . US only.
+                - article [ref=f3e1377]:
+                  - generic [ref=f3e1378]:
+                    - heading [level=3] [ref=f3e1379]:
+                      - link "Add checks in Shopify Balance" [ref=f3e1380] [cursor=pointer]:
+                        - /url: https://help.shopify.com/manual/finance/shopify-balance/adding-checks?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1382]:
+                      - text: Add checks directly to your Shopify Balance account using the
+                      - generic [ref=f3e1383]:
+                        - link "Shopify mobile" [ref=f3e1384] [cursor=pointer]:
+                          - /url: https://www.shopify.com/mobile?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Get app
+                      - text: app with no fees. US only.
+                - article [ref=f3e1386]:
+                  - generic [ref=f3e1387]:
+                    - heading [level=3] [ref=f3e1388]:
+                      - link "Real‑time fraud alerts for Shopify cards" [ref=f3e1389] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/finance/shopify-credit/card-security?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#fraud-alerts-on-shopify-credit-card
+                    - paragraph [ref=f3e1391]:
+                      - text: Get SMS fraud alerts for suspicious activity on
+                      - generic [ref=f3e1392]:
+                        - link "Shopify Balance" [ref=f3e1393] [cursor=pointer]:
+                          - /url: https://www.shopify.com/balance?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: and
+                      - generic [ref=f3e1394]:
+                        - link "Shopify Credit" [ref=f3e1395] [cursor=pointer]:
+                          - /url: https://www.shopify.com/credit?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: . US only.
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "学习进度" [level=2]
+              - paragraph [ref=f3e1398]: 让每次练习接得上，也看得见长期变化。
+            - generic [ref=f3e1400]:
+              - article [ref=f3e1401]:
+                - img "A Fedex return label is paired with the shipping interface that shows the creation of a return label." [ref=f3e1405]
+                - generic [ref=f3e1406]:
+                  - heading "FedEx return labels" [level=3] [ref=f3e1407]
+                  - generic [ref=f3e1408]:
+                    - paragraph [ref=f3e1410]: Create, send, and track FedEx return labels in the Shopify admin with discounted pay‑on‑scan rates. US only.
+                    - link "Read help doc Opens a new window" [ref=f3e1411] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/fulfillment/fulfilling-orders/shipping-labels/buying-labels/return-labels?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#supported-shipping-carriers
+                      - generic [ref=f3e1412]: Read help doc
+                      - img "Opens a new window" [ref=f3e1414]
+              - article [ref=f3e1416]:
+                - img "The shipping interface shows the default packaging options for each product." [ref=f3e1420]
+                - generic [ref=f3e1421]:
+                  - heading "Default package per variant" [level=3] [ref=f3e1422]
+                  - generic [ref=f3e1423]:
+                    - paragraph [ref=f3e1425]: Set a default package for each variant to get more accurate shipping rates at checkout and buy labels faster for single‑item orders.
+                    - link "Read help doc Opens a new window" [ref=f3e1426] [cursor=pointer]:
+                      - /url: https://help.shopify.com/en/manual/fulfillment/setup/packaging/setting-up-packages?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#package-per-variant
+                      - generic [ref=f3e1427]: Read help doc
+                      - img "Opens a new window" [ref=f3e1429]
+              - generic [ref=f3e1432]:
+                - article [ref=f3e1434]:
+                  - generic [ref=f3e1435]:
+                    - heading [level=3] [ref=f3e1436]:
+                      - link "Custom sender name on labels" [ref=f3e1437] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/fulfillment/fulfilling-orders/shipping-labels/managing-labels/printing-shipping-documents?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#custom-name
+                    - paragraph [ref=f3e1439]: Choose the sender name that appears on your shipping labels to protect privacy, satisfy legal requirements, and keep gifts discreet.
+                - article [ref=f3e1441]:
+                  - generic [ref=f3e1442]:
+                    - heading [level=3] [ref=f3e1443]:
+                      - link "More logistics partners" [ref=f3e1444] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/fulfillment/shopify-fulfillment-network/logistics-partners?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1446]:
+                      - text: Choose from more third‑party fulfillment partners, including Amazon, Bigblue, DHL, GoBolt, and Mayple, and track performance in the
+                      - generic [ref=f3e1447]:
+                        - link "Shopify Fulfillment Network" [ref=f3e1448] [cursor=pointer]:
+                          - /url: https://www.shopify.com/fulfillment?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                        - text: Learn more
+                      - text: .
+                - article [ref=f3e1450]:
+                  - generic [ref=f3e1451]:
+                    - heading [level=3] [ref=f3e1452]:
+                      - link "Expanded US and Canada cross-border labels" [ref=f3e1453] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/fulfillment/fulfilling-orders/shipping-labels/buying-labels/ddp-ddu?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1455]: Buy DHL Express Delivered Duty Paid (DDP) or Delivered Duty Unpaid (DDU) and Canada Post DDP labels in Canada, and buy DHL eCommerce DDU labels in the US—directly in the admin.
+                - article [ref=f3e1457]:
+                  - generic [ref=f3e1458]:
+                    - heading [level=3] [ref=f3e1459]:
+                      - link "More global shipping carriers" [ref=f3e1460] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/fulfillment/fulfilling-orders/shipping-labels/shipping-carriers?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition
+                    - paragraph [ref=f3e1462]: Buy shipping labels directly in the admin for Royal Mail in the UK, Australia Post in Australia, and DHL Express in Canada.
+                - article [ref=f3e1464]:
+                  - generic [ref=f3e1465]:
+                    - heading [level=3] [ref=f3e1466]:
+                      - link "In-progress fulfillment status" [ref=f3e1467] [cursor=pointer]:
+                        - /url: https://help.shopify.com/en/manual/fulfillment/fulfilling-orders/single-fulfillment?utm_source=w26-editions-website&utm_medium=product-cta&utm_campaign=winter26edition#in-progress
+                    - paragraph [ref=f3e1469]: Mark orders as in progress, add timeline notes, run bulk actions, and manage statuses in a redesigned fulfillment card.
+            - generic:
+              - button "Back to navigation"
+        - generic:
+          - generic:
+            - generic:
+              - heading "下载与开源" [level=2]
+              - paragraph [ref=f3e1472]: 下载 Android 版本，或在 GitHub 查看 SpeakUp。
+            - generic:
+              - button "Back to navigation"

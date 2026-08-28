@@ -1,0 +1,437 @@
+[    5187ms] [ERROR] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:147
+[    5611ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5611ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5611ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5612ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5612ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5612ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5612ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5612ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5612ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5612ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5612ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5613ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5616ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5617ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5617ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5617ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5617ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5620ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5621ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5621ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5621ms] Error: Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at wa (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:30:4806)
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45951)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at xp (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40006)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:34946)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    5621ms] Error: Minified React error #423; visit https://reactjs.org/docs/error-decoder.html?invariant=423 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at gf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:45610)
+    at pf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:40034)
+    at Ep (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:39962)
+    at no (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:39815)
+    at iu (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:36136)
+    at cf (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:32:35084)
+    at q (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:1647)
+    at MessagePort.me (http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/components-BdJai906.js:17:2029)
+[    6135ms] [LOG] %c
+              ....  ...-....... . . .
+              . ..:====++====+:.....
+         ......:=====+=+==**++==++.     .
+           ..:-=+*-.+++==*=...:===+:.    .
+          ..:==*-.  . . ....  ...==++.
+         ..:-+#:.   ...      .....-=+:...
+          .--*+  .:==+.. ...:++=+:.++*.
+        . .-=++.  ..+=*:...-+*+:=..+++=-=-. .       .
+    ....-======+-:-==++.. .-++-...-++=++++.    ..      .                                           .
+     .-==+++=+=+*=:-:... . .-+=+===+#*#....   ......                           ..
+...-====+*.....:..          ..:=+*+===+*-.-+=-=*++**=-........................:-+=..................:-=. ..
+..--==++++.. .  .           .... .---+*#*+=*#+=++***+****+++++++++=========---==+#*++++============-=+**=..
+..:-===+**:.   .. .          . ...---+*##+=***=****++******+++++++=========---==+#*+++++=========---=+#%%#-
+ ..---==+*.  ..:.   .      . ..::-*===+*+:-++==+*+**++=---==--=----------------=+**++++++=============**-.
+.   ..-===+-:=++*:::....    .=+====+##@+  ... ..:.....  ..   ......  .  .... . .::.---===========++..--. ..
+      ..:======++=-===-. ..:++#:.-====+=+:.                                      ..==--==========++...
+       . ..==+*.....==+:. .-+*:....+==*+=*..                                   .  .==-=-========+=+...
+    ..  ...--++. .:===+.....-*+=+*.==*-....                                    .. . ..=-=======-.  ...
+          ..-=*.. ....       ..=-..=+#. .                                        ..==:==+====-=+::=.. .
+          ...==*:. .. ..     .  .:==*..                                         . .=-==+**:...===-+.  .
+            ..-=++:.:==:=-.. ..:+==*..                                           ..=-==+*+....:===+....
+              .:-=====++==++=+===+=.                                              .:===++++. :===++.
+         . .... ..:==========+++:..                                            .  .... ...   ..... .. .
+                   ....=-...... .
+%c
+
+
+           ***
+            ***                              *                                                                                           *
+             **               **            ***                                                                                         **
+             **               **             *                                                                                          **
+             **                **    ***              ****       ***  ****                 ****              ***  ****                ********
+   ****      **       ****      **    ***  ***       * **** *     **** **** *    ***      * **** *    ***     **** **** *    ****    ********
+  * ***  *   **      * ***  *   **     ***  ***     **  ****       **   ****    * ***    **  ****    * ***     **   ****    * ***  *    **
+ *   ****    **     *   ****    **      **   **    ****            **          *   ***  ****        *   ***    **          *   ****     **
+**           **    **    **     **      **   **      ***           **         **    ***   ***      **    ***   **         **    **      **
+**           **    **    **     **      **   **        ***         **         ********      ***    ********    **         **    **      **
+**           **    **    **     **      **   **          ***       **         *******         ***  *******     **         **    **      **
+**           **    **    **     **      *    **     ****  **       **         **         ****  **  **          **         **    **      **
+***     *    **    **    **      *******     **    * **** *        ***        ****    * * **** *   ****    *   ***        **    **      **
+ *******     *** *  ***** **      *****      *** *    ****          ***        *******     ****     *******     ***        ***** **      **
+  *****       ***    ***   **                 ***                               *****                *****                  ***   **
+
+
+
+
+
+ font-family:monospace; font-size: 8px; color: rgba(26,26,26); font-family:monospace; font-size: 7px; color: rgba(26,26,26); @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/oxygen-v2/47215/49013/102837/4097382/assets/(_locale).editions.winter2026-DrIpAwX1.js:51
+[    6298ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/favicon.ico:0
+[   47375ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/xxl_gpt_1-desktop.webp&width=1800:0
+[   47376ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/xxl_chatgpt_handdevice-desktop.webp&width=1800:0
+[   47376ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/xxl_chatgpt_thumb-desktop.webp&width=1800:0
+[  251449ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/iphonebezelnoisland-mobile.webp&width=1800:0
+[  251451ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/xxl_chatgpt_handdevice-mobile.webp&width=1800:0
+[  251452ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/xxl_chatgpt_thumb-mobile.webp&width=1800:0
+[  251454ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/xxl_gpt_1-mobile.webp&width=1800:0
+[  338504ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/xxl_gpt_1-desktop.webp&width=1800:0
+[  338505ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/xxl_chatgpt_handdevice-desktop.webp&width=1800:0
+[  338505ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:18086/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/xxl_chatgpt_thumb-desktop.webp&width=1800:0

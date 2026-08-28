@@ -25,6 +25,8 @@
       video: "/assets/speakup/scenes/videos/interview.mp4",
       poster: "/assets/speakup/scenes/videos/interview-poster.jpg",
       entry: "/assets/speakup/scenes/ui/screens/interview-screen.png",
+      deviceVideo: "/assets/speakup/scenes/videos/interview-device.mp4",
+      deviceVideoLabel: "播放 SpeakUp 英文面试真机演示",
       videoAlt: "英文面试场景预演",
       entryAlt: "SpeakUp 英文面试练习入口",
     },
@@ -995,6 +997,35 @@
               />`
             : ""
         }
+        ${
+          config.deviceVideo
+            ? `<video
+                class="speakup-scene-ui__device-video"
+                data-speakup-device-video="true"
+                src="${config.deviceVideo}"
+                poster="${config.entry}"
+                preload="auto"
+                playsinline
+                aria-label="${config.deviceVideoLabel}"
+                aria-hidden="true"
+              ></video>
+              <button
+                class="speakup-scene-ui__device-play"
+                type="button"
+                data-speakup-device-play="true"
+                aria-label="${config.deviceVideoLabel}"
+              >
+                <span class="speakup-scene-ui__device-play-prompt" aria-hidden="true">
+                  <span class="speakup-scene-ui__device-play-icon">
+                    <svg viewBox="0 0 20 20" fill="none">
+                      <path d="M7.4 5.55 14 10l-6.6 4.45v-8.9Z" fill="currentColor"/>
+                    </svg>
+                  </span>
+                  <span>播放真机演示</span>
+                </span>
+              </button>`
+            : ""
+        }
       </div>
       ${
         switchable
@@ -1015,6 +1046,64 @@
         setPracticeState(stage, stage.dataset.uiState !== "practice");
       });
       setPracticeState(stage, false);
+    }
+
+    const deviceVideo = stage.querySelector("[data-speakup-device-video]");
+    const devicePlay = stage.querySelector("[data-speakup-device-play]");
+    if (deviceVideo && devicePlay) {
+      const entry = stage.querySelector('[data-speakup-ui-view="entry"]');
+      const suspendedVideos = new Set();
+      const suspendOtherVideos = () => {
+        document.querySelectorAll("video").forEach((video) => {
+          if (video === deviceVideo || video.paused) return;
+          suspendedVideos.add(video);
+          video.pause();
+        });
+      };
+      const resumeOtherVideos = () => {
+        suspendedVideos.forEach((video) => {
+          if (!video.isConnected || document.hidden) return;
+          video.play().catch(() => {});
+        });
+        suspendedVideos.clear();
+      };
+      const setDeviceVideoState = (state) => {
+        const active = state !== "poster";
+        stage.dataset.deviceVideoState = state;
+        deviceVideo.setAttribute("aria-hidden", String(!active));
+        entry?.setAttribute("aria-hidden", String(active));
+        devicePlay.hidden = active;
+      };
+      const resetDeviceVideo = () => {
+        deviceVideo.controls = false;
+        if (deviceVideo.readyState > 0) deviceVideo.currentTime = 0;
+        setDeviceVideoState("poster");
+        resumeOtherVideos();
+      };
+      devicePlay.addEventListener("click", async () => {
+        suspendOtherVideos();
+        setDeviceVideoState("loading");
+        deviceVideo.controls = true;
+        try {
+          await deviceVideo.play();
+          setDeviceVideoState("playing");
+        } catch {
+          resetDeviceVideo();
+        }
+      });
+      deviceVideo.addEventListener("play", () => setDeviceVideoState("playing"));
+      deviceVideo.addEventListener("ended", resetDeviceVideo);
+      deviceVideo.addEventListener("error", resetDeviceVideo);
+      const visibilityObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting || stage.dataset.deviceVideoState === "poster") return;
+          deviceVideo.pause();
+          resetDeviceVideo();
+        },
+        { threshold: 0.08 },
+      );
+      visibilityObserver.observe(stage);
+      setDeviceVideoState("poster");
     }
     return stage;
   }
@@ -1271,7 +1360,7 @@
     if (article.children.length !== 1 || article.firstElementChild !== feature) {
       article.replaceChildren(feature);
     }
-    feature.querySelectorAll("video").forEach((video) => {
+    feature.querySelectorAll("video:not([data-speakup-device-video])").forEach((video) => {
       video.muted = true;
       video.defaultMuted = true;
       video.autoplay = true;

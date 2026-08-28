@@ -1,0 +1,27 @@
+- main [ref=e2]:
+  - heading "卡片栈切换动效" [level=1] [ref=e3]
+  - paragraph [ref=e4]: 左侧保留原始 3 秒循环参考；右侧是可替换任意 HTML、图片和文案的 DOM 实现。
+  - generic [ref=e5]:
+    - region [ref=e6]:
+      - heading "原始动作参考" [level=2] [ref=e7]
+    - region [ref=e9]:
+      - heading "可复用 DOM 实现" [level=2] [ref=e10]
+      - region "Card stack preview" [ref=e11]:
+        - generic [ref=e12]:
+          - article [ref=e13]:
+            - img "Food card" [ref=e15]
+            - generic [ref=e16]:
+              - generic [ref=e17]: Explore recipes
+              - button "下一张" [ref=e18] [cursor=pointer]: →
+          - article [ref=e19]:
+            - generic [ref=e22]:
+              - generic [ref=e23]: Track your outfits
+              - button [ref=e24] [cursor=pointer]: →
+          - article [ref=e25]:
+            - generic [ref=e28]:
+              - generic [ref=e29]: Outfit feedback
+              - button [ref=e30] [cursor=pointer]: →
+        - generic [ref=e31]:
+          - generic [ref=e32]: Card 1 of 3
+          - button "暂停" [ref=e33] [cursor=pointer]
+          - button "下一张" [ref=e34] [cursor=pointer]
