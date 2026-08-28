@@ -92,6 +92,48 @@ const b2bAssetReplacements = [
     '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/c4626bed57ec9dff/B2B_fg_smaller_251127_compressed-optimizedv2.glb',
     '/assets/speakup/b2b/speakup-b2b-medium.glb',
   ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/newProperty_1_B2B.jpg',
+    '/assets/speakup/b2b/b2b-desktop-no-laptop.jpg',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_B2B_2x_1353d91d-00eb-455e-bafb-18762b0240cb.jpg',
+    '/assets/speakup/b2b/b2b-mobile-no-laptop.jpg',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/B2B_desktop.ktx2',
+    '/assets/speakup/b2b/b2b-desktop-no-laptop.jpg',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_B2B_2x.ktx2',
+    '/assets/speakup/b2b/b2b-mobile-no-laptop.jpg',
+  ],
+];
+const financeAssetReplacements = [
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/614d6d0fa1836313/EW26_Finance_251208v2_compressed-optimized.glb',
+    '/assets/speakup/finance/speakup-finance-high.glb',
+  ],
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/7b3adea2cd3c35d2/finance_fg_smaller_251127_compressed-optimized.glb',
+    '/assets/speakup/finance/speakup-finance-medium.glb',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Finance_Fallback.jpg',
+    '/assets/speakup/finance/finance-desktop.jpg',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_Finance_2x_7fce0bd0-4a7b-4811-8eb9-a51d52fd357b.jpg',
+    '/assets/speakup/finance/finance-mobile.jpg',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Finance_desktop.ktx2',
+    '/assets/speakup/finance/finance-clean-background.ktx2',
+  ],
+  [
+    '/assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_Finance_2x.ktx2',
+    '/assets/speakup/finance/finance-clean-background.ktx2',
+  ],
 ];
 
 const fallbackTypes = {
@@ -124,6 +166,9 @@ async function serveSpeakUpIndex(request, response, filePath) {
     body = body.replaceAll(originalPath, speakUpPath);
   }
   for (const [originalPath, speakUpPath] of b2bAssetReplacements) {
+    body = body.replaceAll(originalPath, speakUpPath);
+  }
+  for (const [originalPath, speakUpPath] of financeAssetReplacements) {
     body = body.replaceAll(originalPath, speakUpPath);
   }
   body = body

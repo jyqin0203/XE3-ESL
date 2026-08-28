@@ -416,7 +416,6 @@
     "shop-app": { label: "即时反馈", title: "即时反馈", description: "逐句纠错，也告诉你怎样说得更自然。" },
     b2b: { label: "练习复盘", title: "练习复盘", description: "用真实回答中的证据，找到下一步训练方向。" },
     finance: { label: "训练记忆", title: "训练记忆", description: "记住你的目标、经历、进步与反复出现的卡点。" },
-    shipping: { label: "学习进度", title: "学习进度", description: "让每次练习接得上，也看得见长期变化。" },
     developer: { label: "下载产品", title: "下载与开源", description: "下载 Android 版本，或在 GitHub 查看 SpeakUp。" },
   };
 
@@ -640,6 +639,15 @@
         legalLinks[1].rel = "noopener noreferrer";
       }
     }
+  }
+
+  function removeLearningProgressSection() {
+    document.querySelectorAll('a[href$="#shipping"]').forEach((link) => {
+      const item = link.closest("li");
+      if (item) item.remove();
+      else link.remove();
+    });
+    document.getElementById("shipping")?.remove();
   }
 
   function updateChapterIntros() {
@@ -1695,7 +1703,74 @@
       );
     });
 
+    groupPracticeReviewCards(group);
     bindPracticeReviewReveal(group);
+  }
+
+  function groupPracticeReviewCards(group) {
+    const grid = group?.querySelector(":scope > .grid-template-with-gaps");
+    if (!grid) return;
+
+    const cases = [
+      {
+        id: "daily",
+        eyebrow: "DAILY REVIEW · 01—02",
+        heading: "日常英语",
+        description: "从整体表现到具体问题",
+        articleIds: [
+          "shopify-collective-available-globally",
+          "ach-payments-for-b2b",
+        ],
+      },
+      {
+        id: "ielts",
+        eyebrow: "IELTS REVIEW · 03—04",
+        heading: "IELTS 模考",
+        description: "从阶段估分到下一轮动作",
+        articleIds: [
+          "suppliers-can-discover-retailers",
+          "payment-requests-per-fulfillment",
+        ],
+      },
+    ];
+
+    const panels = cases.map((config) => {
+      let panel = grid.querySelector(
+        `:scope > [data-speakup-review-case="${config.id}"]`,
+      );
+      if (!panel) {
+        panel = document.createElement("div");
+        panel.className = `speakup-review-case speakup-review-case--${config.id}`;
+        panel.dataset.speakupReviewCase = config.id;
+        panel.setAttribute("role", "group");
+        panel.setAttribute("aria-labelledby", `speakup-review-case-${config.id}`);
+        panel.innerHTML = `
+          <header class="speakup-review-case__header">
+            <span>${config.eyebrow}</span>
+            <h3 id="speakup-review-case-${config.id}">${config.heading}</h3>
+            <p>${config.description}</p>
+          </header>`;
+      }
+      const header = panel.querySelector(":scope > .speakup-review-case__header");
+      const articles = config.articleIds
+        .map((articleId) => group.querySelector(`#${articleId}`))
+        .filter(Boolean);
+      const desiredChildren = [header, ...articles].filter(Boolean);
+      if (
+        panel.children.length !== desiredChildren.length ||
+        desiredChildren.some((child, index) => panel.children[index] !== child)
+      ) {
+        panel.replaceChildren(...desiredChildren);
+      }
+      return panel;
+    });
+
+    if (
+      grid.children.length !== panels.length ||
+      panels.some((panel, index) => grid.children[index] !== panel)
+    ) {
+      grid.replaceChildren(...panels);
+    }
   }
 
   function bindPracticeReviewReveal(group) {
@@ -2217,6 +2292,7 @@
       replaceShopifyBagLogos();
       truncateAfterAgenticCommerce();
       removeSidekickSectionsBeforeTediousTasks();
+      removeLearningProgressSection();
       updateEditionPanel();
       updateAllDirectoryLinks();
       updateChapterIntros();

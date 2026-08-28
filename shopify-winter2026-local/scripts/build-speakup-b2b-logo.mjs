@@ -7,7 +7,6 @@ const JSON_CHUNK = 0x4e4f534a;
 const BIN_CHUNK = 0x004e4942;
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, '..');
-const logoPath = path.join(rootDir, 'assets/speakup/b2b/speakup-laptop-logo.png');
 const manifestPath = path.join(rootDir, 'assets/speakup/b2b/b2b-logo-build-manifest.json');
 
 const builds = [
@@ -27,58 +26,6 @@ function align4(value) {
 
 function sha256(value) {
   return createHash('sha256').update(value).digest('hex');
-}
-
-function addScaled(target, vector, amount) {
-  target[0] += vector[0] * amount;
-  target[1] += vector[1] * amount;
-  target[2] += vector[2] * amount;
-}
-
-function createLogoGeometry() {
-  const center = [0.193, 0.314, 0];
-  const normal = [0.8573, -0.5148, 0];
-  const right = [0, 0, -1];
-  const up = [0.5148, 0.8573, 0];
-  const halfSize = 0.12;
-  addScaled(center, normal, 0.006);
-
-  const positions = [];
-  for (const [horizontal, vertical] of [[-1, -1], [1, -1], [1, 1], [-1, 1]]) {
-    const point = [...center];
-    addScaled(point, right, horizontal * halfSize);
-    addScaled(point, up, vertical * halfSize);
-    positions.push(...point);
-  }
-  return {
-    positions: new Float32Array(positions),
-    normals: new Float32Array([
-      ...normal, ...normal, ...normal, ...normal,
-    ]),
-    texcoords: new Float32Array([
-      0, 1,
-      1, 1,
-      1, 0,
-      0, 0,
-    ]),
-    indices: new Uint16Array([0, 1, 2, 0, 2, 3]),
-    min: positions.reduce(
-      (bounds, value, index) => {
-        const axis = index % 3;
-        bounds[axis] = Math.min(bounds[axis], value);
-        return bounds;
-      },
-      [Infinity, Infinity, Infinity],
-    ),
-    max: positions.reduce(
-      (bounds, value, index) => {
-        const axis = index % 3;
-        bounds[axis] = Math.max(bounds[axis], value);
-        return bounds;
-      },
-      [-Infinity, -Infinity, -Infinity],
-    ),
-  };
 }
 
 function parseGlb(source) {
@@ -127,152 +74,44 @@ function encodeGlb(chunks, document, binData) {
   return output;
 }
 
-function appendBuffer(document, outputBin, sourceBinLength, data, target) {
-  const bytes = Buffer.isBuffer(data)
-    ? data
-    : Buffer.from(data.buffer, data.byteOffset, data.byteLength);
-  const byteOffset = align4(outputBin.length);
-  const nextBin = Buffer.alloc(align4(byteOffset + bytes.length));
-  outputBin.copy(nextBin);
-  bytes.copy(nextBin, byteOffset);
-  const bufferView = document.bufferViews.length;
-  const definition = {
-    buffer: 0,
-    byteOffset,
-    byteLength: bytes.length,
-  };
-  if (target) definition.target = target;
-  document.bufferViews.push(definition);
-  if (nextBin.subarray(0, sourceBinLength).compare(outputBin.subarray(0, sourceBinLength)) !== 0) {
-    throw new Error('Original binary prefix changed while appending data.');
-  }
-  return { outputBin: nextBin, bufferView };
-}
-
-async function buildAsset(build, logoPng) {
+async function buildAsset(build) {
   const sourcePath = path.join(rootDir, build.source);
   const outputPath = path.join(rootDir, build.output);
   const source = await readFile(sourcePath);
   const parsed = parseGlb(source);
-  const sourceDocument = structuredClone(parsed.document);
-  const geometry = createLogoGeometry();
-  const sourceBinLength = parsed.binChunk.data.length;
-  let outputBin = parsed.binChunk.data;
+  const originalNodeCount = parsed.document.nodes.length;
+  const originalMeshes = JSON.stringify(parsed.document.meshes || []);
+  const originalAnimations = JSON.stringify(parsed.document.animations || []);
+  const originalSkins = JSON.stringify(parsed.document.skins || []);
+  const hiddenMeshes = {};
 
-  const specs = [
-    {
-      key: 'position', data: geometry.positions, target: 34962,
-      accessor: {
-        componentType: 5126, count: 4, type: 'VEC3',
-        min: geometry.min, max: geometry.max,
-      },
-    },
-    {
-      key: 'normal', data: geometry.normals, target: 34962,
-      accessor: { componentType: 5126, count: 4, type: 'VEC3' },
-    },
-    {
-      key: 'texcoord', data: geometry.texcoords, target: 34962,
-      accessor: { componentType: 5126, count: 4, type: 'VEC2' },
-    },
-    {
-      key: 'indices', data: geometry.indices, target: 34963,
-      accessor: {
-        componentType: 5123, count: 6, type: 'SCALAR', min: [0], max: [3],
-      },
-    },
-  ];
-  const accessors = {};
-  for (const spec of specs) {
-    const appended = appendBuffer(
-      parsed.document,
-      outputBin,
-      sourceBinLength,
-      spec.data,
-      spec.target,
-    );
-    outputBin = appended.outputBin;
-    accessors[spec.key] = parsed.document.accessors.length;
-    parsed.document.accessors.push({ bufferView: appended.bufferView, ...spec.accessor });
+  for (const name of ['Laptop', 'Laptop.001']) {
+    const node = parsed.document.nodes.find((candidate) => candidate.name === name);
+    if (!node || node.mesh === undefined) throw new Error(`Missing visible ${name} node.`);
+    hiddenMeshes[name] = node.mesh;
+    delete node.mesh;
   }
-  const appendedLogo = appendBuffer(
-    parsed.document,
-    outputBin,
-    sourceBinLength,
-    logoPng,
-  );
-  outputBin = appendedLogo.outputBin;
 
-  parsed.document.samplers ||= [];
-  const samplerIndex = parsed.document.samplers.length;
-  parsed.document.samplers.push({
-    magFilter: 9729,
-    minFilter: 9987,
-    wrapS: 33071,
-    wrapT: 33071,
-  });
-  const imageIndex = parsed.document.images.length;
-  parsed.document.images.push({
-    name: 'SpeakUp Two Commas Logo',
-    mimeType: 'image/png',
-    bufferView: appendedLogo.bufferView,
-  });
-  const textureIndex = parsed.document.textures.length;
-  parsed.document.textures.push({ sampler: samplerIndex, source: imageIndex });
-  const materialIndex = parsed.document.materials.length;
-  parsed.document.materials.push({
-    name: 'SpeakUp Laptop Logo',
-    alphaMode: 'BLEND',
-    doubleSided: false,
-    pbrMetallicRoughness: {
-      baseColorTexture: { index: textureIndex },
-      metallicFactor: 0,
-      roughnessFactor: 1,
-    },
-    extensions: { KHR_materials_unlit: {} },
-  });
-  const meshIndex = parsed.document.meshes.length;
-  parsed.document.meshes.push({
-    name: 'SpeakUp Laptop Logo',
-    primitives: [{
-      attributes: {
-        POSITION: accessors.position,
-        NORMAL: accessors.normal,
-        TEXCOORD_0: accessors.texcoord,
-      },
-      indices: accessors.indices,
-      material: materialIndex,
-      mode: 4,
-    }],
-  });
-  const logoNodeIndex = parsed.document.nodes.length;
-  parsed.document.nodes.push({
-    name: 'SpeakUp Laptop Logo',
-    mesh: meshIndex,
-  });
-  const laptopLidIndex = parsed.document.nodes.findIndex((node) => node.name === 'Laptop.001');
-  if (laptopLidIndex < 0) throw new Error('Missing Laptop.001 lid node.');
-  parsed.document.nodes[laptopLidIndex].children ||= [];
-  parsed.document.nodes[laptopLidIndex].children.push(logoNodeIndex);
-  parsed.document.buffers[0].byteLength = outputBin.length;
-
-  if (JSON.stringify(parsed.document.animations || []) !== JSON.stringify(sourceDocument.animations || [])) {
+  if (parsed.document.nodes.length !== originalNodeCount) {
+    throw new Error('Node graph changed unexpectedly.');
+  }
+  if (JSON.stringify(parsed.document.meshes || []) !== originalMeshes) {
+    throw new Error('Mesh definitions changed unexpectedly.');
+  }
+  if (JSON.stringify(parsed.document.animations || []) !== originalAnimations) {
     throw new Error('Animation channels changed unexpectedly.');
   }
-  if (JSON.stringify(parsed.document.skins || []) !== JSON.stringify(sourceDocument.skins || [])) {
+  if (JSON.stringify(parsed.document.skins || []) !== originalSkins) {
     throw new Error('Skin definitions changed unexpectedly.');
   }
-  for (const key of ['materials', 'meshes', 'images', 'textures', 'samplers', 'accessors', 'bufferViews']) {
-    const original = sourceDocument[key] || [];
-    if (JSON.stringify(parsed.document[key].slice(0, original.length)) !== JSON.stringify(original)) {
-      throw new Error(`Original ${key} definitions changed unexpectedly.`);
-    }
-  }
 
-  const output = encodeGlb(parsed.chunks, parsed.document, outputBin);
+  const output = encodeGlb(parsed.chunks, parsed.document, parsed.binChunk.data);
   const outputParsed = parseGlb(output);
-  if (outputParsed.binChunk.data.subarray(0, sourceBinLength).compare(parsed.binChunk.data) !== 0) {
-    throw new Error('Original binary geometry or texture data changed.');
+  if (outputParsed.binChunk.data.compare(parsed.binChunk.data) !== 0) {
+    throw new Error('Original binary geometry and texture data changed.');
+  }
+  if (JSON.stringify(outputParsed.document.animations || []) !== originalAnimations) {
+    throw new Error('Encoded animations changed unexpectedly.');
   }
   await mkdir(path.dirname(outputPath), { recursive: true });
   await writeFile(outputPath, output);
@@ -281,21 +120,24 @@ async function buildAsset(build, logoPng) {
     sourceSha256: sha256(source),
     output: build.output,
     outputSha256: sha256(output),
-    logoNode: logoNodeIndex,
-    laptopLidNode: laptopLidIndex,
-    preservedAnimations: parsed.document.animations?.map((animation) => ({
-      name: animation.name,
-      channels: animation.channels.length,
-      samplers: animation.samplers.length,
-    })) || [],
-    exactOriginalBinaryPrefix: true,
+    hiddenMeshes,
+    preserved: {
+      nodes: originalNodeCount,
+      meshes: parsed.document.meshes.length,
+      skins: parsed.document.skins?.length || 0,
+      animations: parsed.document.animations?.map((animation) => ({
+        name: animation.name,
+        channels: animation.channels.length,
+        samplers: animation.samplers.length,
+      })) || [],
+      exactOriginalBinary: true,
+    },
   };
 }
 
-const logoPng = await readFile(logoPath);
-const manifest = { logo: path.relative(rootDir, logoPath), builds: [] };
+const manifest = { operation: 'remove laptop body, lid, and attached logo', builds: [] };
 for (const build of builds) {
-  manifest.builds.push(await buildAsset(build, logoPng));
+  manifest.builds.push(await buildAsset(build));
 }
 await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 console.log(builds.map((build) => build.output).join('\n'));
