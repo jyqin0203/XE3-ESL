@@ -490,6 +490,7 @@
   let socialMasonryFrame = 0;
   let heroCameraController = null;
   let routedPublicHash = null;
+  let runtimeReadyPublished = false;
   const memorySwitchControllers = new WeakMap();
   let bypassSecondaryEditionLoader =
     isEmbedded ||
@@ -2242,6 +2243,21 @@
         <source type="image/webp" srcset="/assets/speakup/hero-desktop.webp" />
         <img src="/assets/speakup/hero-desktop.png" alt="" decoding="async" fetchpriority="high" />`;
       wrapper.append(picture);
+    }
+    const heroImage = picture.querySelector("img");
+    if (isEmbedded && heroImage && !runtimeReadyPublished) {
+      const publishRuntimeReady = () => {
+        if (runtimeReadyPublished) return;
+        runtimeReadyPublished = true;
+        window.setTimeout(() => {
+          window.parent.postMessage({ type: "speakup-runtime-ready" }, location.origin);
+        }, 1000);
+      };
+      if (heroImage.complete && heroImage.naturalWidth > 0) publishRuntimeReady();
+      else {
+        heroImage.addEventListener("load", publishRuntimeReady, { once: true });
+        heroImage.addEventListener("error", publishRuntimeReady, { once: true });
+      }
     }
     bindHeroPointerCamera(wrapper, picture);
     updateHeroOpacity();

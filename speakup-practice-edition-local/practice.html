@@ -115,6 +115,10 @@
 
         window.addEventListener("message", (event) => {
           if (event.origin !== location.origin || event.source !== frame.contentWindow) return;
+          if (event.data?.type === "speakup-runtime-ready") {
+            document.body.dataset.speakupRuntimeReady = "true";
+            return;
+          }
           if (event.data?.type !== "speakup-route") return;
           const hash = sourceIds[event.data.hash] ? event.data.hash : "";
           const nextLocation = `${publicRoute}${hash ? `#${hash}` : ""}`;
@@ -133,10 +137,7 @@
             location.origin,
           );
         };
-        frame.addEventListener("load", () => {
-          forwardPublicLocation();
-          document.body.dataset.speakupRuntimeReady = "true";
-        });
+        frame.addEventListener("load", forwardPublicLocation);
         window.addEventListener("hashchange", forwardPublicLocation);
         window.addEventListener("popstate", forwardPublicLocation);
       })();
