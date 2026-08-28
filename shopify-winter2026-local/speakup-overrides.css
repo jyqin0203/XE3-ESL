@@ -677,6 +677,349 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   }
 }
 
+/* Immediate feedback keeps the authored Shop App triptych and reveal cadence.
+   Only the three verified portrait articles survive; each one now contains a
+   deterministic render of the real mobile feedback components. */
+#shop-app > div > div.bg-light article:not(#dynamic-shop-storefronts):not(#deals-feed-on-shop):not(#shoppable-videos-on-shop) {
+  display: none !important;
+}
+
+#b2b > div > div.bg-light article:not(#shopify-collective-available-globally):not(#ach-payments-for-b2b):not(#suppliers-can-discover-retailers):not(#payment-requests-per-fulfillment) {
+  display: none !important;
+}
+
+#finance > div > div.bg-light article:not(#continuous-funding-with-the-shopify-capital-flex-account):not(#automatic-transfers-in-shopify-balance):not(#staff-cards-spend-controls-with-shopify-balance) {
+  display: none !important;
+}
+
+#shop-app #dynamic-shop-storefronts > :not([data-speakup-scene-feature="feedback-original"]),
+#shop-app #deals-feed-on-shop > :not([data-speakup-scene-feature="feedback-correction"]),
+#shop-app #shoppable-videos-on-shop > :not([data-speakup-scene-feature="feedback-natural"]) {
+  display: none !important;
+}
+
+#b2b #shopify-collective-available-globally > :not([data-speakup-scene-feature="review-overview"]),
+#b2b #ach-payments-for-b2b > :not([data-speakup-scene-feature="review-score"]),
+#b2b #suppliers-can-discover-retailers > :not([data-speakup-scene-feature="review-advice"]),
+#b2b #payment-requests-per-fulfillment > :not([data-speakup-scene-feature="review-next-step"]) {
+  display: none !important;
+}
+
+#finance #continuous-funding-with-the-shopify-capital-flex-account > :not([data-speakup-scene-feature="memory-switch"]),
+#finance #automatic-transfers-in-shopify-balance > :not([data-speakup-scene-feature="memory-context"]),
+#finance #staff-cards-spend-controls-with-shopify-balance > :not([data-speakup-scene-feature="memory-next-round"]) {
+  display: none !important;
+}
+
+#shop-app .speakup-outcome-card-host,
+#shop-app .speakup-outcome-card,
+#shop-app .speakup-outcome-card__media,
+#b2b .speakup-outcome-card-host,
+#b2b .speakup-outcome-card,
+#b2b .speakup-outcome-card__media,
+#finance .speakup-outcome-card-host,
+#finance .speakup-outcome-card,
+#finance .speakup-outcome-card__media {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#shop-app .speakup-outcome-card-host,
+#b2b .speakup-outcome-card-host,
+#finance .speakup-outcome-card-host {
+  align-self: start;
+}
+
+#shop-app .speakup-outcome-card,
+#b2b .speakup-outcome-card,
+#finance .speakup-outcome-card {
+  width: 100%;
+}
+
+#shop-app .speakup-outcome-card__media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 7 / 12;
+  isolation: isolate;
+  background: #eef5f8;
+  box-shadow:
+    inset 0 0 0 1px rgba(41, 41, 25, 0.12),
+    0 18px 36px rgba(31, 32, 27, 0.08);
+}
+
+#shop-app .speakup-outcome-card__media::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+  box-shadow: inset 0 0 42px rgba(27, 28, 24, 0.035);
+}
+
+#shop-app .speakup-outcome-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+}
+
+#shop-app .speakup-outcome-card__copy,
+#b2b .speakup-outcome-card__copy,
+#finance .speakup-outcome-card__copy {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  margin-top: 14px;
+  color: var(--speakup-ink);
+}
+
+#shop-app .speakup-outcome-card__step,
+#b2b .speakup-outcome-card__step,
+#finance .speakup-outcome-card__step {
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid rgba(41, 41, 25, 0.38);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+#shop-app .speakup-outcome-card__copy h3,
+#b2b .speakup-outcome-card__copy h3,
+#finance .speakup-outcome-card__copy h3 {
+  margin: 1px 0 5px;
+  font-family: "NeueMontreal", -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+#shop-app .speakup-outcome-card__copy p,
+#b2b .speakup-outcome-card__copy p,
+#finance .speakup-outcome-card__copy p {
+  max-width: 18rem;
+  margin: 0;
+  color: rgba(41, 41, 25, 0.72);
+  font-size: clamp(14px, 1.1vw, 17px);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+#b2b .speakup-outcome-card__media {
+  position: relative;
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  place-items: center;
+  isolation: isolate;
+  background:
+    linear-gradient(145deg, rgba(247, 247, 238, 0.6), rgba(238, 245, 248, 0.9)),
+    #e6e2d4;
+  box-shadow:
+    inset 0 0 0 1px rgba(41, 41, 25, 0.12),
+    0 18px 40px rgba(31, 32, 27, 0.08);
+}
+
+#b2b .speakup-outcome-card--review-overview .speakup-outcome-card__media,
+#b2b .speakup-outcome-card--review-score .speakup-outcome-card__media {
+  aspect-ratio: 4 / 5;
+  padding: clamp(12px, 2vw, 24px);
+}
+
+#b2b .speakup-outcome-card--review-detail .speakup-outcome-card__media {
+  aspect-ratio: 16 / 9;
+  padding: clamp(10px, 1.5vw, 18px);
+}
+
+#b2b .speakup-outcome-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+}
+
+#b2b .speakup-outcome-card__copy {
+  margin-top: 14px;
+  margin-bottom: clamp(20px, 3vw, 38px);
+}
+
+#finance .speakup-outcome-card__copy {
+  margin-top: 14px;
+  margin-bottom: clamp(20px, 3vw, 38px);
+}
+
+#finance .speakup-finance-switch {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 562 / 451;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(247, 247, 238, 0.9), transparent 52%),
+    #cfcab7;
+  box-shadow:
+    inset 0 0 0 1px rgba(41, 41, 25, 0.14),
+    0 18px 40px rgba(31, 32, 27, 0.09);
+}
+
+#finance .speakup-finance-switch__stage {
+  position: absolute;
+  inset: 0;
+  perspective: 900px;
+}
+
+#finance .speakup-finance-switch__card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 66%;
+  height: 82%;
+  min-width: 0;
+  padding: clamp(18px, 3.4vw, 38px);
+  border: 1px solid rgba(41, 41, 25, 0.2);
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--speakup-ink);
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.76), rgba(247, 247, 238, 0.9)),
+    #f7f7ee;
+  box-shadow: 0 18px 36px rgba(24, 25, 21, 0.16);
+  transform-origin: 50% 120%;
+  transition:
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 360ms ease,
+    filter 520ms ease;
+  will-change: transform, opacity;
+}
+
+#finance .speakup-finance-switch__card[data-slot="0"] {
+  z-index: 3;
+  opacity: 1;
+  filter: none;
+  transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+}
+
+#finance .speakup-finance-switch__card[data-slot="1"] {
+  z-index: 2;
+  opacity: 0.72;
+  filter: saturate(0.82) brightness(0.94);
+  transform: translate3d(-42%, -46%, -24px) rotate(4.5deg) scale(0.94);
+}
+
+#finance .speakup-finance-switch__card[data-slot="2"] {
+  z-index: 1;
+  opacity: 0.48;
+  filter: saturate(0.72) brightness(0.9);
+  transform: translate3d(-58%, -42%, -46px) rotate(-4deg) scale(0.88);
+}
+
+#finance .speakup-finance-switch__card.is-exiting {
+  z-index: 4;
+  opacity: 0;
+  transform: translate3d(-52%, -142%, 20px) rotate(-9deg) scale(0.98);
+}
+
+#finance .speakup-finance-switch__meta {
+  position: absolute;
+  top: clamp(16px, 2.4vw, 28px);
+  left: clamp(18px, 3.4vw, 38px);
+  font-size: clamp(10px, 0.9vw, 13px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+#finance .speakup-finance-switch__label {
+  margin-bottom: 8px;
+  color: rgba(41, 41, 25, 0.56);
+  font-size: clamp(13px, 1.1vw, 16px);
+  font-weight: 600;
+}
+
+#finance .speakup-finance-switch__card strong {
+  max-width: 18ch;
+  font-family: "NeueMontreal", -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  font-size: clamp(24px, 3.2vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+#finance .speakup-finance-switch__card p {
+  max-width: 26ch;
+  margin: 12px 0 0;
+  color: rgba(41, 41, 25, 0.66);
+  font-size: clamp(12px, 1.05vw, 16px);
+  line-height: 1.2;
+}
+
+#finance .speakup-outcome-card--memory-context .speakup-outcome-card__media,
+#finance .speakup-outcome-card--memory-next-round .speakup-outcome-card__media {
+  position: relative;
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  place-items: center;
+  isolation: isolate;
+  background: #ece9de;
+  box-shadow:
+    inset 0 0 0 1px rgba(41, 41, 25, 0.12),
+    0 18px 36px rgba(31, 32, 27, 0.08);
+}
+
+#finance .speakup-outcome-card--memory-context .speakup-outcome-card__media {
+  aspect-ratio: 1 / 1;
+  padding: clamp(8px, 1.2vw, 14px);
+}
+
+#finance .speakup-outcome-card--memory-next-round .speakup-outcome-card__media {
+  aspect-ratio: 4 / 3;
+  padding: clamp(8px, 1.2vw, 14px);
+}
+
+#finance .speakup-outcome-card--memory-context .speakup-outcome-card__media img,
+#finance .speakup-outcome-card--memory-next-round .speakup-outcome-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #finance .speakup-finance-switch__card {
+    transition: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #shop-app .speakup-outcome-card__media {
+    max-height: 76svh;
+  }
+
+  #shop-app .speakup-outcome-card__copy {
+    margin-bottom: 28px;
+  }
+
+  #b2b .speakup-outcome-card--review-overview .speakup-outcome-card__media,
+  #b2b .speakup-outcome-card--review-score .speakup-outcome-card__media {
+    max-height: 76svh;
+  }
+}
+
 /* “理解目标” keeps the original editorial grid and hand-held phone stage.
    Hide the legacy Rive/video surfaces immediately; JS replaces only the media
    contents and leaves the authored article geometry untouched. */

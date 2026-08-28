@@ -1,0 +1,259 @@
+{
+  "version": 1,
+  "purpose": "SpeakUp outcome-section UI assets derived only from real product captures",
+  "constraints": [
+    "No generated interface pixels",
+    "No duplicate phone shell",
+    "Portrait assets must use contain rather than cover"
+  ],
+  "contactSheet": {
+    "file": "contact-sheet.png",
+    "order": [
+      "review-main",
+      "review-score-detail",
+      "review-advice-detail",
+      "review-next-step-detail",
+      "memory-main",
+      "memory-context-detail",
+      "memory-next-round-detail",
+      "progress-main",
+      "progress-history-detail"
+    ]
+  },
+  "assets": [
+    {
+      "id": "review-main",
+      "file": "review-main.webp",
+      "source": "/Users/mac/Projects/XE3-ESL/portal/public/assets/portal-shots/ielts-review.webp",
+      "sourceSize": {
+        "width": 840,
+        "height": 1826
+      },
+      "operation": "copy",
+      "output": {
+        "width": 840,
+        "height": 1826,
+        "aspectRatio": 0.46,
+        "codec": "webp",
+        "pixelFormat": "yuv420p",
+        "sha256": "6df8f51044b10f79052f9b152c2367dee6ae9c186721dbb166dece0b37af0579"
+      },
+      "semantic": "IELTS Part 1 score, four-axis radar, and detailed recommendations",
+      "recommendedRole": "review chapter primary portrait UI",
+      "fit": "contain"
+    },
+    {
+      "id": "review-score-detail",
+      "file": "review-score-detail.png",
+      "source": "/Users/mac/Projects/XE3-ESL/portal/public/assets/portal-shots/ielts-review.webp",
+      "sourceSize": {
+        "width": 840,
+        "height": 1826
+      },
+      "operation": "crop",
+      "crop": {
+        "x": 36,
+        "y": 250,
+        "width": 768,
+        "height": 960
+      },
+      "output": {
+        "width": 768,
+        "height": 960,
+        "aspectRatio": 0.8,
+        "codec": "png",
+        "pixelFormat": "rgb24",
+        "sha256": "674efb982375a6f6a170966851c366fad9893f36a2ba54b8f30b054632c822d6"
+      },
+      "semantic": "Practice score and four-dimension radar with the first recommendation heading",
+      "recommendedRole": "review chapter close-up detail",
+      "fit": "contain"
+    },
+    {
+      "id": "review-advice-detail",
+      "file": "review-advice-detail.png",
+      "source": "/Users/mac/Projects/XE3-ESL/portal/public/assets/portal-shots/ielts-review.webp",
+      "sourceSize": {
+        "width": 840,
+        "height": 1826
+      },
+      "operation": "crop",
+      "crop": {
+        "x": 36,
+        "y": 1060,
+        "width": 768,
+        "height": 380
+      },
+      "output": {
+        "width": 768,
+        "height": 380,
+        "aspectRatio": 2.0211,
+        "codec": "png",
+        "pixelFormat": "rgb24",
+        "sha256": "74b7c332b35511d4c8cbd2d59017a26f26c58b95f612157e3f933919e91410a9"
+      },
+      "semantic": "Priority dimension, score, evidence coverage, and weakness explanation",
+      "recommendedRole": "review chapter diagnostic evidence detail",
+      "fit": "contain"
+    },
+    {
+      "id": "review-next-step-detail",
+      "file": "review-next-step-detail.png",
+      "source": "/Users/mac/Projects/XE3-ESL/portal/public/assets/portal-shots/ielts-review.webp",
+      "sourceSize": {
+        "width": 840,
+        "height": 1826
+      },
+      "operation": "crop",
+      "crop": {
+        "x": 36,
+        "y": 1440,
+        "width": 768,
+        "height": 240
+      },
+      "output": {
+        "width": 768,
+        "height": 240,
+        "aspectRatio": 3.2,
+        "codec": "png",
+        "pixelFormat": "rgb24",
+        "sha256": "6602816249b39d6d3178bcd505df82a36301537f44bcc267f2370d45b7836750"
+      },
+      "semantic": "Actionable practice suggestion and route to supporting evidence",
+      "recommendedRole": "review chapter next-step detail",
+      "fit": "contain"
+    },
+    {
+      "id": "memory-main",
+      "file": "memory-main.jpg",
+      "source": "/Users/mac/Projects/XE3-ESL/portal/public/assets/portal-shots/portal-memory-chat.jpg",
+      "sourceSize": {
+        "width": 1290,
+        "height": 2796
+      },
+      "operation": "copy",
+      "output": {
+        "width": 1290,
+        "height": 2796,
+        "aspectRatio": 0.4614,
+        "codec": "mjpeg",
+        "pixelFormat": "yuvj420p",
+        "sha256": "86d36c6dd6fa21c108d08b02fb515fe5ebeccd85e73958137dd7c764788242a3"
+      },
+      "semantic": "Memory-aware coaching conversation across prior practice rounds",
+      "recommendedRole": "memory chapter primary portrait UI",
+      "fit": "contain"
+    },
+    {
+      "id": "memory-context-detail",
+      "file": "memory-context-detail.jpg",
+      "source": "/Users/mac/Projects/XE3-ESL/portal/public/assets/portal-shots/portal-memory-chat.jpg",
+      "sourceSize": {
+        "width": 1290,
+        "height": 2796
+      },
+      "operation": "crop",
+      "crop": {
+        "x": 70,
+        "y": 1030,
+        "width": 1150,
+        "height": 1212
+      },
+      "output": {
+        "width": 1150,
+        "height": 1212,
+        "aspectRatio": 0.9488,
+        "codec": "mjpeg",
+        "pixelFormat": "yuvj420p",
+        "sha256": "75b28b5d76f09fd810e7fc56d6cf74610c67439c660da772eb720dedcc38a05b"
+      },
+      "semantic": "Remembered target, project, improvements, and recurring weaknesses",
+      "recommendedRole": "memory chapter evidence detail",
+      "fit": "contain"
+    },
+    {
+      "id": "memory-next-round-detail",
+      "file": "memory-next-round-detail.jpg",
+      "source": "/Users/mac/Projects/XE3-ESL/portal/public/assets/portal-shots/portal-memory-chat.jpg",
+      "sourceSize": {
+        "width": 1290,
+        "height": 2796
+      },
+      "operation": "crop",
+      "crop": {
+        "x": 70,
+        "y": 2120,
+        "width": 1150,
+        "height": 676
+      },
+      "output": {
+        "width": 1150,
+        "height": 676,
+        "aspectRatio": 1.7012,
+        "codec": "mjpeg",
+        "pixelFormat": "yuvj420p",
+        "sha256": "c7176b18119db9f5406566fc0acbd5c79e128289ff7e82b35509e96f8cc15153"
+      },
+      "semantic": "Next practice generated from remembered weaknesses",
+      "recommendedRole": "memory chapter causal payoff detail",
+      "fit": "contain"
+    },
+    {
+      "id": "progress-main",
+      "file": "progress-main.png",
+      "source": "/Users/mac/Projects/XE3-ESL/portal/public/assets/portal-shots/practice-progress.webp",
+      "sourceSize": {
+        "width": 916,
+        "height": 1806
+      },
+      "operation": "crop",
+      "crop": {
+        "x": 73,
+        "y": 31,
+        "width": 787,
+        "height": 1718
+      },
+      "roundedMask": {
+        "radius": 88
+      },
+      "output": {
+        "width": 787,
+        "height": 1718,
+        "aspectRatio": 0.4581,
+        "codec": "png",
+        "pixelFormat": "rgba",
+        "sha256": "f113e14d96037ed461713b79c04848de8570ed1ba77a9e8dd101304a40225213"
+      },
+      "semantic": "Cross-session comparison of recent practice improvement",
+      "recommendedRole": "progress chapter primary portrait UI",
+      "fit": "contain"
+    },
+    {
+      "id": "progress-history-detail",
+      "file": "progress-history-detail.png",
+      "source": "/Users/mac/Projects/XE3-ESL/portal/public/assets/portal-shots/practice-progress.webp",
+      "sourceSize": {
+        "width": 916,
+        "height": 1806
+      },
+      "operation": "crop",
+      "crop": {
+        "x": 90,
+        "y": 270,
+        "width": 736,
+        "height": 1000
+      },
+      "output": {
+        "width": 736,
+        "height": 1000,
+        "aspectRatio": 0.736,
+        "codec": "png",
+        "pixelFormat": "rgb24",
+        "sha256": "cfc2e3f541bc92c3c874f85c799d66e8b8bc7487b6cc85ddec5c7458b30edd40"
+      },
+      "semantic": "Latest, previous, and earlier practice comparison plus coaching conclusion",
+      "recommendedRole": "progress chapter history detail",
+      "fit": "contain"
+    }
+  ]
+}

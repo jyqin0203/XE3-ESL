@@ -59,6 +59,141 @@
     },
   };
 
+  const feedbackChapter = {
+    keepIds: [
+      "dynamic-shop-storefronts",
+      "deals-feed-on-shop",
+      "shoppable-videos-on-shop",
+    ],
+    cards: [
+      {
+        articleId: "dynamic-shop-storefronts",
+        marker: "feedback-original",
+        step: "01",
+        heading: "你的原句",
+        description: "先完整听完，不急着打断。",
+        image: "/assets/speakup/outcomes/feedback/original-collapsed.png",
+        alt: "SpeakUp 保留用户的完整英文回答，并显示即时优化入口",
+      },
+      {
+        articleId: "deals-feed-on-shop",
+        marker: "feedback-correction",
+        step: "02",
+        heading: "先改这一处",
+        description: "指出具体问题，也解释为什么。",
+        image: "/assets/speakup/outcomes/feedback/correction-expanded.png",
+        alt: "SpeakUp 展开单轮纠错，标出原表达和过去式修改建议",
+      },
+      {
+        articleId: "shoppable-videos-on-shop",
+        marker: "feedback-natural",
+        step: "03",
+        heading: "更自然地说",
+        description: "给出能直接复述的表达。",
+        image: "/assets/speakup/outcomes/feedback/natural-expanded.png",
+        alt: "SpeakUp 根据原回答给出更自然的完整英文表达",
+      },
+    ],
+  };
+
+  const reviewChapter = {
+    keepIds: [
+      "shopify-collective-available-globally",
+      "ach-payments-for-b2b",
+      "suppliers-can-discover-retailers",
+      "payment-requests-per-fulfillment",
+    ],
+    cards: [
+      {
+        articleId: "shopify-collective-available-globally",
+        marker: "review-overview",
+        variant: "review-overview",
+        step: "01",
+        heading: "这一轮，发生了什么",
+        description: "总分、维度与建议，先看全貌。",
+        image: "/assets/speakup/outcomes/ui/review-main.webp",
+        alt: "SpeakUp IELTS Part 1 完整练习复盘页面",
+      },
+      {
+        articleId: "ach-payments-for-b2b",
+        marker: "review-score",
+        variant: "review-score",
+        step: "02",
+        heading: "四维表现",
+        description: "流利度、词汇、语法与发音。",
+        image: "/assets/speakup/outcomes/ui/review-score-detail.png",
+        alt: "SpeakUp IELTS 练习估分和四维表现雷达图",
+      },
+      {
+        articleId: "suppliers-can-discover-retailers",
+        marker: "review-advice",
+        variant: "review-detail",
+        step: "03",
+        heading: "证据在原句里",
+        description: "不是泛泛评分，而是具体问题。",
+        image: "/assets/speakup/outcomes/ui/review-advice-detail.png",
+        alt: "SpeakUp 根据真实回答给出的词汇问题与证据覆盖",
+      },
+      {
+        articleId: "payment-requests-per-fulfillment",
+        marker: "review-next-step",
+        variant: "review-detail",
+        step: "04",
+        heading: "建议落到动作",
+        description: "告诉你下一轮先改哪一处。",
+        image: "/assets/speakup/outcomes/ui/review-next-step-detail.png",
+        alt: "SpeakUp 根据复盘证据给出的下一轮口语练习建议",
+      },
+    ],
+  };
+
+  const memoryChapter = {
+    keepIds: [
+      "continuous-funding-with-the-shopify-capital-flex-account",
+      "automatic-transfers-in-shopify-balance",
+      "staff-cards-spend-controls-with-shopify-balance",
+    ],
+    switchCards: [
+      {
+        label: "你的目标",
+        value: "后端开发工程师 · 全球团队",
+        description: "下一次，不再重复解释方向。",
+      },
+      {
+        label: "真实经历",
+        value: "高并发订单系统",
+        description: "把做过的事接进新的追问。",
+      },
+      {
+        label: "反复卡点",
+        value: "量化结果 · 替代方案",
+        description: "已经改善的，不再排在最前面。",
+      },
+    ],
+    cards: [
+      {
+        articleId: "automatic-transfers-in-shopify-balance",
+        marker: "memory-context",
+        variant: "memory-context",
+        step: "02",
+        heading: "记得你为什么卡住",
+        description: "目标、项目和变化，都在同一条上下文里。",
+        image: "/assets/speakup/outcomes/ui/memory-context-detail.jpg",
+        alt: "SpeakUp Memory 记住目标岗位、真实项目、已改善问题和反复卡点",
+      },
+      {
+        articleId: "staff-cards-spend-controls-with-shopify-balance",
+        marker: "memory-next-round",
+        variant: "memory-next-round",
+        step: "03",
+        heading: "也知道下一轮练什么",
+        description: "把已经知道的，变成新的追问。",
+        image: "/assets/speakup/outcomes/ui/memory-next-round-detail.jpg",
+        alt: "SpeakUp 根据长期记忆生成下一轮系统设计训练",
+      },
+    ],
+  };
+
   const goalSlides = [
     {
       label: "英文面试",
@@ -261,6 +396,8 @@
   let applying = false;
   let queued = false;
   let socialMasonryFrame = 0;
+  let financeSwitchCompleted = false;
+  const financeSwitchControllers = new WeakMap();
   let bypassSecondaryEditionLoader =
     Boolean(location.hash && !["#top", "#hero"].includes(location.hash)) || window.scrollY > 100;
 
@@ -932,6 +1069,199 @@
     return feature;
   }
 
+  function buildOutcomeImageFeature(config, chapterId) {
+    const feature = document.createElement("div");
+    feature.className = [
+      "speakup-outcome-card",
+      `speakup-outcome-card--${chapterId}`,
+      config.variant ? `speakup-outcome-card--${config.variant}` : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+    feature.dataset.speakupSceneFeature = config.marker;
+    feature.dataset.speakupOutcomeFeature = config.marker;
+    feature.dataset.version = "1";
+    feature.innerHTML = `
+      <div class="speakup-outcome-card__media animate-show-media">
+        <img
+          src="${config.image}"
+          alt="${config.alt}"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="speakup-outcome-card__copy">
+        <span class="speakup-outcome-card__step" aria-hidden="true">${config.step}</span>
+        <div>
+          <h3>${config.heading}</h3>
+          <p>${config.description}</p>
+        </div>
+      </div>`;
+    return feature;
+  }
+
+  function buildFinanceMemorySwitch() {
+    const feature = document.createElement("div");
+    feature.className =
+      "speakup-outcome-card speakup-outcome-card--memory speakup-outcome-card--memory-switch";
+    feature.dataset.speakupSceneFeature = "memory-switch";
+    feature.dataset.speakupOutcomeFeature = "memory-switch";
+    feature.dataset.version = "1";
+
+    const cards = memoryChapter.switchCards
+      .map(
+        (card, index) => `
+          <div
+            class="speakup-finance-switch__card"
+            data-finance-switch-card="true"
+            data-slot="${index}"
+            aria-hidden="${index === 0 ? "false" : "true"}"
+          >
+            <span class="speakup-finance-switch__meta">SpeakUp Memory · 0${index + 1}</span>
+            <span class="speakup-finance-switch__label">${card.label}</span>
+            <strong>${card.value}</strong>
+            <p>${card.description}</p>
+          </div>`,
+      )
+      .join("");
+
+    feature.innerHTML = `
+      <div
+        class="speakup-finance-switch animate-show-media"
+        data-finance-switch="true"
+        role="group"
+        aria-label="SpeakUp 记住目标、经历和反复卡点"
+      >
+        <div class="speakup-finance-switch__stage">${cards}</div>
+      </div>
+      <div class="speakup-outcome-card__copy">
+        <span class="speakup-outcome-card__step" aria-hidden="true">01</span>
+        <div>
+          <h3>下一次，不再从零开始</h3>
+          <p>目标、经历和卡点，会接着上一轮出现。</p>
+        </div>
+      </div>`;
+    return feature;
+  }
+
+  function setFinanceMemorySwitchIndex(root, activeIndex) {
+    const cards = [...root.querySelectorAll("[data-finance-switch-card]")];
+    cards.forEach((card, index) => {
+      const slot = (index - activeIndex + cards.length) % cards.length;
+      const hidden = slot !== 0;
+      card.classList.remove("is-exiting");
+      card.dataset.slot = String(slot);
+      card.setAttribute("aria-hidden", String(hidden));
+      card.inert = hidden;
+    });
+    root.dataset.activeCard = String(activeIndex);
+  }
+
+  function bindFinanceMemorySwitch(root) {
+    if (!root || financeSwitchControllers.has(root)) return;
+    const cards = [...root.querySelectorAll("[data-finance-switch-card]")];
+    if (cards.length < 2) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let activeIndex = financeSwitchCompleted ? cards.length - 1 : 0;
+    let completedTransitions = financeSwitchCompleted ? cards.length - 1 : 0;
+    let inView = false;
+    let waitTimer = 0;
+    let transitionTimer = 0;
+    let observer;
+
+    const clearTimers = () => {
+      window.clearTimeout(waitTimer);
+      window.clearTimeout(transitionTimer);
+      waitTimer = 0;
+      transitionTimer = 0;
+    };
+
+    const removeListeners = () => {
+      observer?.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibility);
+    };
+
+    const finish = () => {
+      clearTimers();
+      financeSwitchCompleted = true;
+      root.dataset.switchComplete = "true";
+      removeListeners();
+    };
+
+    const stop = () => {
+      clearTimers();
+      removeListeners();
+    };
+
+    const schedule = () => {
+      if (
+        financeSwitchCompleted ||
+        reducedMotion ||
+        !inView ||
+        document.hidden ||
+        waitTimer ||
+        transitionTimer
+      ) {
+        return;
+      }
+      if (!root.isConnected) {
+        stop();
+        return;
+      }
+      waitTimer = window.setTimeout(() => {
+        waitTimer = 0;
+        const current = cards[activeIndex];
+        current.classList.add("is-exiting");
+        transitionTimer = window.setTimeout(() => {
+          transitionTimer = 0;
+          activeIndex = (activeIndex + 1) % cards.length;
+          completedTransitions += 1;
+          setFinanceMemorySwitchIndex(root, activeIndex);
+          if (completedTransitions >= cards.length - 1) finish();
+          else schedule();
+        }, 520);
+      }, 1000);
+    };
+
+    function handleVisibility() {
+      if (document.hidden) {
+        window.clearTimeout(waitTimer);
+        waitTimer = 0;
+      } else {
+        schedule();
+      }
+    }
+
+    setFinanceMemorySwitchIndex(root, activeIndex);
+    root.dataset.switchBound = "true";
+    financeSwitchControllers.set(root, { stop });
+
+    if (financeSwitchCompleted) {
+      root.dataset.switchComplete = "true";
+      return;
+    }
+    if (reducedMotion) {
+      root.dataset.motion = "static";
+      return;
+    }
+
+    observer = new IntersectionObserver(
+      ([entry]) => {
+        inView = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+        if (!inView) {
+          window.clearTimeout(waitTimer);
+          waitTimer = 0;
+        } else {
+          schedule();
+        }
+      },
+      { threshold: [0, 0.25, 0.5] },
+    );
+    observer.observe(root);
+    document.addEventListener("visibilitychange", handleVisibility);
+  }
+
   function installSceneFeature(article, marker, build) {
     if (!article) return null;
     let feature = article.querySelector(
@@ -1046,6 +1376,92 @@
         buildGridFeature(sceneChapters.operations, "operations", "ui"),
       );
     }
+  }
+
+  function updateImmediateFeedbackChapter() {
+    const section = document.getElementById("shop-app");
+    if (!section) return;
+    section.dataset.speakupOutcomeChapter = "feedback";
+
+    const group = [...(section.firstElementChild?.children || [])].find((node) =>
+      node.matches(".bg-light"),
+    );
+    if (!group) return;
+    group.classList.add("speakup-outcome-grid", "speakup-outcome-grid--feedback");
+    removeUnkeptArticles(group, feedbackChapter.keepIds);
+
+    feedbackChapter.cards.forEach((card) => {
+      const article = group.querySelector(`#${card.articleId}`);
+      article?.classList.add(
+        "speakup-outcome-card-host",
+        `speakup-outcome-card-host--${card.marker}`,
+      );
+      installSceneFeature(article, card.marker, () =>
+        buildOutcomeImageFeature(card, "feedback"),
+      );
+    });
+  }
+
+  function updatePracticeReviewChapter() {
+    const section = document.getElementById("b2b");
+    if (!section) return;
+    section.dataset.speakupOutcomeChapter = "review";
+
+    const group = [...(section.firstElementChild?.children || [])].find((node) =>
+      node.matches(".bg-light"),
+    );
+    if (!group) return;
+    group.classList.add("speakup-outcome-grid", "speakup-outcome-grid--review");
+    removeUnkeptArticles(group, reviewChapter.keepIds);
+
+    reviewChapter.cards.forEach((card) => {
+      const article = group.querySelector(`#${card.articleId}`);
+      article?.classList.add(
+        "speakup-outcome-card-host",
+        `speakup-outcome-card-host--${card.marker}`,
+      );
+      installSceneFeature(article, card.marker, () =>
+        buildOutcomeImageFeature(card, "review"),
+      );
+    });
+  }
+
+  function updateTrainingMemoryChapter() {
+    const section = document.getElementById("finance");
+    if (!section) return;
+    section.dataset.speakupOutcomeChapter = "memory";
+
+    const group = [...(section.firstElementChild?.children || [])].find((node) =>
+      node.matches(".bg-light"),
+    );
+    if (!group) return;
+    group.classList.add("speakup-outcome-grid", "speakup-outcome-grid--memory");
+    removeUnkeptArticles(group, memoryChapter.keepIds);
+
+    const switchArticle = group.querySelector(
+      "#continuous-funding-with-the-shopify-capital-flex-account",
+    );
+    switchArticle?.classList.add(
+      "speakup-outcome-card-host",
+      "speakup-outcome-card-host--memory-switch",
+    );
+    const switchFeature = installSceneFeature(switchArticle, "memory-switch", () =>
+      buildFinanceMemorySwitch(),
+    );
+    bindFinanceMemorySwitch(
+      switchFeature?.querySelector("[data-finance-switch]"),
+    );
+
+    memoryChapter.cards.forEach((card) => {
+      const article = group.querySelector(`#${card.articleId}`);
+      article?.classList.add(
+        "speakup-outcome-card-host",
+        `speakup-outcome-card-host--${card.marker}`,
+      );
+      installSceneFeature(article, card.marker, () =>
+        buildOutcomeImageFeature(card, "memory"),
+      );
+    });
   }
 
   function updateAllDirectoryLinks() {
@@ -1503,6 +1919,9 @@
       updateGoalUnderstandingSection();
       updateExpressionPreparationSection();
       updateSceneChapters();
+      updateImmediateFeedbackChapter();
+      updatePracticeReviewChapter();
+      updateTrainingMemoryChapter();
       ensureHeroArt();
       updateSidekickVideoCard();
       updateSocialStoriesSection();
