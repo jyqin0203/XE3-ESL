@@ -26,21 +26,34 @@
     <link rel="canonical" href="/practice" />
     <link rel="icon" type="image/svg+xml" href="/assets/speakup/speakup-mark.svg" />
     <link
+      id="speakup-loading-art-desktop"
       rel="preload"
       as="image"
       type="image/webp"
-      href="/assets/speakup/hero-desktop.webp"
       media="(min-width: 768px)"
       fetchpriority="high"
     />
     <link
+      id="speakup-loading-art-mobile"
       rel="preload"
       as="image"
       type="image/webp"
-      href="/assets/speakup/hero-mobile.webp"
       media="(max-width: 767px)"
       fetchpriority="high"
     />
+    <script>
+      (() => {
+        const aiTeacherEntry = location.hash === "#ai-teacher";
+        document.documentElement.dataset.speakupLoadingChapter =
+          aiTeacherEntry ? "ai-teacher" : "hero";
+        document.getElementById("speakup-loading-art-desktop").href = aiTeacherEntry
+          ? "/assets/speakup/ai-teacher/ai-teacher-desktop.webp"
+          : "/assets/speakup/hero-desktop.webp";
+        document.getElementById("speakup-loading-art-mobile").href = aiTeacherEntry
+          ? "/assets/speakup/ai-teacher/ai-teacher-mobile.webp"
+          : "/assets/speakup/hero-mobile.webp";
+      })();
+    </script>
     <style>
       html,
       body,
@@ -64,6 +77,10 @@
         background-size: cover;
       }
 
+      html[data-speakup-loading-chapter="ai-teacher"] body {
+        background-image: url("/assets/speakup/ai-teacher/ai-teacher-desktop.webp");
+      }
+
       iframe {
         display: block;
         opacity: 0;
@@ -78,6 +95,10 @@
         body {
           background-image: url("/assets/speakup/hero-mobile.webp");
           background-position: center top;
+        }
+
+        html[data-speakup-loading-chapter="ai-teacher"] body {
+          background-image: url("/assets/speakup/ai-teacher/ai-teacher-mobile.webp");
         }
       }
 
