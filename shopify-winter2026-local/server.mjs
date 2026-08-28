@@ -17,6 +17,20 @@ const speakUpAgenticBookPath = '/assets/speakup/agentic/speakup-agentic-book.glb
 const originalOnlineIntroPath =
   '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/46aedb6ec0619620/EW26_Online_251209v3_compressed-optimized.glb';
 const speakUpOnlineIntroPath = '/assets/speakup/online/speakup-online-intro.glb';
+const retailAssetReplacements = [
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/9eeb64e8194faa39/POS_V53_environment_251209v2_compressed-optimized.glb',
+    '/assets/speakup/retail/speakup-retail-environment.glb',
+  ],
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/e51a31d48a973f83/POS_v53_Hub_251208v2_compressed-optimized.glb',
+    '/assets/speakup/retail/speakup-retail-hub.glb',
+  ],
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/2f9637a8c00c276d/Retail_mg_251205v2_compressed-optimized.glb',
+    '/assets/speakup/retail/speakup-retail-middle.glb',
+  ],
+];
 
 const fallbackTypes = {
   '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8',
@@ -31,7 +45,11 @@ async function serveSpeakUpIndex(request, response, filePath) {
   body = body
     .replaceAll(originalAgenticPropsPath, speakUpAgenticPropsPath)
     .replaceAll(originalAgenticBookPath, speakUpAgenticBookPath)
-    .replaceAll(originalOnlineIntroPath, speakUpOnlineIntroPath)
+    .replaceAll(originalOnlineIntroPath, speakUpOnlineIntroPath);
+  for (const [originalPath, speakUpPath] of retailAssetReplacements) {
+    body = body.replaceAll(originalPath, speakUpPath);
+  }
+  body = body
     .replace(
       '</head>',
       '<link rel="stylesheet" href="/speakup-overrides.css" data-speakup-overrides="true" /></head>',
