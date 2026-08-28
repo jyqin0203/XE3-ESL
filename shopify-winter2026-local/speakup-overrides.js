@@ -37,6 +37,23 @@
       poster: "/assets/speakup/scenes/videos/ielts-laptop-speaking-poster.jpg",
       entry: "/assets/speakup/scenes/ui/screens/ielts-screen.png",
       practice: "/assets/speakup/scenes/ui/screens/ielts-practice-screen.png",
+      practiceVideos: [
+        {
+          label: "Part 1",
+          src: "/assets/speakup/scenes/videos/ielts-part-1.mp4",
+          poster: "/assets/speakup/scenes/videos/ielts-part-1-poster.jpg",
+        },
+        {
+          label: "Part 2",
+          src: "/assets/speakup/scenes/videos/ielts-part-2.mp4",
+          poster: "/assets/speakup/scenes/videos/ielts-part-2-poster.jpg",
+        },
+        {
+          label: "Part 3",
+          src: "/assets/speakup/scenes/videos/ielts-part-3.mp4",
+          poster: "/assets/speakup/scenes/videos/ielts-part-3-poster.jpg",
+        },
+      ],
       videoAlt: "IELTS 口语考试场景预演",
       entryAlt: "SpeakUp IELTS 口语练习入口",
       practiceAlt: "SpeakUp IELTS Part 1 真实问答练习页面",
@@ -47,6 +64,10 @@
       video: "/assets/speakup/scenes/videos/work.mp4",
       poster: "/assets/speakup/scenes/videos/work-poster.jpg",
       entry: "/assets/speakup/scenes/ui/screens/work-screen.png",
+      deviceVideo: "/assets/speakup/scenes/videos/workplace-communication-device.mp4",
+      deviceVideoPoster:
+        "/assets/speakup/scenes/videos/workplace-communication-device-poster.jpg",
+      deviceVideoLabel: "播放 SpeakUp 职场沟通真机演示",
       videoAlt: "英文职场沟通场景预演",
       entryAlt: "SpeakUp 职场英语练习入口",
     },
@@ -56,6 +77,10 @@
       video: "/assets/speakup/scenes/videos/travel.mp4",
       poster: "/assets/speakup/scenes/videos/travel-poster.jpg",
       entry: "/assets/speakup/scenes/ui/screens/travel-screen.png",
+      deviceVideo: "/assets/speakup/scenes/videos/restaurant-ordering-device.mp4",
+      deviceVideoPoster:
+        "/assets/speakup/scenes/videos/restaurant-ordering-device-poster.jpg",
+      deviceVideoLabel: "播放 SpeakUp 餐厅点餐真机演示",
       videoAlt: "英文生活旅行场景预演",
       entryAlt: "SpeakUp 生活与旅行练习入口",
     },
@@ -72,28 +97,28 @@
         articleId: "dynamic-shop-storefronts",
         marker: "feedback-original",
         step: "01",
-        heading: "你的原句",
-        description: "先完整听完，不急着打断。",
-        image: "/assets/speakup/outcomes/feedback/original-collapsed.png",
-        alt: "SpeakUp 保留用户的完整英文回答，并显示即时优化入口",
+        heading: "错误出现，就地指出",
+        description: "不中断整轮练习，直接在原句里标出可改位置。",
+        image: "/assets/speakup/逐句纠错1.jpg",
+        alt: "SpeakUp 在 IELTS Part 1 回答中原位标出语法错误，并给出 been 的修改建议",
       },
       {
         articleId: "deals-feed-on-shop",
         marker: "feedback-correction",
         step: "02",
-        heading: "先改这一处",
-        description: "指出具体问题，也解释为什么。",
-        image: "/assets/speakup/outcomes/feedback/correction-expanded.png",
-        alt: "SpeakUp 展开单轮纠错，标出原表达和过去式修改建议",
+        heading: "逐句拆开改",
+        description: "划掉原表达，给出对应正确句，方便逐句对照。",
+        image: "/assets/speakup/逐句纠错2.jpg",
+        alt: "SpeakUp 对两句英文逐句纠错，并列出 really enjoys watching 和 doesn't have 的完整修正版",
       },
       {
         articleId: "shoppable-videos-on-shop",
         marker: "feedback-natural",
         step: "03",
-        heading: "更自然地说",
-        description: "给出能直接复述的表达。",
-        image: "/assets/speakup/outcomes/feedback/natural-expanded.png",
-        alt: "SpeakUp 根据原回答给出更自然的完整英文表达",
+        heading: "改对，也改自然",
+        description: "从语法修正走到整句重写，给出能直接复述的版本。",
+        image: "/assets/speakup/逐句纠错3.jpg",
+        alt: "SpeakUp 在原句中标出多处错误，并给出更自然的完整英文重写",
       },
     ],
   };
@@ -111,40 +136,40 @@
         marker: "review-overview",
         variant: "review-overview",
         step: "01",
-        heading: "这一轮，发生了什么",
-        description: "总分、维度与建议，先看全貌。",
-        image: "/assets/speakup/outcomes/ui/review-main.webp",
-        alt: "SpeakUp IELTS Part 1 完整练习复盘页面",
+        heading: "日常练习，一眼看全",
+        description: "估分、四维表现与优先项，先看全貌。",
+        image: "/assets/speakup/练习复盘1.jpg",
+        alt: "SpeakUp 日常英语练习复盘的估分、四维表现与分项建议",
       },
       {
         articleId: "ach-payments-for-b2b",
         marker: "review-score",
         variant: "review-score",
         step: "02",
-        heading: "四维表现",
-        description: "流利度、词汇、语法与发音。",
-        image: "/assets/speakup/outcomes/ui/review-score-detail.png",
-        alt: "SpeakUp IELTS 练习估分和四维表现雷达图",
+        heading: "薄弱项，逐条展开",
+        description: "原回答、问题证据与建议放在一起。",
+        image: "/assets/speakup/练习复盘2.jpg",
+        alt: "SpeakUp 日常英语复盘展开清晰连贯、任务达成与互动表现的证据和建议",
       },
       {
         articleId: "suppliers-can-discover-retailers",
         marker: "review-advice",
         variant: "review-detail",
         step: "03",
-        heading: "证据在原句里",
-        description: "不是泛泛评分，而是具体问题。",
-        image: "/assets/speakup/outcomes/ui/review-advice-detail.png",
-        alt: "SpeakUp 根据真实回答给出的词汇问题与证据覆盖",
+        heading: "模考结束，马上复盘",
+        description: "15 道回答汇总成阶段估分与能力画像。",
+        image: "/assets/speakup/练习复盘3.jpg",
+        alt: "SpeakUp IELTS 口语模考的阶段估分、四维表现与分项详情",
       },
       {
         articleId: "payment-requests-per-fulfillment",
         marker: "review-next-step",
         variant: "review-detail",
         step: "04",
-        heading: "建议落到动作",
-        description: "告诉你下一轮先改哪一处。",
-        image: "/assets/speakup/outcomes/ui/review-next-step-detail.png",
-        alt: "SpeakUp 根据复盘证据给出的下一轮口语练习建议",
+        heading: "下一轮，知道练什么",
+        description: "从语法、词汇到发音，建议直接落到动作。",
+        image: "/assets/speakup/练习复盘4.jpg",
+        alt: "SpeakUp IELTS 复盘中的词汇资源、发音问题证据和下一轮练习建议",
       },
     ],
   };
@@ -961,8 +986,10 @@
     const entry = feature.querySelector('[data-speakup-ui-view="entry"]');
     const practice = feature.querySelector('[data-speakup-ui-view="practice"]');
     const toggle = feature.querySelector("[data-speakup-practice-toggle]");
+    const partPicker = feature.querySelector("[data-speakup-practice-parts]");
     entry?.setAttribute("aria-hidden", String(showPractice));
     practice?.setAttribute("aria-hidden", String(!showPractice));
+    partPicker?.setAttribute("aria-hidden", String(!showPractice));
     if (!toggle) return;
     toggle.setAttribute("aria-pressed", String(showPractice));
     toggle.setAttribute("aria-expanded", String(showPractice));
@@ -974,6 +1001,10 @@
     stage.className = `speakup-scene-ui speakup-scene-ui--${chapterId} animate-show-media`;
     stage.dataset.uiState = "entry";
     const stageId = `speakup-${chapterId}-ui`;
+    const practiceVideos = Array.isArray(config.practiceVideos)
+      ? config.practiceVideos
+      : [];
+    const hasPracticeVideos = practiceVideos.length > 0;
     stage.innerHTML = `
       <div class="speakup-scene-ui__deck" id="${stageId}">
         <img
@@ -985,7 +1016,27 @@
           decoding="async"
         />
         ${
-          switchable
+          switchable && hasPracticeVideos
+            ? `<div
+                class="speakup-scene-ui__practice-player"
+                data-speakup-ui-view="practice"
+                aria-hidden="true"
+              >
+                <video
+                  data-speakup-practice-video="true"
+                  src="${practiceVideos[0].src}"
+                  poster="${practiceVideos[0].poster}"
+                  preload="metadata"
+                  playsinline
+                  controls
+                  disablepictureinpicture
+                  aria-label="IELTS ${practiceVideos[0].label} 真机练习"
+                ></video>
+                <span class="speakup-scene-ui__practice-status" aria-live="polite">
+                  ${practiceVideos[0].label}
+                </span>
+              </div>`
+            : switchable
             ? `<img
                 class="speakup-scene-ui__shot speakup-scene-ui__shot--practice"
                 data-speakup-ui-view="practice"
@@ -1003,7 +1054,7 @@
                 class="speakup-scene-ui__device-video"
                 data-speakup-device-video="true"
                 src="${config.deviceVideo}"
-                poster="${config.entry}"
+                poster="${config.deviceVideoPoster || config.entry}"
                 preload="auto"
                 playsinline
                 aria-label="${config.deviceVideoLabel}"
@@ -1027,25 +1078,142 @@
             : ""
         }
       </div>
-      ${
-        switchable
-          ? `<button
+      ${switchable
+        ? `<div class="speakup-stage-controls">
+            ${hasPracticeVideos
+              ? `<div
+                  class="speakup-stage-parts"
+                  data-speakup-practice-parts="true"
+                  role="group"
+                  aria-label="选择 IELTS 练习部分"
+                  aria-hidden="true"
+                >
+                  ${practiceVideos.map((item, index) => `
+                    <button
+                      type="button"
+                      data-speakup-practice-part="${index}"
+                      aria-pressed="${String(index === 0)}"
+                    >${index + 1}</button>`).join("")}
+                </div>`
+              : ""}
+            <button
               class="speakup-stage-toggle"
               type="button"
               data-speakup-practice-toggle="true"
               aria-controls="${stageId}"
               aria-pressed="false"
               aria-expanded="false"
-            >进入 IELTS 练习</button>`
-          : ""
-      }`;
+            >进入 IELTS 练习</button>
+          </div>`
+        : ""}`;
 
     const toggle = stage.querySelector("[data-speakup-practice-toggle]");
+    const practiceVideo = stage.querySelector("[data-speakup-practice-video]");
+    const practiceStatus = stage.querySelector(".speakup-scene-ui__practice-status");
+    const partButtons = [...stage.querySelectorAll("[data-speakup-practice-part]")];
+    const suspendedPracticeVideos = new Set();
+    let activePracticePart = 0;
+    const suspendOtherPracticeVideos = () => {
+      document.querySelectorAll("video").forEach((video) => {
+        if (video === practiceVideo || video.paused) return;
+        suspendedPracticeVideos.add(video);
+        video.pause();
+      });
+    };
+    const resumeOtherPracticeVideos = () => {
+      suspendedPracticeVideos.forEach((video) => {
+        if (!video.isConnected || document.hidden) return;
+        video.play().catch(() => {});
+      });
+      suspendedPracticeVideos.clear();
+    };
+    const setActivePracticePart = (index) => {
+      if (!practiceVideo || !practiceVideos[index]) return;
+      const item = practiceVideos[index];
+      activePracticePart = index;
+      if (practiceVideo.getAttribute("src") !== item.src) {
+        practiceVideo.pause();
+        practiceVideo.src = item.src;
+        practiceVideo.poster = item.poster;
+        practiceVideo.load();
+      }
+      practiceVideo.setAttribute("aria-label", `IELTS ${item.label} 真机练习`);
+      if (practiceStatus) practiceStatus.textContent = item.label;
+      partButtons.forEach((button, buttonIndex) => {
+        button.setAttribute("aria-pressed", String(buttonIndex === index));
+      });
+    };
+    const playPracticePart = async (index) => {
+      if (!practiceVideo) return;
+      setActivePracticePart(index);
+      suspendOtherPracticeVideos();
+      stage.dataset.practiceVideoState = "loading";
+      try {
+        await practiceVideo.play();
+        stage.dataset.practiceVideoState = "playing";
+      } catch {
+        stage.dataset.practiceVideoState = "paused";
+        resumeOtherPracticeVideos();
+      }
+    };
+    const stopPracticeVideo = () => {
+      if (!practiceVideo) return;
+      practiceVideo.pause();
+      if (practiceVideo.readyState > 0) practiceVideo.currentTime = 0;
+      stage.dataset.practiceVideoState = "paused";
+      resumeOtherPracticeVideos();
+    };
     if (toggle) {
       toggle.addEventListener("click", () => {
-        setPracticeState(stage, stage.dataset.uiState !== "practice");
+        const showPractice = stage.dataset.uiState !== "practice";
+        setPracticeState(stage, showPractice);
+        if (showPractice && practiceVideo) {
+          playPracticePart(activePracticePart);
+        } else if (practiceVideo) {
+          stopPracticeVideo();
+        }
       });
       setPracticeState(stage, false);
+    }
+    if (practiceVideo) {
+      partButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const index = Number(button.dataset.speakupPracticePart);
+          if (!Number.isInteger(index) || !practiceVideos[index]) return;
+          setPracticeState(stage, true);
+          playPracticePart(index);
+        });
+      });
+      practiceVideo.addEventListener("play", () => {
+        stage.dataset.practiceVideoState = "playing";
+      });
+      practiceVideo.addEventListener("pause", () => {
+        if (!practiceVideo.ended) stage.dataset.practiceVideoState = "paused";
+      });
+      practiceVideo.addEventListener("ended", () => {
+        const nextPart = activePracticePart + 1;
+        if (practiceVideos[nextPart]) {
+          playPracticePart(nextPart);
+        } else {
+          stage.dataset.practiceVideoState = "complete";
+          resumeOtherPracticeVideos();
+        }
+      });
+      practiceVideo.addEventListener("error", () => {
+        stage.dataset.practiceVideoState = "error";
+        resumeOtherPracticeVideos();
+      });
+      const practiceVisibilityObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting || stage.dataset.uiState !== "practice") return;
+          stopPracticeVideo();
+          setPracticeState(stage, false);
+        },
+        { threshold: 0.08 },
+      );
+      practiceVisibilityObserver.observe(stage);
+      setActivePracticePart(0);
+      stage.dataset.practiceVideoState = "paused";
     }
 
     const deviceVideo = stage.querySelector("[data-speakup-device-video]");
@@ -1360,7 +1528,16 @@
     if (article.children.length !== 1 || article.firstElementChild !== feature) {
       article.replaceChildren(feature);
     }
-    feature.querySelectorAll("video:not([data-speakup-device-video])").forEach((video) => {
+    const practicePlaybackActive = Boolean(
+      feature.querySelector(
+        '.speakup-scene-ui[data-ui-state="practice"] [data-speakup-practice-video]',
+      ),
+    );
+    feature
+      .querySelectorAll(
+        "video:not([data-speakup-device-video]):not([data-speakup-practice-video])",
+      )
+      .forEach((video) => {
       video.muted = true;
       video.defaultMuted = true;
       video.autoplay = true;
@@ -1368,8 +1545,12 @@
       video.playsInline = true;
       video.controls = false;
       video.querySelectorAll("source").forEach((source) => source.remove());
-      if (video.paused) video.play().catch(() => {});
-    });
+      if (practicePlaybackActive) {
+        if (!video.paused) video.pause();
+      } else if (video.paused) {
+        video.play().catch(() => {});
+      }
+      });
     return feature;
   }
 
@@ -1513,6 +1694,40 @@
         buildOutcomeImageFeature(card, "review"),
       );
     });
+
+    bindPracticeReviewReveal(group);
+  }
+
+  function bindPracticeReviewReveal(group) {
+    if (!group || group.dataset.speakupReviewRevealBound) return;
+    group.dataset.speakupReviewRevealBound = "true";
+
+    const cards = [
+      ...group.querySelectorAll(
+        ".speakup-outcome-card-host[data-component-name='product']",
+      ),
+    ];
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (!("IntersectionObserver" in window) || reducedMotion) {
+      cards.forEach((card) => card.classList.add("is-review-visible"));
+      return;
+    }
+
+    group.classList.add("is-review-reveal-ready");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-review-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8%" },
+    );
+    cards.forEach((card) => observer.observe(card));
   }
 
   function updateTrainingMemoryChapter() {

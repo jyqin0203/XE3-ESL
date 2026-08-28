@@ -502,8 +502,54 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   object-fit: contain;
 }
 
-#retail .speakup-scene-ui__device-video,
-#retail .speakup-scene-ui__device-play {
+.speakup-scene-ui__practice-player {
+  position: absolute;
+  inset: 7px;
+  z-index: 1;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
+  overflow: hidden;
+  border-radius: 10.6% / 4.9%;
+  background: #eef3f6;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(9%, 2%, 0) rotate(1.25deg) scale(0.975);
+  transition:
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.speakup-scene-ui__practice-player video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #eef3f6;
+  object-fit: cover;
+  object-position: center;
+}
+
+.speakup-scene-ui__practice-status {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  z-index: 2;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(8, 10, 13, 0.58);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.speakup-scene-ui__device-video,
+.speakup-scene-ui__device-play {
   position: absolute;
   inset: 7px;
   width: calc(100% - 14px);
@@ -511,7 +557,7 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   border-radius: 10.6% / 4.9%;
 }
 
-#retail .speakup-scene-ui__device-video {
+.speakup-scene-ui__device-video {
   z-index: 3;
   display: block;
   opacity: 0;
@@ -524,26 +570,22 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   transition: opacity 220ms ease;
 }
 
-#retail
-  .speakup-scene-ui[data-device-video-state="loading"]
+.speakup-scene-ui[data-device-video-state="loading"]
   .speakup-scene-ui__device-video,
-#retail
-  .speakup-scene-ui[data-device-video-state="playing"]
+.speakup-scene-ui[data-device-video-state="playing"]
   .speakup-scene-ui__device-video {
   opacity: 1;
   pointer-events: auto;
 }
 
-#retail
-  .speakup-scene-ui[data-device-video-state="loading"]
+.speakup-scene-ui[data-device-video-state="loading"]
   .speakup-scene-ui__shot--entry,
-#retail
-  .speakup-scene-ui[data-device-video-state="playing"]
+.speakup-scene-ui[data-device-video-state="playing"]
   .speakup-scene-ui__shot--entry {
   opacity: 0;
 }
 
-#retail .speakup-scene-ui__device-play {
+.speakup-scene-ui__device-play {
   z-index: 5;
   display: grid;
   padding: 0;
@@ -554,11 +596,11 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   place-items: center;
 }
 
-#retail .speakup-scene-ui__device-play[hidden] {
+.speakup-scene-ui__device-play[hidden] {
   display: none;
 }
 
-#retail .speakup-scene-ui__device-play-prompt {
+.speakup-scene-ui__device-play-prompt {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -579,7 +621,7 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
     transform 180ms ease;
 }
 
-#retail .speakup-scene-ui__device-play-icon {
+.speakup-scene-ui__device-play-icon {
   display: grid;
   width: 28px;
   height: 28px;
@@ -589,17 +631,17 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   place-items: center;
 }
 
-#retail .speakup-scene-ui__device-play-icon svg {
+.speakup-scene-ui__device-play-icon svg {
   width: 17px;
   height: 17px;
 }
 
-#retail .speakup-scene-ui__device-play:hover .speakup-scene-ui__device-play-prompt {
+.speakup-scene-ui__device-play:hover .speakup-scene-ui__device-play-prompt {
   background: rgba(8, 10, 13, 0.9);
   transform: scale(1.025);
 }
 
-#retail .speakup-scene-ui__device-play:focus-visible {
+.speakup-scene-ui__device-play:focus-visible {
   outline: 2px solid #fff;
   outline-offset: -8px;
 }
@@ -628,6 +670,61 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
 }
 
+.speakup-scene-ui[data-ui-state="practice"] .speakup-scene-ui__practice-player {
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+}
+
+.speakup-stage-controls {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  min-width: 0;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.speakup-stage-parts {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.speakup-scene-ui[data-ui-state="practice"] .speakup-stage-parts {
+  display: flex;
+}
+
+.speakup-stage-parts button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid rgba(41, 41, 25, 0.28);
+  border-radius: 4px;
+  color: var(--speakup-ink);
+  background: rgba(247, 247, 238, 0.82);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  place-items: center;
+}
+
+.speakup-stage-parts button[aria-pressed="true"] {
+  color: var(--speakup-ivory);
+  background: var(--speakup-ink);
+}
+
+.speakup-stage-parts button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
 .speakup-stage-toggle {
   position: relative;
   z-index: 4;
@@ -644,6 +741,10 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
+}
+
+.speakup-stage-controls .speakup-stage-toggle {
+  margin-top: 0;
 }
 
 .speakup-stage-toggle:hover {
@@ -723,6 +824,26 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   background:
     linear-gradient(180deg, rgba(247, 247, 238, 0.58), rgba(247, 247, 238, 0.2)),
     #d2ceb7;
+}
+
+#marketing .speakup-scene-ui__deck {
+  padding: 4px;
+}
+
+#marketing .speakup-scene-ui__deck::before {
+  inset: 2px;
+}
+
+#marketing .speakup-scene-ui__shot,
+#marketing .speakup-scene-ui__practice-player {
+  inset: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border-radius: 11.25% / 5.15%;
+}
+
+#marketing .speakup-scene-ui__shot--entry {
+  object-fit: cover;
 }
 
 /* Checkout and Operations keep the source grid and its reveal classes. Only
@@ -882,7 +1003,7 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   position: relative;
   width: 100%;
   overflow: hidden;
-  aspect-ratio: 7 / 12;
+  aspect-ratio: 9 / 20;
   isolation: isolate;
   background: #eef5f8;
   box-shadow:
@@ -971,14 +1092,9 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
 }
 
 #b2b .speakup-outcome-card--review-overview .speakup-outcome-card__media,
-#b2b .speakup-outcome-card--review-score .speakup-outcome-card__media {
-  aspect-ratio: 4 / 5;
-  padding: clamp(12px, 2vw, 24px);
-}
-
+#b2b .speakup-outcome-card--review-score .speakup-outcome-card__media,
 #b2b .speakup-outcome-card--review-detail .speakup-outcome-card__media {
-  aspect-ratio: 16 / 9;
-  padding: clamp(10px, 1.5vw, 18px);
+  aspect-ratio: 9 / 20;
 }
 
 #b2b .speakup-outcome-card__media img {
@@ -988,11 +1104,107 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   object-fit: contain;
   object-position: center;
   user-select: none;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 #b2b .speakup-outcome-card__copy {
   margin-top: 14px;
   margin-bottom: clamp(20px, 3vw, 38px);
+}
+
+#b2b .speakup-outcome-card-host--review-overview {
+  --review-delay: 0ms;
+  --review-tilt: -0.55deg;
+  --review-hover-tilt: -0.12deg;
+}
+
+#b2b .speakup-outcome-card-host--review-score {
+  --review-delay: 90ms;
+  --review-shift: clamp(54px, 7vw, 108px);
+  --review-tilt: 0.7deg;
+  --review-hover-tilt: 0.15deg;
+}
+
+#b2b .speakup-outcome-card-host--review-advice {
+  --review-delay: 50ms;
+  --review-shift: clamp(-46px, -3vw, -24px);
+  --review-tilt: 0.45deg;
+  --review-hover-tilt: 0.1deg;
+}
+
+#b2b .speakup-outcome-card-host--review-next-step {
+  --review-delay: 140ms;
+  --review-shift: clamp(34px, 5vw, 78px);
+  --review-tilt: -0.65deg;
+  --review-hover-tilt: -0.14deg;
+}
+
+#b2b .speakup-outcome-grid--review .speakup-outcome-card-host {
+  transform: translateY(var(--review-shift, 0));
+}
+
+#b2b
+  .speakup-outcome-grid--review
+  .speakup-outcome-card-host
+  .speakup-outcome-card {
+  width: 90%;
+  transform: rotate(var(--review-tilt, 0deg));
+  transform-origin: 50% 42%;
+}
+
+#b2b
+  .speakup-outcome-card-host--review-overview
+  .speakup-outcome-card,
+#b2b
+  .speakup-outcome-card-host--review-advice
+  .speakup-outcome-card {
+  margin-inline: 2% auto;
+}
+
+#b2b
+  .speakup-outcome-card-host--review-score
+  .speakup-outcome-card,
+#b2b
+  .speakup-outcome-card-host--review-next-step
+  .speakup-outcome-card {
+  margin-inline: auto 2%;
+}
+
+#b2b
+  .speakup-outcome-grid--review.is-review-reveal-ready
+  .speakup-outcome-card-host
+  .speakup-outcome-card {
+  opacity: 0;
+  filter: blur(2px);
+  transform: translateY(34px) rotate(var(--review-tilt, 0deg)) scale(0.985);
+}
+
+#b2b
+  .speakup-outcome-grid--review.is-review-reveal-ready
+  .speakup-outcome-card-host.is-review-visible
+  .speakup-outcome-card {
+  opacity: 1;
+  filter: none;
+  transform: translateY(0) rotate(var(--review-tilt, 0deg)) scale(1);
+  transition:
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1) var(--review-delay, 0ms),
+    filter 550ms ease-out var(--review-delay, 0ms),
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1) var(--review-delay, 0ms);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #b2b
+    .speakup-outcome-grid--review
+    .speakup-outcome-card-host.is-review-visible
+    .speakup-outcome-card:hover {
+    transform: translateY(-8px) rotate(var(--review-hover-tilt, 0deg)) scale(1.003);
+    transition-delay: 0ms;
+    transition-duration: 420ms;
+  }
+
+  #b2b .speakup-outcome-card:hover .speakup-outcome-card__media img {
+    transform: scale(1.012);
+  }
 }
 
 #finance .speakup-outcome-card__copy {
@@ -1145,6 +1357,11 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   #finance .speakup-finance-switch__card {
     transition: none;
   }
+
+  #b2b .speakup-outcome-card,
+  #b2b .speakup-outcome-card__media img {
+    transition: none !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1157,8 +1374,21 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   }
 
   #b2b .speakup-outcome-card--review-overview .speakup-outcome-card__media,
-  #b2b .speakup-outcome-card--review-score .speakup-outcome-card__media {
+  #b2b .speakup-outcome-card--review-score .speakup-outcome-card__media,
+  #b2b .speakup-outcome-card--review-detail .speakup-outcome-card__media {
     max-height: 76svh;
+  }
+
+  #b2b .speakup-outcome-grid--review .speakup-outcome-card-host {
+    transform: none;
+  }
+
+  #b2b
+    .speakup-outcome-grid--review
+    .speakup-outcome-card-host
+    .speakup-outcome-card {
+    width: 94%;
+    margin-inline: auto;
   }
 }
 

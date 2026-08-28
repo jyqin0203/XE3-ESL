@@ -83,6 +83,16 @@ const shopAppAssetReplacements = [
     '/assets/speakup/shopapp/speakup-shopapp-medium.glb',
   ],
 ];
+const b2bAssetReplacements = [
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/73f4d9f62ba07f6e/EW26_B2B_251205v2_compressed-optimized.glb',
+    '/assets/speakup/b2b/speakup-b2b-high.glb',
+  ],
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/c4626bed57ec9dff/B2B_fg_smaller_251127_compressed-optimizedv2.glb',
+    '/assets/speakup/b2b/speakup-b2b-medium.glb',
+  ],
+];
 
 const fallbackTypes = {
   '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8',
@@ -111,6 +121,9 @@ async function serveSpeakUpIndex(request, response, filePath) {
     body = body.replaceAll(originalPath, speakUpPath);
   }
   for (const [originalPath, speakUpPath] of shopAppAssetReplacements) {
+    body = body.replaceAll(originalPath, speakUpPath);
+  }
+  for (const [originalPath, speakUpPath] of b2bAssetReplacements) {
     body = body.replaceAll(originalPath, speakUpPath);
   }
   body = body
