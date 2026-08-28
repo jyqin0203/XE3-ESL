@@ -63,6 +63,26 @@ const marketingAssetReplacements = [
     '/assets/speakup/marketing/speakup-marketing-scene.glb',
   ],
 ];
+const checkoutAssetReplacements = [
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/f889c7c758e60536/EW26_Checkout_251209_compressed-optimized.glb',
+    '/assets/speakup/checkout/speakup-checkout-scene.glb',
+  ],
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/7aca351ff49a1198/Checkout_fg_smaller_251127_compressed-optimized.glb',
+    '/assets/speakup/checkout/speakup-checkout-foreground.glb',
+  ],
+];
+const shopAppAssetReplacements = [
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/3ffd3b2a5abbe541/EW26_ShopApp_251208v3_compressed-optimized.glb',
+    '/assets/speakup/shopapp/speakup-shopapp-high.glb',
+  ],
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/f10427420c475b24/EW26_ShopApp_251128v2_compressed-optimized.glb',
+    '/assets/speakup/shopapp/speakup-shopapp-medium.glb',
+  ],
+];
 
 const fallbackTypes = {
   '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8',
@@ -85,6 +105,12 @@ async function serveSpeakUpIndex(request, response, filePath) {
     body = body.replaceAll(originalPath, speakUpPath);
   }
   for (const [originalPath, speakUpPath] of marketingAssetReplacements) {
+    body = body.replaceAll(originalPath, speakUpPath);
+  }
+  for (const [originalPath, speakUpPath] of checkoutAssetReplacements) {
+    body = body.replaceAll(originalPath, speakUpPath);
+  }
+  for (const [originalPath, speakUpPath] of shopAppAssetReplacements) {
     body = body.replaceAll(originalPath, speakUpPath);
   }
   body = body
