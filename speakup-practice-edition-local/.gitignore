@@ -1,0 +1,11 @@
+# Third-party scene-runtime assets are kept locally for compatibility but must
+# not be committed. Tracked SpeakUp assets live beside them in assets/speakup/.
+assets/remote/
+.playwright-cli/
+
+# Local source captures retained beside their derived, web-ready media.
+assets/speakup/职场沟通.mov
+assets/speakup/雅思part1.mov
+assets/speakup/雅思part2.mov
+assets/speakup/雅思part3.mov
+assets/speakup/餐厅点餐.mov

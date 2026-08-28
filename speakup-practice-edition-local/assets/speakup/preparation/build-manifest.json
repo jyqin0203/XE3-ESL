@@ -1,0 +1,149 @@
+{
+  "source": {
+    "glb": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/46aedb6ec0619620/EW26_Online_251209v3_compressed-optimized.glb",
+    "glbBytes": 736028,
+    "glbSha256": "9f0f8dc0abec3a3edb3f15f5e8c6a4a3780f82373f698d9f39a154aae104b321",
+    "recording": "assets/speakup/表达准备.mov",
+    "recordingDurationSeconds": 21.933333,
+    "recordingDimensions": [
+      432,
+      960
+    ]
+  },
+  "output": {
+    "glb": "assets/speakup/preparation/speakup-preparation-intro.glb",
+    "glbBytes": 1129344,
+    "glbSha256": "080aa9baa33827a58b6c9c3f03114084b77fe61d1814313de981c848ac0b2080",
+    "atlas": "assets/speakup/preparation/speakup-preparation-atlas.png",
+    "atlasBytes": 393340,
+    "atlasSha256": "3c291ab3d269f483b670e8b200f43d0313abe529b879959ca507f54c3c92f471",
+    "uiFlowContactSheet": "assets/speakup/preparation/speakup-preparation-ui-flow.png"
+  },
+  "frames": [
+    {
+      "id": "01-choose-goal",
+      "timestampSeconds": 0.4,
+      "label": "01 · CHOOSE",
+      "crop": {
+        "left": 0,
+        "top": 40,
+        "width": 432,
+        "height": 455
+      },
+      "file": "assets/speakup/preparation/frames/01-choose-goal.png"
+    },
+    {
+      "id": "02-name-context",
+      "timestampSeconds": 3.4,
+      "label": "02 · CONTEXT",
+      "crop": {
+        "left": 0,
+        "top": 300,
+        "width": 432,
+        "height": 455
+      },
+      "file": "assets/speakup/preparation/frames/02-name-context.png"
+    },
+    {
+      "id": "03-learn-frame",
+      "timestampSeconds": 6.4,
+      "label": "03 · LEARN",
+      "crop": {
+        "left": 0,
+        "top": 100,
+        "width": 432,
+        "height": 455
+      },
+      "file": "assets/speakup/preparation/frames/03-learn-frame.png"
+    },
+    {
+      "id": "04-ask-to-try",
+      "timestampSeconds": 10.4,
+      "label": "04 · ASK TO TRY",
+      "crop": {
+        "left": 0,
+        "top": 420,
+        "width": 432,
+        "height": 455
+      },
+      "file": "assets/speakup/preparation/frames/04-ask-to-try.png"
+    },
+    {
+      "id": "05-enter-practice",
+      "timestampSeconds": 13.4,
+      "label": "05 · ENTER",
+      "crop": {
+        "left": 0,
+        "top": 280,
+        "width": 432,
+        "height": 455
+      },
+      "file": "assets/speakup/preparation/frames/05-enter-practice.png"
+    },
+    {
+      "id": "06-start-session",
+      "timestampSeconds": 18.4,
+      "label": "06 · PRACTICE",
+      "crop": {
+        "left": 0,
+        "top": 330,
+        "width": 432,
+        "height": 455
+      },
+      "file": "assets/speakup/preparation/frames/06-start-session.png"
+    }
+  ],
+  "preserved": {
+    "nodes": 41,
+    "meshes": 6,
+    "materials": 3,
+    "skins": 2,
+    "animations": [
+      {
+        "name": "online_canvasAction",
+        "channels": 3,
+        "samplers": 3
+      },
+      {
+        "name": "Armature.002Action.001",
+        "channels": 24,
+        "samplers": 24
+      },
+      {
+        "name": "online_handarmatureAction.001",
+        "channels": 81,
+        "samplers": 81
+      },
+      {
+        "name": "online_brushAction.001",
+        "channels": 6,
+        "samplers": 6
+      }
+    ],
+    "scenes": 1,
+    "accessors": 164,
+    "exactInvariantJsonMatch": true
+  },
+  "atlasReplacement": {
+    "sourceImage": "online_fg_diffuse_v5",
+    "sourceEncoding": "KTX2 ETC1S 1024x1024, no alpha",
+    "outputEncoding": "embedded PNG 1024x1024",
+    "reason": "The mirror includes a Basis decoder but no KTX encoder; PNG keeps the material and UV contract while remaining browser-native.",
+    "changedRegion": "Six authored product cells and the small header wordmark only; surrounding paper, baked hand shadow, brush path, and all non-canvas atlas regions are preserved."
+  },
+  "fallbacks": {
+    "status": "blocked-for-exact-composite",
+    "reason": "Desktop, mobile, and no-WebGL fallbacks are flattened renders. The hand, sleeve, blue brush, paper, and product pixels share one bitmap, and their occlusions differ by crop. A 2D overwrite would cover authored foreground pixels. Render fresh fallbacks from the replacement GLB at the original camera states instead of patching these bitmaps.",
+    "requiredSources": [
+      "assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Online_desktop.ktx2",
+      "assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_Online_2x.ktx2",
+      "assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Online_Fallback.jpg",
+      "assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_Online_2x_19548bd3-08de-48b3-a780-e47cbf3fbf64.jpg"
+    ]
+  },
+  "toolkit": {
+    "sharpViaGltfTransform": "4.4.2",
+    "ffmpeg": true,
+    "basisDecoder": "three@0.172.0/examples/jsm/libs/basis/basis_transcoder"
+  }
+}

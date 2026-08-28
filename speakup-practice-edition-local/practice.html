@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SpeakUp Practice Edition · 下一场重要的英文沟通，先练一遍</title>
+    <meta
+      name="description"
+      content="面向真实表达场景的 AI 英语口语陪练：理解目标、组织准备、进入实战并持续复盘。"
+    />
+    <meta property="og:title" content="SpeakUp Practice Edition · 下一场重要的英文沟通，先练一遍" />
+    <meta
+      property="og:description"
+      content="面向真实表达场景的 AI 英语口语陪练：理解目标、组织准备、进入实战并持续复盘。"
+    />
+    <meta property="og:site_name" content="SpeakUp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/speakup/hero-desktop.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SpeakUp Practice Edition · 下一场重要的英文沟通，先练一遍" />
+    <meta
+      name="twitter:description"
+      content="面向真实表达场景的 AI 英语口语陪练：理解目标、组织准备、进入实战并持续复盘。"
+    />
+    <meta name="twitter:image" content="/assets/speakup/hero-desktop.png" />
+    <link rel="canonical" href="/practice" />
+    <link rel="icon" type="image/svg+xml" href="/assets/speakup/speakup-mark.svg" />
+    <style>
+      html,
+      body,
+      iframe {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border: 0;
+      }
+
+      html,
+      body {
+        overflow: hidden;
+        background: #080b0d;
+      }
+
+      iframe {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="speakup-practice" title="SpeakUp Practice Edition"></iframe>
+    <script>
+      (() => {
+        const publicRoute = "/practice";
+        const runtimeRoute = "/editions/winter2026?embed=1";
+        const sourceIds = {
+          "ai-teacher": "sidekick",
+          goal: "agentic",
+          preparation: "online",
+          interview: "retail",
+          ielts: "marketing",
+          workplace: "checkout",
+          travel: "operations",
+          feedback: "shop-app",
+          review: "b2b",
+          memory: "finance",
+          download: "developer",
+        };
+        const frame = document.getElementById("speakup-practice");
+
+        const publicHash = () => location.hash.replace(/^#/, "");
+        const runtimeHash = () => sourceIds[publicHash()] || "";
+        frame.src = `${runtimeRoute}${runtimeHash() ? `#${runtimeHash()}` : ""}`;
+
+        window.addEventListener("message", (event) => {
+          if (event.origin !== location.origin || event.source !== frame.contentWindow) return;
+          if (event.data?.type !== "speakup-route") return;
+          const hash = sourceIds[event.data.hash] ? event.data.hash : "";
+          const nextLocation = `${publicRoute}${hash ? `#${hash}` : ""}`;
+          const currentLocation = `${location.pathname}${location.hash}`;
+          if (nextLocation === currentLocation) return;
+          history[event.data.replace === false ? "pushState" : "replaceState"](
+            history.state,
+            "",
+            nextLocation,
+          );
+        });
+
+        const forwardPublicLocation = () => {
+          frame.contentWindow?.postMessage(
+            { type: "speakup-navigate", hash: publicHash() },
+            location.origin,
+          );
+        };
+        frame.addEventListener("load", forwardPublicLocation);
+        window.addEventListener("hashchange", forwardPublicLocation);
+        window.addEventListener("popstate", forwardPublicLocation);
+      })();
+    </script>
+  </body>
+</html>

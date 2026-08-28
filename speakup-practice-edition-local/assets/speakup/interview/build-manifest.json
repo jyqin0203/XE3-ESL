@@ -1,0 +1,90 @@
+{
+  "purpose": "Remove unrelated source merchandise while preserving the authored interview camera and timeline.",
+  "models": [
+    {
+      "id": "environment",
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/9eeb64e8194faa39/POS_V53_environment_251209v2_compressed-optimized.glb",
+      "output": "assets/speakup/interview/speakup-interview-environment.glb",
+      "sourceSha256": "44c52485c10067ef8a1921abff012fa5f6c5a025ff01a98a6b917c3464a852af",
+      "outputSha256": "a515a9b23138e8862543ac8f5487b612a0a6947b1d73de7ef3b68dc89c8fab52",
+      "removedMeshNodes": [
+        "env-exterior",
+        "env-interior"
+      ],
+      "remainingVisibleNodes": [
+        "corinthian_column.001",
+        "en-dome"
+      ],
+      "preserved": {
+        "nodes": 7,
+        "animations": [
+          {
+            "name": "Scene",
+            "channels": 7,
+            "samplers": 7
+          }
+        ]
+      }
+    },
+    {
+      "id": "hub",
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/e51a31d48a973f83/POS_v53_Hub_251208v2_compressed-optimized.glb",
+      "output": "assets/speakup/interview/speakup-interview-hub.glb",
+      "sourceSha256": "7517e702e33e83e33015371d48b90c5295ac708ca116d9ea602e0e3f61e505df",
+      "outputSha256": "4b83833a6403a41f8e3749fa1d6d41d69cb688cd21e772fdaffd52b6f7dd7ee5",
+      "removedMeshNodes": [
+        "pos-markings",
+        "pos-bottom",
+        "pos-logo",
+        "pos-pcb",
+        "pos-ports",
+        "pos-screws",
+        "pos-top"
+      ],
+      "remainingVisibleNodes": [],
+      "preserved": {
+        "nodes": 8,
+        "animations": [
+          {
+            "name": "Scene",
+            "channels": 4,
+            "samplers": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "middle-ground",
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/2f9637a8c00c276d/Retail_mg_251205v2_compressed-optimized.glb",
+      "output": "assets/speakup/interview/speakup-interview-middle.glb",
+      "sourceSha256": "d6520ed66ef13cc4a6bfe4e39d9b9d4dc8d0d5759c5c4ebd9d47e134a2c54c38",
+      "outputSha256": "48a3b1772e3b8d824a3fc352493ca54ffedc130054a5707df3d1c3d113b029fc",
+      "removedMeshNodes": [
+        "env-backwall",
+        "pos-device-screen",
+        "pos-device-ipad",
+        "pos-device-scanner",
+        "pos-reader",
+        "shine-poscordscanner",
+        "shiny-bar1",
+        "shiny-pos-psu-end",
+        "shiny-pos-usb-end-1",
+        "shiny-pos-usb-end-2",
+        "shiny-posethernetend",
+        "shiny-usb-c",
+        "shiny-cord"
+      ],
+      "remainingVisibleNodes": [],
+      "preserved": {
+        "nodes": 77,
+        "animations": [
+          {
+            "name": "Scene",
+            "channels": 185,
+            "samplers": 185
+          }
+        ]
+      }
+    }
+  ]
+}

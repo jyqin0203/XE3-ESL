@@ -1,0 +1,23 @@
+{
+  "operation": "precise object removal with the built-in image generation editor, followed by deterministic resize",
+  "role": "Practice review desktop and mobile low-performance fallbacks without the laptop",
+  "constraints": "Remove only the laptop and reconstruct the directly obscured clothing, hands, bench, floor, and courtyard; preserve people, identities, poses, framing, palette, and painterly style.",
+  "outputs": [
+    {
+      "source": "assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/newProperty_1_B2B.jpg",
+      "output": "assets/speakup/review/review-desktop-no-laptop.jpg",
+      "width": 2880,
+      "height": 1780,
+      "fit": "exact aspect-preserving resize",
+      "sha256": "f7c2c59952aa85de6665598587e374357abb92cfbb51f05f701a2f8ed7cba13d"
+    },
+    {
+      "source": "assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_B2B_2x_1353d91d-00eb-455e-bafb-18762b0240cb.jpg",
+      "output": "assets/speakup/review/review-mobile-no-laptop.jpg",
+      "width": 804,
+      "height": 1748,
+      "fit": "exact aspect-preserving resize",
+      "sha256": "8743857a35019a21a5422965bd0e6ec4d201c01224e22edb403abc82066b9db2"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "modelBuilds": [
+    {
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/614d6d0fa1836313/EW26_Finance_251208v2_compressed-optimized.glb",
+      "sourceSha256": "61571e16d71c7d1439b4ef89beef90a54d008ba09955ff95877670c55548f148",
+      "output": "assets/speakup/memory/speakup-memory-high.glb",
+      "outputSha256": "126b355fb6420bedd544aac650abbdd4ed38db58986072a461a2e46b3d589501",
+      "hiddenNodes": [
+        {
+          "name": "shiny-coin1",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "shiny-coin10",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "shiny-coin2",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "shiny-coin3",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "shiny-coin4",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "shiny-coin5",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "shiny-coin6",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "shiny-coin7",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "shiny-coin8",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "shiny-coin9",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Finance-l-hand.001",
+          "mesh": 3,
+          "role": "person"
+        },
+        {
+          "name": "Phone",
+          "mesh": 6,
+          "role": "prop"
+        },
+        {
+          "name": "Finance-r-hand.001",
+          "mesh": 5,
+          "role": "person"
+        },
+        {
+          "name": "Finance Woman",
+          "mesh": 2,
+          "role": "person"
+        }
+      ],
+      "preserved": {
+        "nodes": 85,
+        "meshes": 7,
+        "skins": 3,
+        "animations": [
+          {
+            "name": "Scene",
+            "channels": 243,
+            "samplers": 243
+          }
+        ],
+        "exactOriginalBinary": true
+      }
+    },
+    {
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/7b3adea2cd3c35d2/finance_fg_smaller_251127_compressed-optimized.glb",
+      "sourceSha256": "6d29659a2909d2df31dbead6dff986d4b2001f4627d9571752a9f90587feab5c",
+      "output": "assets/speakup/memory/speakup-memory-medium.glb",
+      "outputSha256": "22eb27ac6785955e8c637cf574879d5b42d0b540552ab8c6134423708bbce8d1",
+      "hiddenNodes": [
+        {
+          "name": "Coin",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Coin.001",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Coin.002",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Coin.003",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Coin.004",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Coin.005",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Coin.006",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Coin.007",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Coin.008",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Coin.009",
+          "mesh": 4,
+          "role": "coin"
+        },
+        {
+          "name": "Finance-l-hand.001",
+          "mesh": 3,
+          "role": "person"
+        },
+        {
+          "name": "Phone",
+          "mesh": 6,
+          "role": "prop"
+        },
+        {
+          "name": "Finance-r-hand.001",
+          "mesh": 5,
+          "role": "person"
+        },
+        {
+          "name": "Finance Woman",
+          "mesh": 2,
+          "role": "person"
+        }
+      ],
+      "preserved": {
+        "nodes": 85,
+        "meshes": 7,
+        "skins": 3,
+        "animations": [
+          {
+            "name": "Scene",
+            "channels": 243,
+            "samplers": 243
+          }
+        ],
+        "exactOriginalBinary": true
+      }
+    }
+  ],
+  "fallbacks": {
+    "source": "assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Finance_bg-optimized.ktx2",
+    "sourceSha256": "762665428c0ab13f103ad75f0fcb91d86531bbc1ac252ae305e0211698f0fe81",
+    "operation": "decode original clean background, then scale and center-crop without stretching",
+    "fit": "cover",
+    "outputs": [
+      {
+        "path": "assets/speakup/memory/memory-clean-background.ktx2",
+        "width": 2048,
+        "height": 1444,
+        "sha256": "762665428c0ab13f103ad75f0fcb91d86531bbc1ac252ae305e0211698f0fe81"
+      },
+      {
+        "path": "assets/speakup/memory/memory-desktop.jpg",
+        "width": 2880,
+        "height": 1780,
+        "sha256": "5a01dd7f893decfe4d7846b505adb432559bba4448a2b9d538bb6567cff2fcda"
+      },
+      {
+        "path": "assets/speakup/memory/memory-mobile.jpg",
+        "width": 804,
+        "height": 1748,
+        "sha256": "976c893b6deb60d74d6d842e99165ae001454717b20c2e99255982c81682e891"
+      }
+    ]
+  }
+}

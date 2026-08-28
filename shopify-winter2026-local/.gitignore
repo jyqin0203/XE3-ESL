@@ -1,5 +1,0 @@
-# Third-party Shopify mirror assets are kept locally for study but must not be
-# committed to the SpeakUp repository. The tracked SpeakUp assets live beside
-# this directory in assets/speakup/.
-assets/remote/
-

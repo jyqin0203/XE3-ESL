@@ -1,0 +1,98 @@
+{
+  "builds": [
+    {
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/3ffd3b2a5abbe541/EW26_ShopApp_251208v3_compressed-optimized.glb",
+      "sourceSha256": "23bcc186f4584aa483115b819732069b743b3fbee62fe4f8fb071e7ea8149b95",
+      "output": "assets/speakup/feedback-scene/speakup-feedback-high.glb",
+      "outputSha256": "51077928ffbcb7744c861cf7de379fbf0f68898b09361812776a7db4485a14e3",
+      "hiddenMeshes": {
+        "Woman and Horse": 0,
+        "Horse-eye": 5,
+        "Arm": 2,
+        "checkout-hand.001": 3,
+        "shopappphone": 4,
+        "ShopAppCap": 1
+      },
+      "hairReplacement": null,
+      "preserved": {
+        "nodes": 62,
+        "skins": 3,
+        "animations": [
+          {
+            "name": "shopappbody",
+            "channels": 60,
+            "samplers": 60
+          },
+          {
+            "name": "shopapp-arm",
+            "channels": 27,
+            "samplers": 27
+          },
+          {
+            "name": "shopapphandAction",
+            "channels": 81,
+            "samplers": 81
+          },
+          {
+            "name": "shopapp-phone",
+            "channels": 3,
+            "samplers": 3
+          },
+          {
+            "name": "Horse-eyeAction",
+            "channels": 3,
+            "samplers": 3
+          }
+        ],
+        "exactOriginalBinaryPrefix": true
+      }
+    },
+    {
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/f10427420c475b24/EW26_ShopApp_251128v2_compressed-optimized.glb",
+      "sourceSha256": "b4a63386d0efb28d70a295b90e5edb29edb2ca421f5e7d06c49d586276da3080",
+      "output": "assets/speakup/feedback-scene/speakup-feedback-medium.glb",
+      "outputSha256": "91ef2b7b84291bd7f645d4129da73d9d3896b2bf61875765834c06a355953913",
+      "hiddenMeshes": {
+        "Woman and Horse": 0,
+        "Horse-eye": 5,
+        "Arm": 2,
+        "checkout-hand.001": 3,
+        "shopappphone": 4,
+        "ShopAppCap": 1
+      },
+      "hairReplacement": null,
+      "preserved": {
+        "nodes": 62,
+        "skins": 3,
+        "animations": [
+          {
+            "name": "shopappbody",
+            "channels": 60,
+            "samplers": 60
+          },
+          {
+            "name": "shopapp-arm",
+            "channels": 27,
+            "samplers": 27
+          },
+          {
+            "name": "shopapphandAction",
+            "channels": 81,
+            "samplers": 81
+          },
+          {
+            "name": "shopapp-phone",
+            "channels": 3,
+            "samplers": 3
+          },
+          {
+            "name": "Horse-eyeAction",
+            "channels": 3,
+            "samplers": 3
+          }
+        ],
+        "exactOriginalBinaryPrefix": true
+      }
+    }
+  ]
+}

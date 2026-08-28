@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-08-28T06:29:17.047Z",
+  "intent": {
+    "changed": [
+      "Remove the purple eye mask while preserving the original eyes and identity.",
+      "Replace the source laptop mark with the existing white SpeakUp mark.",
+      "Detach the source eyelid mesh so the character remains naturally open-eyed."
+    ],
+    "preserved": [
+      "Person, clothing, pose, scene, camera, lighting, star background, rings, geometry, UVs, and all non-eyelid motion.",
+      "The original atlas alpha channel and every non-texture GLB bufferView."
+    ]
+  },
+  "generatedDonors": {
+    "face": "assets/speakup/ai-teacher/donors/face-without-mask.png",
+    "laptop": "assets/speakup/ai-teacher/donors/laptop-surface.png",
+    "desktop": "assets/speakup/ai-teacher/donors/desktop-without-mask-and-logo.png",
+    "mobile": "assets/speakup/ai-teacher/donors/mobile-without-mask.png",
+    "method": "OpenAI built-in image edit; only reviewed local regions are blended back through deterministic masks."
+  },
+  "models": [
+    {
+      "id": "high",
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/63ac5b514230f82a/EW26_Sidekick_251208_compressed-optimized.glb",
+      "sourceBytes": 499776,
+      "sourceSha256": "662cdea6238f602436c32fd50c6e9561c8332864da88d381f6b1e98df524b503",
+      "output": "assets/speakup/ai-teacher/speakup-ai-teacher-high.glb",
+      "outputBytes": 525704,
+      "outputSha256": "9358595cbc4b8312ff16d0709aa3aa95daeb1f7de9b34e94f7938ab4ee9d4f2d",
+      "atlas": "assets/speakup/ai-teacher/ai-teacher-atlas-high.png",
+      "atlasSha256": "92aa23134e15a7e4116ee6f8800d80f1ffbe06c09439bec552a4328fb65ff1e2",
+      "purplePixels": 16233,
+      "skinAdjustment": [
+        3,
+        5,
+        6
+      ],
+      "blinkOverlayDetached": true,
+      "invariants": {
+        "sceneGraph": true,
+        "nonTextureBufferViews": true,
+        "ok": true
+      }
+    },
+    {
+      "id": "medium",
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/6c9b3bf2f335a314/EW26_Sidekick_251207v4_compressed-optimized.glb",
+      "sourceBytes": 491520,
+      "sourceSha256": "7394cb9c541d6b693bf284dac9027c422ba6d8128fe1f07efbf1ec972fc6facd",
+      "output": "assets/speakup/ai-teacher/speakup-ai-teacher-medium.glb",
+      "outputBytes": 518296,
+      "outputSha256": "6f2264408031e392ecd0b6e6357b0d874e1703d00038fa457ee50d3becbd8f56",
+      "atlas": "assets/speakup/ai-teacher/ai-teacher-atlas-medium.png",
+      "atlasSha256": "51552af3bc96afb763c702c23325778abeafa445862faa4d8be449a73049e104",
+      "purplePixels": 16217,
+      "skinAdjustment": [
+        3,
+        5,
+        6
+      ],
+      "blinkOverlayDetached": true,
+      "invariants": {
+        "sceneGraph": true,
+        "nonTextureBufferViews": true,
+        "ok": true
+      }
+    }
+  ],
+  "fallbacks": [
+    {
+      "id": "desktop",
+      "source": "assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Sidekick_Fallback.jpg",
+      "donor": "assets/speakup/ai-teacher/donors/desktop-face-without-mask.png",
+      "output": "assets/speakup/ai-teacher/ai-teacher-desktop.jpg",
+      "outputBytes": 978405,
+      "outputSha256": "8a0d6b46d02698e3a31769dc94ce5f896f57dce0abaf8d2bd394527b523ca102",
+      "optimized": "assets/speakup/ai-teacher/ai-teacher-desktop.ktx2",
+      "optimizedBytes": 210243,
+      "optimizedSha256": "b61911e5900a24462355583a9d9678689a5dbc5ce98119f81d3edbb00eb520d1",
+      "dimensions": [
+        2880,
+        1780
+      ],
+      "optimizedDimensions": [
+        1440,
+        890
+      ],
+      "purplePixels": 37351,
+      "skinAdjustment": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "mobile",
+      "source": "assets/remote/cdn.shopify.com/s/files/1/0951/3130/4218/files/Fallback_Mobile_Sidekick_2x_ae10922b-27e9-4a86-ac5d-24de7957ea02.jpg",
+      "donor": "assets/speakup/ai-teacher/donors/mobile-face-without-mask.png",
+      "output": "assets/speakup/ai-teacher/ai-teacher-mobile.jpg",
+      "outputBytes": 290541,
+      "outputSha256": "5faedf3afbacf1859d068841cbca5128bb97e0a39e1f0b0361566f091d280d69",
+      "optimized": "assets/speakup/ai-teacher/ai-teacher-mobile.ktx2",
+      "optimizedBytes": 176832,
+      "optimizedSha256": "eecab1414d338672897aba543151e3d699e7578ef9be9e96c22a79288d39c168",
+      "dimensions": [
+        804,
+        1748
+      ],
+      "optimizedDimensions": [
+        804,
+        1748
+      ],
+      "purplePixels": 30568,
+      "skinAdjustment": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "toolkit": {
+    "sharpViaGltfTransform": "4.4.2",
+    "basisEncoder": "basisu@1.16.3 ETC1S",
+    "basisDecoder": "three@0.172.0 basis_transcoder"
+  }
+}

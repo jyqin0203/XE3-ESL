@@ -1,0 +1,86 @@
+{
+  "builds": [
+    {
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/f889c7c758e60536/EW26_Checkout_251209_compressed-optimized.glb",
+      "sourceSha256": "a697862e0fd8c066feb10eb9259b15c89bac55f4ffc5ff7a07eddf0dca94ff64",
+      "output": "assets/speakup/workplace/speakup-workplace-scene.glb",
+      "outputSha256": "89e85f592fef6c7cc4fe1607107564dcb0322498886e03160c8bd152fc00cb97",
+      "hiddenMeshes": {
+        "Checkout": 1,
+        "Checkout Eyes": 2,
+        "checkout-hand": 3,
+        "checkout-hat": 6,
+        "checkout-card": 5,
+        "shiny-cardchip": 4
+      },
+      "hairReplacement": null,
+      "preserved": {
+        "nodes": 40,
+        "skins": 2,
+        "animations": [
+          {
+            "name": "Armature.003Action",
+            "channels": 18,
+            "samplers": 18
+          },
+          {
+            "name": "Checkout Eyes",
+            "channels": 3,
+            "samplers": 3
+          },
+          {
+            "name": "ArmatureAction",
+            "channels": 81,
+            "samplers": 81
+          },
+          {
+            "name": "Credit CardAction",
+            "channels": 3,
+            "samplers": 3
+          }
+        ],
+        "exactOriginalBinaryPrefix": true
+      }
+    },
+    {
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/7aca351ff49a1198/Checkout_fg_smaller_251127_compressed-optimized.glb",
+      "sourceSha256": "a02f08ec8877153dfdab0ff4200c0882b4325c0e128279695a2bf9929e101d7b",
+      "output": "assets/speakup/workplace/speakup-workplace-foreground.glb",
+      "outputSha256": "b4c6403347b49807b35756b7721738aae3cc1ebbadd97895c26655d5315041b5",
+      "hiddenMeshes": {
+        "Checkout": 1,
+        "Checkout Eyes": 2,
+        "checkout-hand": 3,
+        "checkout-card": 4
+      },
+      "hairReplacement": null,
+      "preserved": {
+        "nodes": 38,
+        "skins": 2,
+        "animations": [
+          {
+            "name": "Armature.003Action",
+            "channels": 18,
+            "samplers": 18
+          },
+          {
+            "name": "Checkout Eyes",
+            "channels": 3,
+            "samplers": 3
+          },
+          {
+            "name": "ArmatureAction",
+            "channels": 81,
+            "samplers": 81
+          },
+          {
+            "name": "Credit CardAction",
+            "channels": 3,
+            "samplers": 3
+          }
+        ],
+        "exactOriginalBinaryPrefix": true
+      }
+    }
+  ]
+}

@@ -16,7 +16,7 @@ const _assetBoundaryKey = Key('feedback-web-asset');
 const _statusUrl =
     '/v1/practice-turns/20000000-0000-4000-8000-000000000001/evaluation';
 const _outputDirectory =
-    '../shopify-winter2026-local/assets/speakup/outcomes/feedback';
+    '../speakup-practice-edition-local/assets/speakup/outcomes/feedback';
 
 enum _FeedbackAssetState { collapsed, correction, natural }
 

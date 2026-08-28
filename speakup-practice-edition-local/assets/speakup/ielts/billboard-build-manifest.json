@@ -1,0 +1,21 @@
+{
+  "sourceGlb": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/2e684892a34b58b8/EW26_Marketing_251209v4_compressed-optimized.glb",
+  "sourceGlbSha256": "92aa4145634e41e33a6b4ba46df0f7eccb64d013c16c9a13dc5b89cca24573c6",
+  "billboardGeometryGlb": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/572da57473b77962/Marketing_fg_smaller_251127_compressed-optimized.glb",
+  "billboardGeometryGlbSha256": "6d1f1d27ea1862a8d1db921885e24552f1d47757806aa67f3dfb27408dcbf4e7",
+  "sourceImage": "assets/speakup/ielts/ielts-billboard-source.png",
+  "sourceImageSha256": "d068aea74151e64069c245009236f7d05b5c4892472fafb308fdbf1836ceb057",
+  "poster": "assets/speakup/ielts/ielts-billboard-static.jpg",
+  "posterSha256": "28939b9c0d54417e1b5afbfe02b5c6643eebb73ca8ac8da177eeb047edb3a381",
+  "outputGlb": "assets/speakup/ielts/speakup-ielts-scene.glb",
+  "outputGlbSha256": "2b64afa14b4ff7180ecb613f2afe6fce2525de7255fe577ac593f1b62dceb42d",
+  "preserved": {
+    "originalNodes": 2,
+    "originalMeshes": 2,
+    "originalMaterials": 1,
+    "originalScenes": 1,
+    "exactOriginalCollectionPrefixes": true,
+    "exactOriginalBinaryPrefix": true,
+    "addedBillboardOverlayNode": "SpeakUp IELTS Billboard"
+  }
+}

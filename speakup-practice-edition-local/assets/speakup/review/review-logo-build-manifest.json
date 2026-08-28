@@ -1,0 +1,51 @@
+{
+  "operation": "remove laptop body, lid, and attached logo",
+  "builds": [
+    {
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/73f4d9f62ba07f6e/EW26_B2B_251205v2_compressed-optimized.glb",
+      "sourceSha256": "b06e3c9f8243adb61489ccb31c4efb989227cb3db3ed6b0346b878ebbf714ff1",
+      "output": "assets/speakup/review/speakup-review-high.glb",
+      "outputSha256": "9a7c80b81ece42e6d8ceb250ee70acf93919fc2f77069f16ebafa23aeacd51c9",
+      "hiddenMeshes": {
+        "Laptop": 1,
+        "Laptop.001": 0
+      },
+      "preserved": {
+        "nodes": 125,
+        "meshes": 10,
+        "skins": 4,
+        "animations": [
+          {
+            "name": "Scene",
+            "channels": 357,
+            "samplers": 357
+          }
+        ],
+        "exactOriginalBinary": true
+      }
+    },
+    {
+      "source": "assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/c4626bed57ec9dff/B2B_fg_smaller_251127_compressed-optimizedv2.glb",
+      "sourceSha256": "d32a24845c20f5b91859080143e1eb964be6cc5da7703e8b452bf57771d369ec",
+      "output": "assets/speakup/review/speakup-review-medium.glb",
+      "outputSha256": "dd67994047e4de8c09ab5cb94f5f961e27dbbfcc0ad32137f2a150629db0b412",
+      "hiddenMeshes": {
+        "Laptop": 1,
+        "Laptop.001": 0
+      },
+      "preserved": {
+        "nodes": 124,
+        "meshes": 9,
+        "skins": 4,
+        "animations": [
+          {
+            "name": "Scene",
+            "channels": 354,
+            "samplers": 354
+          }
+        ],
+        "exactOriginalBinary": true
+      }
+    }
+  ]
+}
