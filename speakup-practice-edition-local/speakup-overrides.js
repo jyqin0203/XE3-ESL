@@ -2256,7 +2256,7 @@
           window.requestAnimationFrame(() => {
             window.setTimeout(() => {
               window.parent.postMessage({ type: "speakup-runtime-ready" }, location.origin);
-            }, 320);
+            }, 1600);
           });
         });
       };
