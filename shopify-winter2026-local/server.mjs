@@ -57,6 +57,12 @@ const retailAssetReplacements = [
     '/assets/speakup/retail/speakup-retail-middle.glb',
   ],
 ];
+const marketingAssetReplacements = [
+  [
+    '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/2e684892a34b58b8/EW26_Marketing_251209v4_compressed-optimized.glb',
+    '/assets/speakup/marketing/speakup-marketing-scene.glb',
+  ],
+];
 
 const fallbackTypes = {
   '.css': 'text/css; charset=utf-8', '.html': 'text/html; charset=utf-8',
@@ -76,6 +82,9 @@ async function serveSpeakUpIndex(request, response, filePath) {
     body = body.replaceAll(originalPath, speakUpPath);
   }
   for (const [originalPath, speakUpPath] of retailAssetReplacements) {
+    body = body.replaceAll(originalPath, speakUpPath);
+  }
+  for (const [originalPath, speakUpPath] of marketingAssetReplacements) {
     body = body.replaceAll(originalPath, speakUpPath);
   }
   body = body

@@ -33,8 +33,8 @@
     marketing: {
       heading: "从选题到开口",
       description: "选择 Part 1、2、3，再进入一轮真实问答。",
-      video: "/assets/speakup/scenes/videos/ielts.mp4",
-      poster: "/assets/speakup/scenes/videos/ielts-poster.jpg",
+      video: "/assets/speakup/scenes/videos/ielts-laptop-speaking.mp4",
+      poster: "/assets/speakup/scenes/videos/ielts-laptop-speaking-poster.jpg",
       entry: "/assets/speakup/scenes/ui/screens/ielts-screen.png",
       practice: "/assets/speakup/scenes/ui/screens/ielts-practice-screen.png",
       videoAlt: "IELTS 口语考试场景预演",
