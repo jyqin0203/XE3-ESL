@@ -2237,7 +2237,9 @@
       picture.className = "speakup-hero-art";
       picture.setAttribute("aria-hidden", "true");
       picture.innerHTML = `
+        <source media="(max-width: 767px)" type="image/webp" srcset="/assets/speakup/hero-mobile.webp" />
         <source media="(max-width: 767px)" srcset="/assets/speakup/hero-mobile.png" />
+        <source type="image/webp" srcset="/assets/speakup/hero-desktop.webp" />
         <img src="/assets/speakup/hero-desktop.png" alt="" decoding="async" fetchpriority="high" />`;
       wrapper.append(picture);
     }

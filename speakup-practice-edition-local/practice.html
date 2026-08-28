@@ -25,6 +25,22 @@
     <meta name="twitter:image" content="/assets/speakup/hero-desktop.png" />
     <link rel="canonical" href="/practice" />
     <link rel="icon" type="image/svg+xml" href="/assets/speakup/speakup-mark.svg" />
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/assets/speakup/hero-desktop.webp"
+      media="(min-width: 768px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/assets/speakup/hero-mobile.webp"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+    />
     <style>
       html,
       body,
@@ -38,11 +54,37 @@
       html,
       body {
         overflow: hidden;
-        background: #080b0d;
+        background-color: #080b0d;
+      }
+
+      body {
+        background-image: url("/assets/speakup/hero-desktop.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
       }
 
       iframe {
         display: block;
+        opacity: 0;
+        transition: opacity 180ms ease-out;
+      }
+
+      body[data-speakup-runtime-ready="true"] iframe {
+        opacity: 1;
+      }
+
+      @media (max-width: 767px) {
+        body {
+          background-image: url("/assets/speakup/hero-mobile.webp");
+          background-position: center top;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        iframe {
+          transition: none;
+        }
       }
     </style>
   </head>
@@ -91,7 +133,10 @@
             location.origin,
           );
         };
-        frame.addEventListener("load", forwardPublicLocation);
+        frame.addEventListener("load", () => {
+          forwardPublicLocation();
+          document.body.dataset.speakupRuntimeReady = "true";
+        });
         window.addEventListener("hashchange", forwardPublicLocation);
         window.addEventListener("popstate", forwardPublicLocation);
       })();
