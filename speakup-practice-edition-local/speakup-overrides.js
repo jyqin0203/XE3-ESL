@@ -2249,6 +2249,12 @@
       const publishRuntimeReady = async () => {
         if (runtimeReadyPublished) return;
         runtimeReadyPublished = true;
+        if (location.hash === "#sidekick") {
+          window.setTimeout(() => {
+            window.parent.postMessage({ type: "speakup-runtime-ready" }, location.origin);
+          }, 12000);
+          return;
+        }
         try {
           await heroImage.decode();
         } catch {}
@@ -2256,11 +2262,12 @@
           window.requestAnimationFrame(() => {
             window.setTimeout(() => {
               window.parent.postMessage({ type: "speakup-runtime-ready" }, location.origin);
-            }, location.hash === "#sidekick" ? 12000 : 1600);
+            }, 1600);
           });
         });
       };
-      if (heroImage.complete && heroImage.naturalWidth > 0) publishRuntimeReady();
+      if (location.hash === "#sidekick") publishRuntimeReady();
+      else if (heroImage.complete && heroImage.naturalWidth > 0) publishRuntimeReady();
       else {
         heroImage.addEventListener("load", publishRuntimeReady, { once: true });
         heroImage.addEventListener("error", publishRuntimeReady, { once: true });
