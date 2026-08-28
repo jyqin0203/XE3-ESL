@@ -9,6 +9,7 @@ const host = process.env.HOST || '127.0.0.1';
 const port = Number(process.env.PORT || 18086);
 const publicPagePath = '/practice';
 const compatibilityPagePath = '/editions/winter2026';
+const localMirrorOrigin = 'http://127.0.0.1:18086';
 const mimeMap = JSON.parse(await readFile(path.join(rootDir, 'mime-map.json'), 'utf8'));
 const sourceGoalPropsPath =
   '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/3d/models/o/510af84586abddc1/EW26_Agentic_Props_251209v5_compressed-optimized.glb';
@@ -149,6 +150,7 @@ const fallbackTypes = {
 async function serveSpeakUpIndex(request, response, filePath) {
   let body = await readFile(filePath, 'utf8');
   body = body
+    .replaceAll(localMirrorOrigin, '')
     .replaceAll(sourceGoalPropsPath, speakUpGoalPropsPath)
     .replaceAll(sourceGoalBookPath, speakUpGoalBookPath)
     .replaceAll(sourcePreparationIntroPath, speakUpPreparationIntroPath);

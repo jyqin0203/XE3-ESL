@@ -1,7 +1,7 @@
 (() => {
   window.__SPEAKUP_PRACTICE_EDITION_LOCAL__ = true;
   window.dataLayer = window.dataLayer || [];
-  const localReferenceVideo = 'http://127.0.0.1:18086/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/videos/c/vp/620a0d8735da4d97b040b1cd98693898/620a0d8735da4d97b040b1cd98693898.HD-1080p-2.5Mbps-64843815.mp4';
+  const localReferenceVideo = '/assets/remote/editions-winter-2026.myshopify.com/cdn/shop/videos/c/vp/620a0d8735da4d97b040b1cd98693898/620a0d8735da4d97b040b1cd98693898.HD-1080p-2.5Mbps-64843815.mp4';
 
   const replaceRemoteVideoFrames = () => {
     document.querySelectorAll('iframe[src*="youtube-nocookie.com/embed/"]').forEach((frame) => {
