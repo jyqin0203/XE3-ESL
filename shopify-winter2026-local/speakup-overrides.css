@@ -436,30 +436,70 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   display: grid;
   min-width: 0;
   min-height: 0;
-  width: 100%;
+  width: auto;
   height: 100%;
+  max-width: 100%;
+  aspect-ratio: 430 / 932;
   overflow: hidden;
   place-items: center;
+  justify-self: center;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 12% / 5.55%;
+  box-sizing: border-box;
+  background:
+    linear-gradient(
+      135deg,
+      #a9adb4 0%,
+      #34373c 8%,
+      #090a0c 30%,
+      #17191d 68%,
+      #777b82 92%,
+      #25272c 100%
+    );
+  box-shadow:
+    0 34px 74px rgba(12, 13, 11, 0.34),
+    0 10px 24px rgba(12, 13, 11, 0.2),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+  transform: translateZ(0);
+}
+
+.speakup-scene-ui__deck::before {
+  position: absolute;
+  inset: 4px;
+  z-index: 4;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 11.3% / 5.2%;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.82);
+  content: "";
+  pointer-events: none;
 }
 
 .speakup-scene-ui__shot {
   position: absolute;
-  inset: 0;
+  inset: 7px;
   grid-area: 1 / 1;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
   max-width: 100%;
   max-height: 100%;
   margin: auto;
-  object-fit: contain;
+  border-radius: 10.6% / 4.9%;
+  object-fit: cover;
   object-position: center;
-  filter: drop-shadow(0 20px 30px rgba(41, 41, 25, 0.2));
+  background: #f6f7fa;
+  filter: none;
   user-select: none;
   transition:
     opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
     transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
     filter 420ms ease;
+}
+
+.speakup-scene-ui__shot--practice {
+  object-fit: contain;
 }
 
 .speakup-scene-ui__shot--entry {
