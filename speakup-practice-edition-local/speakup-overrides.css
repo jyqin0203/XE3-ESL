@@ -53,9 +53,8 @@ body.speakup-mode #shipping {
   display: none !important;
 }
 
-/* Keep the authored loader for the first hero visit only. Once the user enters
-   any real chapter (or opens a chapter hash directly), reveal the content and
-   prevent the inherited startup shell from replaying. */
+/* The embedded SpeakUp page is already the authored entry experience. Keep the
+   inherited edition title out of the runtime, including after hydration. */
 body.speakup-mode
   [data-section-name="side-and-lines"][data-speakup-loader-bypassed="true"]
   :is(.davinci-lines__title, .davinci-lines__loader, .davinci-lines__complete) {

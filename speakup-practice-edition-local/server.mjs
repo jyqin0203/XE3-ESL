@@ -149,6 +149,10 @@ const fallbackTypes = {
 
 async function serveSpeakUpIndex(request, response, filePath) {
   let body = await readFile(filePath, 'utf8');
+  const embeddedRuntime = new URL(
+    request.url || '/',
+    `http://${request.headers.host || `${host}:${port}`}`,
+  ).searchParams.get('embed') === '1';
   const forwardedProtocol = String(request.headers['x-forwarded-proto'] || '')
     .split(',')[0]
     .trim();
@@ -182,10 +186,28 @@ async function serveSpeakUpIndex(request, response, filePath) {
   for (const [originalPath, speakUpPath] of memoryAssetReplacements) {
     body = body.replaceAll(originalPath, speakUpPath);
   }
+  const criticalEditionLoaderBypass = embeddedRuntime
+    ? `<style data-speakup-critical-loader="true">
+[data-section-name="side-and-lines"]
+  :is(.davinci-lines__title, .davinci-lines__loader, .davinci-lines__complete) {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  animation: none !important;
+  transition: none !important;
+  pointer-events: none !important;
+}
+[data-section-name="side-and-lines"]
+  ~ #main-content {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+</style>`
+    : '';
   body = body
     .replace(
       '</head>',
-      '<link rel="stylesheet" href="/speakup-overrides.css" data-speakup-overrides="true" /></head>',
+      `${criticalEditionLoaderBypass}<link rel="stylesheet" href="/speakup-overrides.css" data-speakup-overrides="true" /></head>`,
     )
     .replace(
       '</body>',

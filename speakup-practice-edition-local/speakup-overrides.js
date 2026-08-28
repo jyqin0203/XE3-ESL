@@ -492,7 +492,9 @@
   let routedPublicHash = null;
   const memorySwitchControllers = new WeakMap();
   let bypassSecondaryEditionLoader =
-    Boolean(location.hash && !["#top", "#hero"].includes(location.hash)) || window.scrollY > 100;
+    isEmbedded ||
+    Boolean(location.hash && !["#top", "#hero"].includes(location.hash)) ||
+    window.scrollY > 100;
 
   function ensureStyles() {
     if (document.querySelector('link[data-speakup-overrides="true"]')) return;
