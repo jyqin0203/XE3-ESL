@@ -71,6 +71,7 @@
       }
 
       body {
+        position: relative;
         background-image: url("/assets/speakup/hero-desktop.webp");
         background-position: center;
         background-repeat: no-repeat;
@@ -82,6 +83,8 @@
       }
 
       iframe {
+        position: relative;
+        z-index: 1;
         display: block;
         opacity: 0;
         transition: opacity 180ms ease-out;
@@ -89,6 +92,125 @@
 
       body[data-speakup-runtime-ready="true"] iframe {
         opacity: 1;
+      }
+
+      .speakup-entry-motion {
+        position: fixed;
+        z-index: 2;
+        inset: 0;
+        overflow: hidden;
+        color: rgba(247, 247, 238, 0.66);
+        pointer-events: none;
+        animation: speakup-entry-motion-exit 420ms cubic-bezier(0.25, 0.46, 0.45, 0.94)
+          2.55s both;
+      }
+
+      .speakup-entry-motion::before,
+      .speakup-entry-motion::after {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        bottom: 0;
+        width: 50.05%;
+        content: "";
+        background: rgba(8, 11, 13, 0.94);
+        animation: speakup-entry-panels-open 1.5s cubic-bezier(0.34, 0.22, 0.47, 0.84)
+          180ms both;
+      }
+
+      .speakup-entry-motion::before {
+        left: 0;
+        transform-origin: left center;
+      }
+
+      .speakup-entry-motion::after {
+        right: 0;
+        transform-origin: right center;
+      }
+
+      .speakup-entry-motion__lines {
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .speakup-entry-motion__lines :is(path, rect, circle) {
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1;
+        stroke-dasharray: 1;
+        stroke-dashoffset: 1;
+        vector-effect: non-scaling-stroke;
+        animation: speakup-entry-line-draw var(--duration, 1.8s)
+          cubic-bezier(0.34, 0.22, 0.47, 0.84) var(--delay, 0s) both;
+      }
+
+      .speakup-entry-motion__lines .speakup-entry-motion__frame {
+        stroke: rgba(247, 247, 238, 0.88);
+        --duration: 1.05s;
+        --delay: 80ms;
+      }
+
+      .speakup-entry-motion__lines .speakup-entry-motion__primary {
+        stroke: rgba(247, 247, 238, 0.56);
+      }
+
+      .speakup-entry-motion__lines .speakup-entry-motion__secondary {
+        stroke: rgba(247, 247, 238, 0.24);
+      }
+
+      .speakup-entry-motion__mark {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        width: 46px;
+        height: 46px;
+        object-fit: contain;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.78);
+        animation: speakup-entry-mark-in 1.35s cubic-bezier(0.72, 0.16, 0.19, 0.96)
+          260ms both;
+      }
+
+      @keyframes speakup-entry-panels-open {
+        from {
+          transform: scaleX(1);
+        }
+        to {
+          transform: scaleX(0);
+        }
+      }
+
+      @keyframes speakup-entry-line-draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes speakup-entry-mark-in {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.78);
+        }
+        42%,
+        72% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(1.04);
+        }
+      }
+
+      @keyframes speakup-entry-motion-exit {
+        to {
+          visibility: hidden;
+          opacity: 0;
+        }
       }
 
       @media (max-width: 767px) {
@@ -106,11 +228,53 @@
         iframe {
           transition: none;
         }
+
+        .speakup-entry-motion {
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
     <iframe id="speakup-practice" title="SpeakUp Practice Edition"></iframe>
+    <div class="speakup-entry-motion" aria-hidden="true">
+      <svg
+        class="speakup-entry-motion__lines"
+        viewBox="0 0 1440 880"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <rect
+          class="speakup-entry-motion__frame"
+          x="550"
+          y="208"
+          width="340"
+          height="464"
+          pathLength="1"
+        />
+        <g class="speakup-entry-motion__primary">
+          <path d="M720 440H-1840" pathLength="1" style="--delay: 120ms" />
+          <path d="M720 440H3280" pathLength="1" style="--delay: 120ms" />
+          <path d="M720 440V-1000" pathLength="1" style="--delay: 220ms" />
+          <path d="M720 440V1880" pathLength="1" style="--delay: 220ms" />
+        </g>
+        <g class="speakup-entry-motion__secondary">
+          <path d="M720 440L-1636 -1000" pathLength="1" style="--delay: 300ms" />
+          <path d="M720 440L3076 -1000" pathLength="1" style="--delay: 300ms" />
+          <path d="M720 440L-1636 1880" pathLength="1" style="--delay: 380ms" />
+          <path d="M720 440L3076 1880" pathLength="1" style="--delay: 380ms" />
+          <path d="M550 440V-1000" pathLength="1" style="--delay: 440ms" />
+          <path d="M890 440V1880" pathLength="1" style="--delay: 440ms" />
+          <path d="M720 336H-1840" pathLength="1" style="--delay: 500ms" />
+          <path d="M720 544H3280" pathLength="1" style="--delay: 500ms" />
+          <circle cx="720" cy="440" r="4" pathLength="1" style="--delay: 80ms" />
+        </g>
+      </svg>
+      <img
+        class="speakup-entry-motion__mark"
+        src="/assets/speakup/speakup-mark-white.svg"
+        alt=""
+      />
+    </div>
     <script>
       (() => {
         const publicRoute = "/practice";

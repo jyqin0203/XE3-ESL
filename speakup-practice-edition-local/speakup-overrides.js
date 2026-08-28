@@ -2287,24 +2287,40 @@
       `url("${AI_TEACHER_VIDEO_POSTER_URL}")`,
     );
 
-    const poster = mediaWrapper.querySelector("img");
-    if (poster) {
-      if (poster.getAttribute("src") !== AI_TEACHER_VIDEO_POSTER_URL) {
-        poster.src = AI_TEACHER_VIDEO_POSTER_URL;
-      }
-      // Hydration may restore the original responsive source even after `src`
-      // is replaced, so clear these attributes on every guard pass.
-      poster.removeAttribute("srcset");
-      poster.removeAttribute("sizes");
-      poster.width = 536;
-      poster.height = 960;
-      poster.alt = "SpeakUp 先理解你功能演示";
-      poster.loading = "eager";
-      poster.classList.add("speakup-ai-teacher-poster");
+    // Leave the mirrored component's React-managed media subtree untouched.
+    // Project-owned poster/video siblings can remain mounted while the source
+    // component lazily creates and destroys its own hidden player.
+    let poster = mediaWrapper.querySelector(
+      ':scope > img[data-speakup-ai-teacher-poster="true"]',
+    );
+    if (!poster) {
+      poster = document.createElement("img");
+      poster.dataset.speakupAiTeacherPoster = "true";
+      mediaWrapper.append(poster);
     }
+    if (poster.getAttribute("src") !== AI_TEACHER_VIDEO_POSTER_URL) {
+      poster.src = AI_TEACHER_VIDEO_POSTER_URL;
+    }
+    poster.width = 536;
+    poster.height = 960;
+    poster.alt = "SpeakUp 先理解你功能演示";
+    poster.loading = "eager";
+    poster.classList.add("speakup-ai-teacher-poster");
 
-    const previewVideo = mediaWrapper.querySelector("video");
-    if (!previewVideo) delete mediaWrapper.dataset.speakupVideoReady;
+    // Keep one project-owned player mounted directly on the stable media
+    // wrapper so loop and scroll transitions cannot expose the source
+    // component's intermittent error surface.
+
+    let previewVideo = mediaWrapper.querySelector(
+      ':scope > video[data-speakup-ai-teacher-player="true"]',
+    );
+    if (!previewVideo) {
+      delete mediaWrapper.dataset.speakupVideoReady;
+      previewVideo = document.createElement("video");
+      previewVideo.dataset.speakupAiTeacherPlayer = "true";
+      previewVideo.setAttribute("aria-label", "SpeakUp 先理解你功能演示视频");
+      mediaWrapper.append(previewVideo);
+    }
 
     if (previewVideo) {
       const sourceChanged = previewVideo.getAttribute("src") !== AI_TEACHER_VIDEO_URL;
@@ -2312,21 +2328,22 @@
         delete mediaWrapper.dataset.speakupVideoReady;
         previewVideo.src = AI_TEACHER_VIDEO_URL;
       }
-      // The mirrored component can rehydrate its original <source> children.
-      // A direct source wins in the browser; removing the stale children also
-      // prevents them from flashing during a later media reload.
-      previewVideo.querySelectorAll("source").forEach((source) => source.remove());
       previewVideo.poster = AI_TEACHER_VIDEO_POSTER_URL;
       previewVideo.muted = true;
       previewVideo.defaultMuted = true;
       previewVideo.autoplay = true;
       previewVideo.loop = true;
       previewVideo.playsInline = true;
+      previewVideo.controls = false;
+      previewVideo.disablePictureInPicture = true;
       previewVideo.preload = "auto";
       previewVideo.classList.add("speakup-ai-teacher-preview-video");
 
       if (!previewVideo.dataset.speakupReadyBound) {
         previewVideo.dataset.speakupReadyBound = "true";
+        const showPoster = () => {
+          delete mediaWrapper.dataset.speakupVideoReady;
+        };
         const revealVideo = () => {
           if (previewVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
             mediaWrapper.dataset.speakupVideoReady = "true";
@@ -2335,6 +2352,8 @@
         previewVideo.addEventListener("loadeddata", revealVideo);
         previewVideo.addEventListener("canplay", revealVideo);
         previewVideo.addEventListener("playing", revealVideo);
+        previewVideo.addEventListener("emptied", showPoster);
+        previewVideo.addEventListener("error", showPoster);
       }
       if (previewVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
         mediaWrapper.dataset.speakupVideoReady = "true";

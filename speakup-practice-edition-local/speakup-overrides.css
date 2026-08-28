@@ -224,10 +224,15 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
 #sidekick-video .speakup-ai-teacher-media > div:first-child {
   position: relative;
   z-index: 1;
+  visibility: hidden !important;
+  pointer-events: none;
 }
 
 #sidekick-video .speakup-ai-teacher-poster {
+  position: absolute;
+  inset: 0;
   z-index: 1;
+  display: block;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover;
