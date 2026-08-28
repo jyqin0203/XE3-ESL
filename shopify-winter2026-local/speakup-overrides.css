@@ -122,6 +122,47 @@ body.speakup-mode .canvas-wrapper {
   object-position: center center;
 }
 
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body.speakup-mode .canvas-wrapper {
+    perspective: 1400px;
+    perspective-origin: 50% 48%;
+  }
+
+  .speakup-hero-art[data-camera-motion="pointer"] {
+    overflow: visible;
+    transform: translate3d(
+        var(--speakup-hero-pan-x, 0px),
+        var(--speakup-hero-pan-y, 0px),
+        0
+      )
+      rotateX(var(--speakup-hero-tilt-x, 0deg))
+      rotateY(var(--speakup-hero-tilt-y, 0deg))
+      scale(1.045);
+    transform-origin: 50% 48%;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  .speakup-hero-art[data-camera-motion="pointer"] img {
+    transform: translateZ(18px) scale(1.018);
+    transform-origin: center;
+    will-change: transform;
+  }
+
+  .speakup-hero-art[data-camera-motion="pointer"]::after {
+    background:
+      radial-gradient(
+        circle at var(--speakup-hero-light-x, 50%) var(--speakup-hero-light-y, 44%),
+        rgba(247, 247, 238, 0.13),
+        transparent 33%
+      ),
+      linear-gradient(180deg, rgba(12, 18, 18, 0.16), transparent 30%, transparent 72%, rgba(8, 13, 12, 0.18)),
+      linear-gradient(90deg, rgba(7, 12, 12, 0.08), transparent 22%, transparent 78%, rgba(7, 12, 12, 0.08));
+    transform: translateZ(30px) scale(1.02);
+    will-change: transform, background-position;
+  }
+}
+
 body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   position: relative;
   z-index: 1;
@@ -151,7 +192,13 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
 #sidekick-video .speakup-sidekick-media {
   isolation: isolate;
   overflow: hidden;
+  border: 1px solid rgba(222, 202, 137, 0.82);
+  border-radius: 14px;
   background: #e9e9e1;
+  box-shadow:
+    0 0 0 5px rgba(12, 23, 40, 0.9),
+    0 0 0 6px rgba(222, 202, 137, 0.46),
+    0 24px 56px rgba(4, 12, 25, 0.32);
 }
 
 #sidekick-video .speakup-sidekick-media::before {
@@ -167,11 +214,12 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
   filter: blur(22px) saturate(0.72);
   opacity: 0.82;
   transform: scale(1.08);
+  border-radius: inherit;
 }
 
 #sidekick-video .speakup-sidekick-media > div:first-child,
 #sidekick-video .speakup-sidekick-media > div:first-child > div {
-  aspect-ratio: 4 / 3 !important;
+  aspect-ratio: 9 / 16 !important;
 }
 
 #sidekick-video .speakup-sidekick-media > div:first-child {
@@ -180,26 +228,44 @@ body.speakup-mode .canvas-wrapper > .pointer-events-auto {
 }
 
 #sidekick-video .speakup-sidekick-poster {
+  z-index: 1;
   width: 100% !important;
   height: 100% !important;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
+  opacity: 1 !important;
+  transition: opacity 220ms ease !important;
 }
 
 #sidekick-video .speakup-sidekick-preview-video {
   position: absolute;
   inset: 0;
+  z-index: 2;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
+  opacity: 0;
   background: transparent;
+  transition: opacity 220ms ease;
+}
+
+#sidekick-video
+  .speakup-sidekick-media[data-speakup-video-ready="true"]
+  .speakup-sidekick-poster {
+  opacity: 0 !important;
+}
+
+#sidekick-video
+  .speakup-sidekick-media[data-speakup-video-ready="true"]
+  .speakup-sidekick-preview-video {
+  opacity: 1;
 }
 
 @media (min-width: 940px) {
   #sidekick-video .speakup-sidekick-media > div:first-child,
   #sidekick-video .speakup-sidekick-media > div:first-child > div {
-    aspect-ratio: 4 / 5 !important;
+    aspect-ratio: 3 / 5 !important;
   }
 }
 

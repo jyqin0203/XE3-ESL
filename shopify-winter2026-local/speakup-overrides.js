@@ -422,7 +422,7 @@
   let applying = false;
   let queued = false;
   let socialMasonryFrame = 0;
-  let financeSwitchCompleted = false;
+  let heroCameraController = null;
   const financeSwitchControllers = new WeakMap();
   let bypassSecondaryEditionLoader =
     Boolean(location.hash && !["#top", "#hero"].includes(location.hash)) || window.scrollY > 100;
@@ -1428,9 +1428,9 @@
     if (cards.length < 2) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let activeIndex = financeSwitchCompleted ? cards.length - 1 : 0;
-    let completedTransitions = financeSwitchCompleted ? cards.length - 1 : 0;
+    let activeIndex = 0;
     let inView = false;
+    let interactionPaused = false;
     let waitTimer = 0;
     let transitionTimer = 0;
     let observer;
@@ -1445,13 +1445,10 @@
     const removeListeners = () => {
       observer?.disconnect();
       document.removeEventListener("visibilitychange", handleVisibility);
-    };
-
-    const finish = () => {
-      clearTimers();
-      financeSwitchCompleted = true;
-      root.dataset.switchComplete = "true";
-      removeListeners();
+      root.removeEventListener("mouseenter", handleInteractionStart);
+      root.removeEventListener("mouseleave", handleInteractionEnd);
+      root.removeEventListener("focusin", handleInteractionStart);
+      root.removeEventListener("focusout", handleFocusOut);
     };
 
     const stop = () => {
@@ -1461,9 +1458,9 @@
 
     const schedule = () => {
       if (
-        financeSwitchCompleted ||
         reducedMotion ||
         !inView ||
+        interactionPaused ||
         document.hidden ||
         waitTimer ||
         transitionTimer
@@ -1481,18 +1478,35 @@
         transitionTimer = window.setTimeout(() => {
           transitionTimer = 0;
           activeIndex = (activeIndex + 1) % cards.length;
-          completedTransitions += 1;
           setFinanceMemorySwitchIndex(root, activeIndex);
-          if (completedTransitions >= cards.length - 1) finish();
-          else schedule();
+          schedule();
         }, 520);
-      }, 1000);
+      }, 2400);
     };
+
+    function pauseWaiting() {
+      window.clearTimeout(waitTimer);
+      waitTimer = 0;
+    }
+
+    function handleInteractionStart() {
+      interactionPaused = true;
+      pauseWaiting();
+    }
+
+    function handleInteractionEnd() {
+      interactionPaused = false;
+      schedule();
+    }
+
+    function handleFocusOut(event) {
+      if (event.relatedTarget instanceof Node && root.contains(event.relatedTarget)) return;
+      handleInteractionEnd();
+    }
 
     function handleVisibility() {
       if (document.hidden) {
-        window.clearTimeout(waitTimer);
-        waitTimer = 0;
+        pauseWaiting();
       } else {
         schedule();
       }
@@ -1502,10 +1516,6 @@
     root.dataset.switchBound = "true";
     financeSwitchControllers.set(root, { stop });
 
-    if (financeSwitchCompleted) {
-      root.dataset.switchComplete = "true";
-      return;
-    }
     if (reducedMotion) {
       root.dataset.motion = "static";
       return;
@@ -1515,8 +1525,7 @@
       ([entry]) => {
         inView = entry.isIntersecting && entry.intersectionRatio >= 0.25;
         if (!inView) {
-          window.clearTimeout(waitTimer);
-          waitTimer = 0;
+          pauseWaiting();
         } else {
           schedule();
         }
@@ -1525,6 +1534,10 @@
     );
     observer.observe(root);
     document.addEventListener("visibilitychange", handleVisibility);
+    root.addEventListener("mouseenter", handleInteractionStart);
+    root.addEventListener("mouseleave", handleInteractionEnd);
+    root.addEventListener("focusin", handleInteractionStart);
+    root.addEventListener("focusout", handleFocusOut);
   }
 
   function installSceneFeature(article, marker, build) {
@@ -1852,17 +1865,127 @@
     }
   }
 
+  function bindHeroPointerCamera(wrapper, art) {
+    if (heroCameraController?.wrapper === wrapper && heroCameraController.art === art) return;
+    heroCameraController?.stop();
+
+    const supportsPointerCamera = window.matchMedia(
+      "(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)",
+    ).matches;
+    if (!supportsPointerCamera) {
+      art.dataset.cameraMotion = "static";
+      heroCameraController = { wrapper, art, stop() {} };
+      return;
+    }
+
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let frame = 0;
+    let lastFrameTime = 0;
+
+    const render = (time) => {
+      const elapsed = lastFrameTime ? Math.min(1000, time - lastFrameTime) : 1000 / 60;
+      const ease = 1 - Math.exp(-elapsed / 115);
+      lastFrameTime = time;
+      currentX += (targetX - currentX) * ease;
+      currentY += (targetY - currentY) * ease;
+
+      art.style.setProperty("--speakup-hero-pan-x", `${(-currentX * 14).toFixed(2)}px`);
+      art.style.setProperty("--speakup-hero-pan-y", `${(-currentY * 10).toFixed(2)}px`);
+      art.style.setProperty("--speakup-hero-tilt-x", `${(-currentY * 1.1).toFixed(3)}deg`);
+      art.style.setProperty("--speakup-hero-tilt-y", `${(currentX * 1.45).toFixed(3)}deg`);
+      art.style.setProperty("--speakup-hero-light-x", `${(50 + currentX * 9).toFixed(2)}%`);
+      art.style.setProperty("--speakup-hero-light-y", `${(44 + currentY * 7).toFixed(2)}%`);
+
+      if (
+        Math.abs(targetX - currentX) > 0.001 ||
+        Math.abs(targetY - currentY) > 0.001
+      ) {
+        frame = window.requestAnimationFrame(render);
+      } else {
+        currentX = targetX;
+        currentY = targetY;
+        frame = 0;
+        lastFrameTime = 0;
+      }
+    };
+
+    const requestRender = () => {
+      if (!frame) {
+        lastFrameTime = 0;
+        frame = window.requestAnimationFrame(render);
+      }
+    };
+
+    const handlePointerMove = (event) => {
+      if (event.pointerType && event.pointerType !== "mouse") return;
+      const rect = wrapper.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      if (
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom ||
+        getComputedStyle(art).visibility === "hidden"
+      ) {
+        resetCamera();
+        return;
+      }
+      targetX = Math.max(-1, Math.min(1, ((event.clientX - rect.left) / rect.width) * 2 - 1));
+      targetY = Math.max(-1, Math.min(1, ((event.clientY - rect.top) / rect.height) * 2 - 1));
+      requestRender();
+    };
+
+    const resetCamera = () => {
+      targetX = 0;
+      targetY = 0;
+      requestRender();
+    };
+
+    const handleVisibility = () => {
+      if (document.hidden) resetCamera();
+    };
+
+    const handlePointerOut = (event) => {
+      if (!event.relatedTarget) resetCamera();
+    };
+
+    window.addEventListener("pointermove", handlePointerMove, { passive: true });
+    window.addEventListener("mouseout", handlePointerOut, { passive: true });
+    window.addEventListener("blur", resetCamera);
+    document.addEventListener("visibilitychange", handleVisibility);
+    art.dataset.cameraMotion = "pointer";
+
+    heroCameraController = {
+      wrapper,
+      art,
+      stop() {
+        window.cancelAnimationFrame(frame);
+        window.removeEventListener("pointermove", handlePointerMove);
+        window.removeEventListener("mouseout", handlePointerOut);
+        window.removeEventListener("blur", resetCamera);
+        document.removeEventListener("visibilitychange", handleVisibility);
+      },
+    };
+  }
+
   function ensureHeroArt() {
     const wrapper = document.querySelector(".canvas-wrapper");
-    if (!wrapper || wrapper.querySelector(".speakup-hero-art")) return;
+    if (!wrapper) return;
 
-    const picture = document.createElement("picture");
-    picture.className = "speakup-hero-art";
-    picture.setAttribute("aria-hidden", "true");
-    picture.innerHTML = `
-      <source media="(max-width: 767px)" srcset="/assets/speakup/hero-mobile.png" />
-      <img src="/assets/speakup/hero-desktop.png" alt="" decoding="async" fetchpriority="high" />`;
-    wrapper.append(picture);
+    let picture = wrapper.querySelector(".speakup-hero-art");
+    if (!picture) {
+      picture = document.createElement("picture");
+      picture.className = "speakup-hero-art";
+      picture.setAttribute("aria-hidden", "true");
+      picture.innerHTML = `
+        <source media="(max-width: 767px)" srcset="/assets/speakup/hero-mobile.png" />
+        <img src="/assets/speakup/hero-desktop.png" alt="" decoding="async" fetchpriority="high" />`;
+      wrapper.append(picture);
+    }
+    bindHeroPointerCamera(wrapper, picture);
     updateHeroOpacity();
   }
 
@@ -1888,12 +2011,17 @@
       poster.width = 536;
       poster.height = 960;
       poster.alt = "SpeakUp 先理解你功能演示";
+      poster.loading = "eager";
       poster.classList.add("speakup-sidekick-poster");
     }
 
     const previewVideo = mediaWrapper.querySelector("video");
+    if (!previewVideo) delete mediaWrapper.dataset.speakupVideoReady;
+
     if (previewVideo) {
-      if (previewVideo.getAttribute("src") !== SIDEKICK_VIDEO_URL) {
+      const sourceChanged = previewVideo.getAttribute("src") !== SIDEKICK_VIDEO_URL;
+      if (sourceChanged) {
+        delete mediaWrapper.dataset.speakupVideoReady;
         previewVideo.src = SIDEKICK_VIDEO_URL;
       }
       // The mirrored component can rehydrate its original <source> children.
@@ -1906,7 +2034,23 @@
       previewVideo.autoplay = true;
       previewVideo.loop = true;
       previewVideo.playsInline = true;
+      previewVideo.preload = "auto";
       previewVideo.classList.add("speakup-sidekick-preview-video");
+
+      if (!previewVideo.dataset.speakupReadyBound) {
+        previewVideo.dataset.speakupReadyBound = "true";
+        const revealVideo = () => {
+          if (previewVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+            mediaWrapper.dataset.speakupVideoReady = "true";
+          }
+        };
+        previewVideo.addEventListener("loadeddata", revealVideo);
+        previewVideo.addEventListener("canplay", revealVideo);
+        previewVideo.addEventListener("playing", revealVideo);
+      }
+      if (previewVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+        mediaWrapper.dataset.speakupVideoReady = "true";
+      }
       if (previewVideo.paused) previewVideo.play().catch(() => {});
     }
 
