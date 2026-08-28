@@ -149,8 +149,15 @@ const fallbackTypes = {
 
 async function serveSpeakUpIndex(request, response, filePath) {
   let body = await readFile(filePath, 'utf8');
+  const forwardedProtocol = String(request.headers['x-forwarded-proto'] || '')
+    .split(',')[0]
+    .trim();
+  const protocol = forwardedProtocol === 'https' ? 'https' : 'http';
+  const requestOrigin = new URL(
+    `${protocol}://${request.headers.host || `${host}:${port}`}`,
+  ).origin;
   body = body
-    .replaceAll(localMirrorOrigin, '')
+    .replaceAll(localMirrorOrigin, requestOrigin)
     .replaceAll(sourceGoalPropsPath, speakUpGoalPropsPath)
     .replaceAll(sourceGoalBookPath, speakUpGoalBookPath)
     .replaceAll(sourcePreparationIntroPath, speakUpPreparationIntroPath);
