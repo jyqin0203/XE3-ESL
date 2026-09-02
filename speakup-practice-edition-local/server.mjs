@@ -235,6 +235,12 @@ function sendJson(response, status, value) {
 
 async function serveFile(request, response, filePath, publicPath) {
   const info = await stat(filePath);
+  if (!info.isFile()) {
+    response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+    if (request.method === 'HEAD') response.end();
+    else response.end('Not found');
+    return;
+  }
   const contentType = mimeMap[publicPath] || fallbackTypes[path.extname(filePath).toLowerCase()] || 'application/octet-stream';
   const range = request.headers.range;
   const common = {
